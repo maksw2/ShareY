@@ -94,8 +94,8 @@ namespace ShareX.ScreenCaptureLib
         private InputManager InputManager => ShapeManager.InputManager;
         private TextureBrush backgroundBrush, backgroundHighlightBrush;
         private GraphicsPath regionFillPath, regionDrawPath;
-        private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen;
-        private Brush textBrush, textShadowBrush, textBackgroundBrush;
+        private Pen borderPen, borderDotPen, borderDotStaticPen, textOuterBorderPen, textInnerBorderPen, markerPen, canvasBorderPen, magnifierGridPen;
+        private Brush textBrush, textShadowBrush, textBackgroundBrush, magnifierHighlightBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart;
         private System.Windows.Forms.Timer repaintTimer;
@@ -103,6 +103,7 @@ namespace ShareX.ScreenCaptureLib
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
         private Cursor defaultCursor, openHandCursor, closedHandCursor;
+        private Bitmap magnifierBitmap;
         private Color canvasBackgroundColor, canvasBorderColor, textColor, textShadowColor, textBackgroundColor, textOuterBorderColor, textInnerBorderColor;
         private float zoomFactor = 1;
 
@@ -167,6 +168,8 @@ namespace ShareX.ScreenCaptureLib
             infoFontMedium = new Font("Verdana", 12);
             infoFontBig = new Font("Verdana", 16, FontStyle.Bold);
             markerPen = new Pen(Color.FromArgb(200, Color.Red));
+            magnifierGridPen = new Pen(Color.FromArgb(75, Color.Black));
+            magnifierHighlightBrush = new SolidBrush(Color.FromArgb(75, Color.LightBlue));
 
             canvasBackgroundColor = ShareXResources.Theme.BackgroundColor;
             canvasBorderColor = ShareXResources.Theme.BorderColor;
@@ -1434,7 +1437,6 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            magnifier?.Dispose();
         }
 
         private Bitmap Magnifier(Image img, PointF position, int pixelCount, int diameter)
@@ -1450,9 +1452,15 @@ namespace ShareX.ScreenCaptureLib
             RectangleF srcRect = new RectangleF(position.X - (pixelCount / 2) - CanvasRectangle.X,
                 position.Y - (pixelCount / 2) - CanvasRectangle.Y, pixelCount, pixelCount).Round();
 
-            Bitmap bmp = new Bitmap(diameter, diameter);
-            using (Graphics g = Graphics.FromImage(bmp))
+            if (magnifierBitmap == null || magnifierBitmap.Width != diameter)
             {
+                magnifierBitmap?.Dispose();
+                magnifierBitmap = new Bitmap(diameter, diameter);
+            }
+
+            using (Graphics g = Graphics.FromImage(magnifierBitmap))
+            {
+                g.Clear(Color.Transparent);
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
 
                 if (!new RectangleF(0, 0, img.Width, img.Height).Contains(srcRect))
@@ -1469,22 +1477,16 @@ namespace ShareX.ScreenCaptureLib
                 int centerRight = (int)Math.Round((center + 1) * (double)diameter / pixelCount);
                 int centerSize = centerRight - centerLeft;
 
-                using (SolidBrush brush = new SolidBrush(Color.FromArgb(75, Color.LightBlue)))
-                {
-                    g.FillRectangle(brush, 0, centerLeft, centerLeft, centerSize);
-                    g.FillRectangle(brush, centerRight, centerLeft, diameter - centerRight, centerSize);
-                    g.FillRectangle(brush, centerLeft, 0, centerSize, centerLeft);
-                    g.FillRectangle(brush, centerLeft, centerRight, centerSize, diameter - centerRight);
-                }
+                g.FillRectangle(magnifierHighlightBrush, 0, centerLeft, centerLeft, centerSize);
+                g.FillRectangle(magnifierHighlightBrush, centerRight, centerLeft, diameter - centerRight, centerSize);
+                g.FillRectangle(magnifierHighlightBrush, centerLeft, 0, centerSize, centerLeft);
+                g.FillRectangle(magnifierHighlightBrush, centerLeft, centerRight, centerSize, diameter - centerRight);
 
-                using (Pen pen = new Pen(Color.FromArgb(75, Color.Black)))
+                for (int i = 1; i < pixelCount; i++)
                 {
-                    for (int i = 1; i < pixelCount; i++)
-                    {
-                        int edge = (int)Math.Round(i * (double)diameter / pixelCount) - 1;
-                        g.DrawLine(pen, edge, 0, edge, diameter - 1);
-                        g.DrawLine(pen, 0, edge, diameter - 1, edge);
-                    }
+                    int edge = (int)Math.Round(i * (double)diameter / pixelCount) - 1;
+                    g.DrawLine(magnifierGridPen, edge, 0, edge, diameter - 1);
+                    g.DrawLine(magnifierGridPen, 0, edge, diameter - 1, edge);
                 }
 
                 g.DrawRectangle(Pens.Black, centerLeft - 1, centerLeft - 1, centerSize, centerSize);
@@ -1494,7 +1496,7 @@ namespace ShareX.ScreenCaptureLib
                 }
             }
 
-            return bmp;
+            return magnifierBitmap;
         }
 
         private void DrawRuler(Graphics g, RectangleF rect, Pen pen, int rulerSize, int rulerWidth)
@@ -1753,6 +1755,9 @@ namespace ShareX.ScreenCaptureLib
             textInnerBorderPen?.Dispose();
             markerPen?.Dispose();
             canvasBorderPen?.Dispose();
+            magnifierGridPen?.Dispose();
+            magnifierHighlightBrush?.Dispose();
+            magnifierBitmap?.Dispose();
             defaultCursor?.Dispose();
             openHandCursor?.Dispose();
             closedHandCursor?.Dispose();
