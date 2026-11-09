@@ -23,7 +23,6 @@
 
 #endregion License Information (GPL v3)
 
-using Microsoft.Win32;
 using ShareX.HelpersLib;
 using System;
 using System.Diagnostics;
@@ -41,19 +40,12 @@ namespace ShareX.Setup
             CreateSetup = 1,
             CreatePortable = 1 << 1,
             CreateDebug = 1 << 2,
-            CreateSteamFolder = 1 << 3,
-            CreateMicrosoftStoreFolder = 1 << 4,
-            CreateMicrosoftStoreDebugFolder = 1 << 5,
-            CompileAppx = 1 << 6,
             DownloadTools = 1 << 7,
             CreateChecksumFile = 1 << 8,
             OpenOutputDirectory = 1 << 9,
 
             Release = CreateSetup | CreatePortable | DownloadTools | OpenOutputDirectory,
-            Debug = CreateDebug | DownloadTools | OpenOutputDirectory,
-            Steam = CreateSteamFolder | DownloadTools | OpenOutputDirectory,
-            MicrosoftStore = CreateMicrosoftStoreFolder | CompileAppx | DownloadTools | OpenOutputDirectory,
-            MicrosoftStoreDebug = CreateMicrosoftStoreDebugFolder | CompileAppx | DownloadTools | OpenOutputDirectory
+            Debug = CreateDebug | DownloadTools | OpenOutputDirectory
         }
 
         private static SetupJobs Job { get; set; } = SetupJobs.Release;
@@ -63,36 +55,25 @@ namespace ShareX.Setup
         private static string ParentDir;
         private static string Configuration;
         private static string AppVersion;
-        private static string WindowsKitsDir;
 
         private static string RuntimeId => Platform == "arm64" ? "win-arm64" : "win-x64";
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, RuntimeId);
-        private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
         private static string ExecutablePath => Path.Combine(BinDir, "ShareY.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
         private static string PortableOutputDir => Path.Combine(OutputDir, "ShareY-portable");
         private static string DebugOutputDir => Path.Combine(OutputDir, "ShareY-debug");
-        private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
-        private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
-        private static string MicrosoftStoreDebugOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore-debug");
 
         private static string SetupDir => Path.Combine(ParentDir, "ShareX.Setup");
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
-        private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
         private static string SetupPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-setup-{Platform}.exe");
         private static string PortableZipPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-portable-{Platform}.zip");
         private static string DebugZipPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-debug-{Platform}.zip");
-        private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
-        private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam-{Platform}.zip");
-        private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-{Platform}.appx");
-        private static string MicrosoftStoreDebugAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-debug-{Platform}.appx");
         private static string FFmpegPath => Path.Combine(OutputDir, "ffmpeg.exe");
         private static string RecorderDevicesSetupPath => Path.Combine(OutputDir, $"recorder-devices-{RecorderDevicesVersion}-setup.exe");
         private static string ExifToolPath => Path.Combine(OutputDir, "exiftool.exe");
-        private static string MakeAppxPath => Path.Combine(WindowsKitsDir, "x64", "makeappx.exe");
 
         private const string InnoSetupCompilerPath = @"C:\Program Files (x86)\Inno Setup 6\ISCC.exe";
         private const string FFmpegVersion = "8.1";
@@ -143,33 +124,6 @@ namespace ShareX.Setup
                 CreateFolder(BinDir, DebugOutputDir, SetupJobs.CreateDebug);
 
                 CreateZipFile(DebugOutputDir, DebugZipPath);
-            }
-
-            if (Job.HasFlag(SetupJobs.CreateSteamFolder))
-            {
-                CreateSteamFolder();
-
-                CreateZipFile(SteamOutputDir, SteamZipPath);
-            }
-
-            if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
-            {
-                CreateFolder(BinDir, MicrosoftStoreOutputDir, SetupJobs.CreateMicrosoftStoreFolder);
-
-                if (Job.HasFlag(SetupJobs.CompileAppx))
-                {
-                    CompileAppx(MicrosoftStoreOutputDir, MicrosoftStoreAppxPath);
-                }
-            }
-
-            if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
-            {
-                CreateFolder(BinDir, MicrosoftStoreDebugOutputDir, SetupJobs.CreateMicrosoftStoreDebugFolder);
-
-                if (Job.HasFlag(SetupJobs.CompileAppx))
-                {
-                    CompileAppx(MicrosoftStoreDebugOutputDir, MicrosoftStoreDebugAppxPath);
-                }
             }
 
             if (!Silent && Job.HasFlag(SetupJobs.OpenOutputDirectory))
@@ -243,18 +197,6 @@ namespace ShareX.Setup
             {
                 Configuration = "Debug";
             }
-            else if (Job.HasFlag(SetupJobs.CreateSteamFolder))
-            {
-                Configuration = "Steam";
-            }
-            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreFolder))
-            {
-                Configuration = "MicrosoftStore";
-            }
-            else if (Job.HasFlag(SetupJobs.CreateMicrosoftStoreDebugFolder))
-            {
-                Configuration = "MicrosoftStoreDebug";
-            }
             else
             {
                 Configuration = "Release";
@@ -266,17 +208,6 @@ namespace ShareX.Setup
             AppVersion = versionInfo.ProductVersion;
 
             Console.WriteLine("Application version: " + AppVersion);
-
-            if (Job.HasFlag(SetupJobs.CompileAppx))
-            {
-                string sdkInstallationFolder = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
-                    "InstallationFolder", RegistryHive.LocalMachine);
-                string sdkProductVersion = RegistryHelpers.GetValueString(@"SOFTWARE\WOW6432Node\Microsoft\Microsoft SDKs\Windows\v10.0",
-                    "ProductVersion", RegistryHive.LocalMachine);
-                WindowsKitsDir = Path.Combine(sdkInstallationFolder, "bin", Helpers.NormalizeVersion(sdkProductVersion).ToString());
-
-                Console.WriteLine("Windows Kits directory: " + WindowsKitsDir);
-            }
         }
 
         private static void CompileSetup()
@@ -314,48 +245,6 @@ namespace ShareX.Setup
             }
         }
 
-        private static void CompileAppx(string contentDirectory, string outputPackageName)
-        {
-            Console.WriteLine("Compiling appx file: " + contentDirectory);
-
-            using (Process process = new Process())
-            {
-                ProcessStartInfo psi = new ProcessStartInfo()
-                {
-                    FileName = MakeAppxPath,
-                    Arguments = $"pack /d \"{contentDirectory}\" /p \"{outputPackageName}\" /l /o",
-                    UseShellExecute = false
-                };
-
-                process.StartInfo = psi;
-                process.Start();
-                process.WaitForExit();
-            }
-
-            Console.WriteLine("Appx file compiled: " + outputPackageName);
-
-            CreateChecksumFile(outputPackageName);
-        }
-
-        private static void CreateSteamFolder()
-        {
-            Console.WriteLine("Creating Steam folder: " + SteamOutputDir);
-
-            if (Directory.Exists(SteamOutputDir))
-            {
-                Directory.Delete(SteamOutputDir, true);
-            }
-
-            Directory.CreateDirectory(SteamOutputDir);
-
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "ShareX_Launcher.exe"), SteamOutputDir);
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "steam_appid.txt"), SteamOutputDir);
-            FileHelpers.CopyFiles(Path.Combine(SteamLauncherDir, "installscript.vdf"), SteamOutputDir);
-            FileHelpers.CopyFiles(SteamLauncherDir, SteamOutputDir, "*.dll");
-
-            CreateFolder(BinDir, SteamUpdatesDir, SetupJobs.CreateSteamFolder);
-        }
-
         private static void CreateFolder(string source, string destination, SetupJobs job)
         {
             Console.WriteLine("Creating folder: " + destination);
@@ -371,19 +260,16 @@ namespace ShareX.Setup
             FileHelpers.CopyFiles(source, destination, "*.dll");
             FileHelpers.CopyFiles(source, destination, "*.json");
 
-            if (job == SetupJobs.CreateDebug || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
+            if (job == SetupJobs.CreateDebug)
             {
                 FileHelpers.CopyFiles(source, destination, "*.pdb");
             }
 
             FileHelpers.CopyFiles(Path.Combine(ParentDir, "Licenses"), Path.Combine(destination, "Licenses"), "*.txt");
 
-            if (job != SetupJobs.CreateMicrosoftStoreFolder && job != SetupJobs.CreateMicrosoftStoreDebugFolder)
+            if (File.Exists(RecorderDevicesSetupPath))
             {
-                if (File.Exists(RecorderDevicesSetupPath))
-                {
-                    FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
-                }
+                FileHelpers.CopyFiles(RecorderDevicesSetupPath, destination);
             }
 
             FileHelpers.CopyFiles(Path.Combine(source, "ShareX_File_Icon.ico"), destination);
@@ -413,30 +299,8 @@ namespace ShareX.Setup
             {
                 FileHelpers.CreateEmptyFile(Path.Combine(destination, "Portable"));
             }
-            else if (job == SetupJobs.CreateMicrosoftStoreFolder || job == SetupJobs.CreateMicrosoftStoreDebugFolder)
-            {
-                FileHelpers.CopyAll(MicrosoftStorePackageFilesDir, destination);
-
-                string manifestPath = Path.Combine(destination, "AppxManifest.xml");
-
-                if (File.Exists(manifestPath))
-                {
-                    string manifestContent = File.ReadAllText(manifestPath);
-                    manifestContent = manifestContent.
-                        Replace("{PLATFORM}", Platform).
-                        Replace("{VERSION}", GetMicrosoftStoreManifestVersion());
-                    File.WriteAllText(manifestPath, manifestContent);
-                }
-            }
 
             Console.WriteLine("Folder created: " + destination);
-        }
-
-        private static string GetMicrosoftStoreManifestVersion()
-        {
-            Version version = Version.Parse(AppVersion);
-            int revision = version.Revision > -1 ? version.Revision : 0;
-            return $"{version.Major}.{version.Minor}.{version.Build}.{revision}";
         }
 
         private static void CreateZipFile(string source, string archivePath)
