@@ -649,4 +649,7 @@ Do you want to abort the active 화면 녹화?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>시작up has been enabled by your organization</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>다시 알리지 않음</value>
+  </data>
 </root>

@@ -648,4 +648,7 @@ Clique de la molette pour fermer</value>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>Rectangle client</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Ne plus me le rappeler</value>
+  </data>
 </root>

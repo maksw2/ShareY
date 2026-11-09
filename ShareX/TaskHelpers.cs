@@ -629,6 +629,31 @@ namespace ShareX
             return true;
         }
 
+        public static bool ConfirmFileDelete()
+        {
+            if (!Program.Settings.ShowFileDeleteConfirmation)
+            {
+                return true;
+            }
+
+            using (MyMessageBox messageBox = new MyMessageBox(Resources.MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_,
+                "ShareX - " + Resources.MainForm_tsmiDeleteSelectedFile_Click_File_delete_confirmation,
+                MessageBoxButtons.YesNo, Resources.FileDeleteConfirmation_DontRemindAgain))
+            {
+                if (messageBox.ShowDialog() != DialogResult.Yes)
+                {
+                    return false;
+                }
+
+                if (messageBox.IsChecked)
+                {
+                    Program.Settings.ShowFileDeleteConfirmation = false;
+                }
+
+                return true;
+            }
+        }
+
         public static void PrintImage(Image img)
         {
             if (Program.Settings.DontShowPrintSettingsDialog)

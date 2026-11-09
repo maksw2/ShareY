@@ -184,6 +184,9 @@ namespace ShareX
         [Category("Application"), DefaultValue(true), Description("Show tips and hotkeys in main window when task list is empty.")]
         public bool ShowMainWindowTip { get; set; }
 
+        [Category("Application"), DefaultValue(true), Description("Ask for confirmation before deleting a file locally from the notification or the main window.")]
+        public bool ShowFileDeleteConfirmation { get; set; }
+
         [Category("Application"), DefaultValue(""), Description("URLs will open using this path instead of default browser. Example path: chrome.exe")]
         [Editor(typeof(ExeFileNameEditor), typeof(UITypeEditor))]
         public string BrowserPath { get; set; }

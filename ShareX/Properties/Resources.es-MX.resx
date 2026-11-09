@@ -646,4 +646,7 @@ Clic medio para cerrar</value>
   <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
     <value>Donar</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>No volver a recordármelo</value>
+  </data>
 </root>

@@ -649,4 +649,7 @@ Pretende cancelar a gravação de ecrã ativa?</value>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>O administrador do sistema desativou a funcionalidade de carregamento.</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Não voltar a lembrar</value>
+  </data>
 </root>

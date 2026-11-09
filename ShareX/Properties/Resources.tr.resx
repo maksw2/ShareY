@@ -648,4 +648,7 @@ Orta fare tuşu kapatmak için</value>
     <value>İndirme başarısız:
 {0}</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Bir daha hatırlatma</value>
+  </data>
 </root>

@@ -649,4 +649,7 @@
     <value>Збій завантаження:
 {0}</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Більше не нагадувати</value>
+  </data>
 </root>

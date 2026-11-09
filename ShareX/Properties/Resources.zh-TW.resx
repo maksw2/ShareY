@@ -649,4 +649,7 @@
   <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
     <value>捐贈</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>不再提醒</value>
+  </data>
 </root>

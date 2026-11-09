@@ -648,4 +648,7 @@ Deseja interromper a gravação de tela ativa?</value>
   <data name="ClipboardUpload" xml:space="preserve">
     <value>Clipboard envio</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Não me lembrar novamente</value>
+  </data>
 </root>

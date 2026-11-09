@@ -649,4 +649,7 @@
     <value>Не удалось загрузить с сервера:
 {0}</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Больше не напоминать</value>
+  </data>
 </root>

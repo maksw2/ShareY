@@ -648,4 +648,7 @@
     <value>下载失败：
 {0}</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>不再提醒</value>
+  </data>
 </root>

@@ -647,4 +647,7 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   <data name="AboutForm_AboutForm_Team" xml:space="preserve">
     <value>Team</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Nicht mehr erinnern</value>
+  </data>
 </root>

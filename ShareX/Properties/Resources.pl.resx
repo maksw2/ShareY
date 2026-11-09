@@ -649,4 +649,7 @@ Kliknij prawym przyciskiem myszy, aby otworzyć menu
   <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
     <value>Przekaż darowiznę</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Nie przypominaj mi ponownie</value>
+  </data>
 </root>

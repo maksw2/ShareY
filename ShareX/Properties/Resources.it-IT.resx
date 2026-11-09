@@ -648,4 +648,7 @@ Do you want to abort the active registrazione schermo?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Avviaup has been enabled by your organization</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Non ricordarmelo più</value>
+  </data>
 </root>

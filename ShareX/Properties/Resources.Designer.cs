@@ -2139,6 +2139,12 @@ namespace ShareX.Properties {
             }
         }
         
+        internal static string FileDeleteConfirmation_DontRemindAgain {
+            get {
+                return ResourceManager.GetString("FileDeleteConfirmation_DontRemindAgain", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to File delete confirmation.
         /// </summary>

@@ -648,4 +648,7 @@ ShareY を再起動しますか？</value>
   <data name="AboutForm_AboutForm_Donate" xml:space="preserve">
     <value>寄付</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>今後は確認しない</value>
+  </data>
 </root>

@@ -648,4 +648,7 @@ Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</valu
   <data name="ClipboardUpload" xml:space="preserve">
     <value>Clipboard tải lên</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Không nhắc lại nữa</value>
+  </data>
 </root>

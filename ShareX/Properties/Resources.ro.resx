@@ -649,4 +649,7 @@ Vrei să anulezi înregistrarea activă a ecranului?</value>
   <data name="FFmpegDoesNotExistAtTheFollowingPath" xml:space="preserve">
     <value>FFmpeg nu există la următoarea cale:</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Nu-mi mai aminti</value>
+  </data>
 </root>

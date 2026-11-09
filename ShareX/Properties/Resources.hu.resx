@@ -648,4 +648,7 @@ Middle click to close</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Indításup has been engedélyezve by your organization</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Ne emlékeztessen újra</value>
+  </data>
 </root>

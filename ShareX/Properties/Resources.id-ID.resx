@@ -648,4 +648,7 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Startup telah diaktifkan oleh organisasi Anda</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Jangan ingatkan saya lagi</value>
+  </data>
 </root>

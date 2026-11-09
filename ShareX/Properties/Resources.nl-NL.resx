@@ -647,4 +647,7 @@ Middle klik to close</value>
   <data name="ApplicationSettingsForm_cbStartWithWindows_EnabledByPolicy_Text" xml:space="preserve">
     <value>Startenup has been inschakelend by your organization</value>
   </data>
+  <data name="FileDeleteConfirmation_DontRemindAgain" xml:space="preserve">
+    <value>Niet meer herinneren</value>
+  </data>
 </root>
