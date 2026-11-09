@@ -2391,6 +2391,7 @@ namespace ShareX.ScreenCaptureLib
 
         public void Dispose()
         {
+            DisposeToolbar();
             DeleteAllShapes();
 
             history.Dispose();

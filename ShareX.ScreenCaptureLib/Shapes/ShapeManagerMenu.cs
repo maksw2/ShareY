@@ -1260,6 +1260,22 @@ namespace ShareX.ScreenCaptureLib
             ToolbarCreated = true;
         }
 
+        private void DisposeToolbar()
+        {
+            if (menuForm == null) return;
+
+            menuForm.Shown -= MenuForm_Shown;
+            menuForm.KeyDown -= MenuForm_KeyDown;
+            menuForm.KeyUp -= MenuForm_KeyUp;
+            menuForm.LocationChanged -= MenuForm_LocationChanged;
+            menuForm.GotFocus -= MenuForm_GotFocus;
+            menuForm.LostFocus -= MenuForm_LostFocus;
+            tsMain.MouseLeave -= TsMain_MouseLeave;
+            menuForm.Dispose();
+            menuForm = null;
+            ToolbarCreated = false;
+        }
+
         private void MenuForm_Shown(object sender, EventArgs e)
         {
             Form.ToolbarHeight = menuForm.Height;
