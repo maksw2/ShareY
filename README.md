@@ -22,3 +22,12 @@
 * Google Cloud Storage guide: https://getsharex.com/docs/google-cloud-storage
 * Cloudflare R2 guide: https://getsharex.com/docs/cloudflare-r2
 * Brand assets: https://getsharex.com/brand-assets
+
+## Star History
+<a href="https://www.star-history.com/?repos=maksw2%2Fsharey&type=date&legend=bottom-right">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://www.star-history.com/?repos=maksw2%2Fsharey&type=date&legend=bottom-right" />
+   <source media="(prefers-color-scheme: light)" srcset="https://www.star-history.com/?repos=maksw2%2Fsharey&type=date&legend=bottom-right" />
+   <img alt="Star History Chart" src="https://www.star-history.com/?repos=maksw2%2Fsharey&type=date&legend=bottom-right" />
+ </picture>
+</a>
