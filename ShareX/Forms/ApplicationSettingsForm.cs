@@ -150,16 +150,10 @@ namespace ShareX
             cbShellContextMenu.Visible = false;
             cbEditWithShareX.Visible = false;
             cbSendToMenu.Visible = false;
-            gbChrome.Visible = false;
-            gbFirefox.Visible = false;
 #else
             cbShellContextMenu.Checked = IntegrationHelpers.CheckShellContextMenuButton();
             cbEditWithShareX.Checked = IntegrationHelpers.CheckEditShellContextMenuButton();
             cbSendToMenu.Checked = IntegrationHelpers.CheckSendToMenuButton();
-            cbChromeExtensionSupport.Checked = IntegrationHelpers.CheckChromeExtensionSupport();
-            btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
-            cbFirefoxAddonSupport.Checked = IntegrationHelpers.CheckFirefoxAddonSupport();
-            btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
 #endif
 
 #if STEAM
@@ -618,34 +612,6 @@ namespace ShareX
             {
                 IntegrationHelpers.CreateSendToMenuButton(cbSendToMenu.Checked);
             }
-        }
-
-        private void cbChromeExtensionSupport_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ready)
-            {
-                IntegrationHelpers.CreateChromeExtensionSupport(cbChromeExtensionSupport.Checked);
-                btnChromeOpenExtensionPage.Enabled = cbChromeExtensionSupport.Checked;
-            }
-        }
-
-        private void btnChromeOpenExtensionPage_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://chrome.google.com/webstore/detail/sharex/nlkoigbdolhchiicbonbihbphgamnaoc");
-        }
-
-        private void cbFirefoxAddonSupport_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ready)
-            {
-                IntegrationHelpers.CreateFirefoxAddonSupport(cbFirefoxAddonSupport.Checked);
-                btnFirefoxOpenAddonPage.Enabled = cbFirefoxAddonSupport.Checked;
-            }
-        }
-
-        private void btnFirefoxOpenAddonPage_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL("https://addons.mozilla.org/en-US/firefox/addon/sharex/");
         }
 
         private void cbSteamShowInApp_CheckedChanged(object sender, EventArgs e)

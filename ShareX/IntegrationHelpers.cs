@@ -70,11 +70,6 @@ namespace ShareX
         private static readonly string ShellImageEffectCommandPath = $@"{ShellImageEffectAssociatePath}\shell\open\command";
         private static readonly string ShellImageEffectCommandValue = $"{ApplicationPath} -ImageEffect \"%1\"";
 
-        private static readonly string ChromeNativeMessagingHosts = @"SOFTWARE\Google\Chrome\NativeMessagingHosts\com.getsharex.sharex";
-        private static readonly string FirefoxNativeMessagingHosts = @"SOFTWARE\Mozilla\NativeMessagingHosts\ShareX";
-        private static readonly string ChromeHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-chrome.json");
-        private static readonly string FirefoxHostManifestFilePath = FileHelpers.GetAbsolutePath("host-manifest-firefox.json");
-
         public static bool CheckShellContextMenuButton()
         {
             try
@@ -275,94 +270,6 @@ namespace ShareX
             RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath);
         }
 
-        public static bool CheckChromeExtensionSupport()
-        {
-            try
-            {
-                return RegistryHelpers.CheckStringValue(ChromeNativeMessagingHosts, null, ChromeHostManifestFilePath) && File.Exists(ChromeHostManifestFilePath);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static void CreateChromeExtensionSupport(bool create)
-        {
-            try
-            {
-                if (create)
-                {
-                    UnregisterChromeExtensionSupport();
-                    RegisterChromeExtensionSupport();
-                }
-                else
-                {
-                    UnregisterChromeExtensionSupport();
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-        }
-
-        private static void RegisterChromeExtensionSupport()
-        {
-            RegistryHelpers.CreateRegistry(ChromeNativeMessagingHosts, ChromeHostManifestFilePath);
-        }
-
-        private static void UnregisterChromeExtensionSupport()
-        {
-            RegistryHelpers.RemoveRegistry(ChromeNativeMessagingHosts);
-        }
-
-        public static bool CheckFirefoxAddonSupport()
-        {
-            try
-            {
-                return RegistryHelpers.CheckStringValue(FirefoxNativeMessagingHosts, null, FirefoxHostManifestFilePath) && File.Exists(FirefoxHostManifestFilePath);
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-
-            return false;
-        }
-
-        public static void CreateFirefoxAddonSupport(bool create)
-        {
-            try
-            {
-                if (create)
-                {
-                    UnregisterFirefoxAddonSupport();
-                    RegisterFirefoxAddonSupport();
-                }
-                else
-                {
-                    UnregisterFirefoxAddonSupport();
-                }
-            }
-            catch (Exception e)
-            {
-                DebugHelper.WriteException(e);
-            }
-        }
-
-        private static void RegisterFirefoxAddonSupport()
-        {
-            RegistryHelpers.CreateRegistry(FirefoxNativeMessagingHosts, FirefoxHostManifestFilePath);
-        }
-
-        private static void UnregisterFirefoxAddonSupport()
-        {
-            RegistryHelpers.RemoveRegistry(FirefoxNativeMessagingHosts);
-        }
-
         public static bool CheckSendToMenuButton()
         {
             return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, "ShareX", Application.ExecutablePath);
@@ -412,8 +319,6 @@ namespace ShareX
             CreateCustomUploaderExtension(false);
             CreateImageEffectExtension(false);
             CreateSendToMenuButton(false);
-            UnregisterChromeExtensionSupport();
-            UnregisterFirefoxAddonSupport();
         }
     }
 }

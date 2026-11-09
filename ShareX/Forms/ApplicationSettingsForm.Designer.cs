@@ -62,14 +62,8 @@ namespace ShareX
             this.pgTheme = new System.Windows.Forms.PropertyGrid();
             this.eiTheme = new ShareX.HelpersLib.ExportImportControl();
             this.tpIntegration = new System.Windows.Forms.TabPage();
-            this.gbFirefox = new System.Windows.Forms.GroupBox();
-            this.cbFirefoxAddonSupport = new System.Windows.Forms.CheckBox();
-            this.btnFirefoxOpenAddonPage = new System.Windows.Forms.Button();
             this.gbSteam = new System.Windows.Forms.GroupBox();
             this.cbSteamShowInApp = new System.Windows.Forms.CheckBox();
-            this.gbChrome = new System.Windows.Forms.GroupBox();
-            this.cbChromeExtensionSupport = new System.Windows.Forms.CheckBox();
-            this.btnChromeOpenExtensionPage = new System.Windows.Forms.Button();
             this.gbWindows = new System.Windows.Forms.GroupBox();
             this.cbEditWithShareX = new System.Windows.Forms.CheckBox();
             this.cbStartWithWindows = new System.Windows.Forms.CheckBox();
@@ -186,9 +180,7 @@ namespace ShareX
             this.tpGeneral.SuspendLayout();
             this.tpTheme.SuspendLayout();
             this.tpIntegration.SuspendLayout();
-            this.gbFirefox.SuspendLayout();
             this.gbSteam.SuspendLayout();
-            this.gbChrome.SuspendLayout();
             this.gbWindows.SuspendLayout();
             this.tpPaths.SuspendLayout();
             this.tpSettings.SuspendLayout();
@@ -461,34 +453,10 @@ namespace ShareX
             // tpIntegration
             // 
             this.tpIntegration.BackColor = System.Drawing.SystemColors.Window;
-            this.tpIntegration.Controls.Add(this.gbFirefox);
             this.tpIntegration.Controls.Add(this.gbSteam);
-            this.tpIntegration.Controls.Add(this.gbChrome);
             this.tpIntegration.Controls.Add(this.gbWindows);
             resources.ApplyResources(this.tpIntegration, "tpIntegration");
             this.tpIntegration.Name = "tpIntegration";
-            // 
-            // gbFirefox
-            // 
-            this.gbFirefox.Controls.Add(this.cbFirefoxAddonSupport);
-            this.gbFirefox.Controls.Add(this.btnFirefoxOpenAddonPage);
-            resources.ApplyResources(this.gbFirefox, "gbFirefox");
-            this.gbFirefox.Name = "gbFirefox";
-            this.gbFirefox.TabStop = false;
-            // 
-            // cbFirefoxAddonSupport
-            // 
-            resources.ApplyResources(this.cbFirefoxAddonSupport, "cbFirefoxAddonSupport");
-            this.cbFirefoxAddonSupport.Name = "cbFirefoxAddonSupport";
-            this.cbFirefoxAddonSupport.UseVisualStyleBackColor = true;
-            this.cbFirefoxAddonSupport.CheckedChanged += new System.EventHandler(this.cbFirefoxAddonSupport_CheckedChanged);
-            // 
-            // btnFirefoxOpenAddonPage
-            // 
-            resources.ApplyResources(this.btnFirefoxOpenAddonPage, "btnFirefoxOpenAddonPage");
-            this.btnFirefoxOpenAddonPage.Name = "btnFirefoxOpenAddonPage";
-            this.btnFirefoxOpenAddonPage.UseVisualStyleBackColor = true;
-            this.btnFirefoxOpenAddonPage.Click += new System.EventHandler(this.btnFirefoxOpenAddonPage_Click);
             // 
             // gbSteam
             // 
@@ -503,28 +471,6 @@ namespace ShareX
             this.cbSteamShowInApp.Name = "cbSteamShowInApp";
             this.cbSteamShowInApp.UseVisualStyleBackColor = true;
             this.cbSteamShowInApp.CheckedChanged += new System.EventHandler(this.cbSteamShowInApp_CheckedChanged);
-            // 
-            // gbChrome
-            // 
-            this.gbChrome.Controls.Add(this.cbChromeExtensionSupport);
-            this.gbChrome.Controls.Add(this.btnChromeOpenExtensionPage);
-            resources.ApplyResources(this.gbChrome, "gbChrome");
-            this.gbChrome.Name = "gbChrome";
-            this.gbChrome.TabStop = false;
-            // 
-            // cbChromeExtensionSupport
-            // 
-            resources.ApplyResources(this.cbChromeExtensionSupport, "cbChromeExtensionSupport");
-            this.cbChromeExtensionSupport.Name = "cbChromeExtensionSupport";
-            this.cbChromeExtensionSupport.UseVisualStyleBackColor = true;
-            this.cbChromeExtensionSupport.CheckedChanged += new System.EventHandler(this.cbChromeExtensionSupport_CheckedChanged);
-            // 
-            // btnChromeOpenExtensionPage
-            // 
-            resources.ApplyResources(this.btnChromeOpenExtensionPage, "btnChromeOpenExtensionPage");
-            this.btnChromeOpenExtensionPage.Name = "btnChromeOpenExtensionPage";
-            this.btnChromeOpenExtensionPage.UseVisualStyleBackColor = true;
-            this.btnChromeOpenExtensionPage.Click += new System.EventHandler(this.btnChromeOpenExtensionPage_Click);
             // 
             // gbWindows
             // 
@@ -1438,12 +1384,8 @@ namespace ShareX
             this.tpGeneral.PerformLayout();
             this.tpTheme.ResumeLayout(false);
             this.tpIntegration.ResumeLayout(false);
-            this.gbFirefox.ResumeLayout(false);
-            this.gbFirefox.PerformLayout();
             this.gbSteam.ResumeLayout(false);
             this.gbSteam.PerformLayout();
-            this.gbChrome.ResumeLayout(false);
-            this.gbChrome.PerformLayout();
             this.gbWindows.ResumeLayout(false);
             this.gbWindows.PerformLayout();
             this.tpPaths.ResumeLayout(false);
@@ -1559,7 +1501,6 @@ namespace ShareX
         private MenuButton btnLanguages;
         private System.Windows.Forms.ContextMenuStrip cmsLanguages;
         private System.Windows.Forms.GroupBox gbWindows;
-        private System.Windows.Forms.GroupBox gbChrome;
         private System.Windows.Forms.CheckBox cbSteamShowInApp;
         private System.Windows.Forms.TabPage tpIntegration;
         private System.Windows.Forms.GroupBox gbSteam;
@@ -1585,11 +1526,6 @@ namespace ShareX
         private System.Windows.Forms.ComboBox cbTrayMiddleClickAction;
         private System.Windows.Forms.ComboBox cbTrayLeftDoubleClickAction;
         private System.Windows.Forms.ComboBox cbTrayLeftClickAction;
-        private System.Windows.Forms.Button btnChromeOpenExtensionPage;
-        private System.Windows.Forms.GroupBox gbFirefox;
-        private System.Windows.Forms.Button btnFirefoxOpenAddonPage;
-        private System.Windows.Forms.CheckBox cbChromeExtensionSupport;
-        private System.Windows.Forms.CheckBox cbFirefoxAddonSupport;
         private System.Windows.Forms.Button btnResetSettings;
         private System.Windows.Forms.CheckBox cbEditWithShareX;
         private System.Windows.Forms.Button btnCheckDevBuild;

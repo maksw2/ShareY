@@ -482,9 +482,6 @@ namespace ShareX
         [Category("General"), DefaultValue(false), Description("Use after capture tasks for clipboard image uploads.")]
         public bool ProcessImagesDuringClipboardUpload { get; set; }
 
-        [Category("General"), DefaultValue(false), Description("Use after capture tasks for browser extension image uploads.")]
-        public bool ProcessImagesDuringExtensionUpload { get; set; }
-
         [Category("General"), DefaultValue(true), Description("Allows file related after capture tasks (\"Perform actions\", \"Copy file to clipboard\" etc.) to be used when doing file upload.")]
         public bool UseAfterCaptureTasksDuringFileUpload { get; set; }
 

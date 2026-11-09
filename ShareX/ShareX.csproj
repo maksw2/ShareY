@@ -26,22 +26,12 @@
     <ProjectReference Include="..\ShareX.ImageEffectsLib\ShareX.ImageEffectsLib.csproj" />
     <ProjectReference Include="..\ShareX.IndexerLib\ShareX.IndexerLib.csproj" />
     <ProjectReference Include="..\ShareX.MediaLib\ShareX.MediaLib.csproj" />
-    <ProjectReference Include="..\ShareX.NativeMessagingHost\ShareX.NativeMessagingHost.csproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-      <SkipGetTargetFrameworkProperties>true</SkipGetTargetFrameworkProperties>
-    </ProjectReference>
     <ProjectReference Include="..\ShareX.ScreenCaptureLib\ShareX.ScreenCaptureLib.csproj" />
     <ProjectReference Include="..\ShareX.ScreenRecordingLib\ShareX.ScreenRecordingLib.csproj" />
     <ProjectReference Include="..\ShareX.HelpersLib\ShareX.HelpersLib.csproj" />
     <ProjectReference Include="..\ShareX.UploadersLib\ShareX.UploadersLib.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="host-manifest-chrome.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="host-manifest-firefox.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="ShareX_File_Icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
