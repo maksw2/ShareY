@@ -98,6 +98,7 @@ namespace ShareX.ScreenCaptureLib
         private Brush textBrush, textShadowBrush, textBackgroundBrush;
         private Font infoFont, infoFontMedium, infoFontBig;
         private Stopwatch timerStart;
+        private System.Windows.Forms.Timer repaintTimer;
         private bool pause, isKeyAllowed, forceClose;
         private RectangleAnimation regionAnimation;
         private TextAnimation editorPanTipAnimation;
@@ -137,8 +138,13 @@ namespace ShareX.ScreenCaptureLib
             CanvasRectangle = ClientArea;
 
             timerStart = new Stopwatch();
-            FPSManager = new FPSManager(Options.FPSLimit);
+            FPSManager = new FPSManager();
             FPSManager.FPSUpdated += FpsManager_FPSChanged;
+            repaintTimer = new System.Windows.Forms.Timer();
+            repaintTimer.Tick += (sender, e) =>
+            {
+                if (!pause) Invalidate();
+            };
             regionAnimation = new RectangleAnimation()
             {
                 Duration = TimeSpan.FromMilliseconds(200)
@@ -525,6 +531,7 @@ namespace ShareX.ScreenCaptureLib
         private void RegionCaptureForm_Shown(object sender, EventArgs e)
         {
             this.ForceActivate();
+            SetFPSLimit(Options.FPSLimit);
 
             OnMoved();
             CenterCanvas();
@@ -791,13 +798,29 @@ namespace ShareX.ScreenCaptureLib
         internal void Pause()
         {
             pause = true;
+            repaintTimer.Stop();
         }
 
         internal void Resume()
         {
             pause = false;
-
+            SetFPSLimit(Options.FPSLimit);
             Invalidate();
+        }
+
+        internal void SetFPSLimit(int fpsLimit)
+        {
+            repaintTimer.Stop();
+
+            if (fpsLimit > 0 && !pause)
+            {
+                repaintTimer.Interval = Math.Max(1, (int)Math.Round(1000d / fpsLimit));
+                repaintTimer.Start();
+            }
+            else if (!pause)
+            {
+                Invalidate();
+            }
         }
 
         private void CopyAreaInfo()
@@ -902,7 +925,7 @@ namespace ShareX.ScreenCaptureLib
                 DrawFPS(g, 10);
             }
 
-            if (!pause)
+            if (!pause && Options.FPSLimit == 0)
             {
                 Invalidate();
             }
@@ -1713,6 +1736,7 @@ namespace ShareX.ScreenCaptureLib
         {
             IsClosing = true;
 
+            repaintTimer?.Dispose();
             ShapeManager?.Dispose();
             backgroundBrush?.Dispose();
             backgroundHighlightBrush?.Dispose();

@@ -1109,7 +1109,7 @@ namespace ShareX.ScreenCaptureLib
             tslnudFPSLimit.Content.ValueChanged = (sender, e) =>
             {
                 Options.FPSLimit = (int)tslnudFPSLimit.Content.Value;
-                Form.FPSManager.FPSLimit = Options.FPSLimit;
+                Form.SetFPSLimit(Options.FPSLimit);
             };
             tsddbOptions.DropDownItems.Add(tslnudFPSLimit);
 
