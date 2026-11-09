@@ -35,16 +35,17 @@ namespace ShareX
         {
             if (UpdateChannel == UpdateChannel.Dev)
             {
-                return new GitHubUpdateChecker("ShareX", "DevBuilds")
+                return new GitHubUpdateChecker("maksw2", "ShareY")
                 {
                     IsDev = true,
+                    IncludePreRelease = true,
                     IsPortable = Program.Portable,
                     IgnoreRevision = true
                 };
             }
             else
             {
-                return new GitHubUpdateChecker("ShareX", "ShareX")
+                return new GitHubUpdateChecker("maksw2", "ShareY")
                 {
                     IsPortable = Program.Portable,
                     IncludePreRelease = UpdateChannel == UpdateChannel.PreRelease,

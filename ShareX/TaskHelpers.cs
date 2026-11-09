@@ -2175,9 +2175,10 @@ namespace ShareX
 
         public static async Task DownloadDevBuild()
         {
-            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("ShareX", "DevBuilds")
+            GitHubUpdateChecker updateChecker = new GitHubUpdateChecker("maksw2", "ShareY")
             {
                 IsDev = true,
+                IncludePreRelease = true,
                 IsPortable = Program.Portable
             };
 
@@ -2191,20 +2192,6 @@ namespace ShareX
             {
                 MessageBox.Show(Resources.ShareXIsUpToDate, "ShareX", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
-
-        public static async Task DownloadAppVeyorBuild()
-        {
-            AppVeyorUpdateChecker updateChecker = new AppVeyorUpdateChecker()
-            {
-                IsDev = true,
-                IsPortable = Program.Portable,
-                Branch = "develop"
-            };
-
-            await updateChecker.CheckUpdateAsync();
-
-            UpdateMessageBox.Start(updateChecker);
         }
 
         public static Image GenerateQRCode(string text, int size)
@@ -2278,7 +2265,7 @@ namespace ShareX
             return !string.IsNullOrEmpty(content) && Encoding.UTF8.GetByteCount(content) <= 2952;
         }
 
-        public static void ShowNotificationTip(string text, string title = "ShareX", int duration = -1)
+        public static void ShowNotificationTip(string text, string title = "ShareY", int duration = -1)
         {
             if (duration < 0)
             {

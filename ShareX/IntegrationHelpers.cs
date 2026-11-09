@@ -36,35 +36,35 @@ namespace ShareX
         private static readonly string ApplicationPath = $"\"{Application.ExecutablePath}\"";
         private static readonly string FileIconPath = $"\"{FileHelpers.GetAbsolutePath("ShareX_File_Icon.ico")}\"";
 
-        private static readonly string ShellExtMenuName = "ShareX";
+        private static readonly string ShellExtMenuName = Program.AppName;
         private static readonly string ShellExtMenuFiles = $@"Software\Classes\*\shell\{ShellExtMenuName}";
         private static readonly string ShellExtMenuFilesCmd = $@"{ShellExtMenuFiles}\command";
         private static readonly string ShellExtMenuDirectory = $@"Software\Classes\Directory\shell\{ShellExtMenuName}";
         private static readonly string ShellExtMenuDirectoryCmd = $@"{ShellExtMenuDirectory}\command";
-        private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX;
+        private static readonly string ShellExtDesc = Resources.IntegrationHelpers_UploadWithShareX.Replace("ShareX", Program.AppName);
         private static readonly string ShellExtIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtPath = $"{ApplicationPath} \"%1\"";
 
-        private static readonly string ShellExtEditName = "ShareXImageEditor";
+        private static readonly string ShellExtEditName = "ShareYImageEditor";
         private static readonly string ShellExtEditImage = $@"Software\Classes\SystemFileAssociations\image\shell\{ShellExtEditName}";
         private static readonly string ShellExtEditImageCmd = $@"{ShellExtEditImage}\command";
-        private static readonly string ShellExtEditDesc = Resources.IntegrationHelpers_EditWithShareX;
+        private static readonly string ShellExtEditDesc = Resources.IntegrationHelpers_EditWithShareX.Replace("ShareX", Program.AppName);
         private static readonly string ShellExtEditIcon = $"{ApplicationPath},0";
         private static readonly string ShellExtEditPath = $"{ApplicationPath} -ImageEditor \"%1\"";
 
         private static readonly string ShellCustomUploaderExtensionPath = @"Software\Classes\.sxcu";
-        private static readonly string ShellCustomUploaderExtensionValue = "ShareX.sxcu";
+        private static readonly string ShellCustomUploaderExtensionValue = "ShareY.sxcu";
         private static readonly string ShellCustomUploaderAssociatePath = $@"Software\Classes\{ShellCustomUploaderExtensionValue}";
-        private static readonly string ShellCustomUploaderAssociateValue = "ShareX custom uploader";
+        private static readonly string ShellCustomUploaderAssociateValue = "ShareY custom uploader";
         private static readonly string ShellCustomUploaderIconPath = $@"{ShellCustomUploaderAssociatePath}\DefaultIcon";
         private static readonly string ShellCustomUploaderIconValue = $"{FileIconPath}";
         private static readonly string ShellCustomUploaderCommandPath = $@"{ShellCustomUploaderAssociatePath}\shell\open\command";
         private static readonly string ShellCustomUploaderCommandValue = $"{ApplicationPath} -CustomUploader \"%1\"";
 
         private static readonly string ShellImageEffectExtensionPath = @"Software\Classes\.sxie";
-        private static readonly string ShellImageEffectExtensionValue = "ShareX.sxie";
+        private static readonly string ShellImageEffectExtensionValue = "ShareY.sxie";
         private static readonly string ShellImageEffectAssociatePath = $@"Software\Classes\{ShellImageEffectExtensionValue}";
-        private static readonly string ShellImageEffectAssociateValue = "ShareX image effect";
+        private static readonly string ShellImageEffectAssociateValue = "ShareY image effect";
         private static readonly string ShellImageEffectIconPath = $@"{ShellImageEffectAssociatePath}\DefaultIcon";
         private static readonly string ShellImageEffectIconValue = $"{FileIconPath}";
         private static readonly string ShellImageEffectCommandPath = $@"{ShellImageEffectAssociatePath}\shell\open\command";
@@ -215,7 +215,11 @@ namespace ShareX
 
         private static void UnregisterCustomUploaderExtension()
         {
-            RegistryHelpers.RemoveRegistry(ShellCustomUploaderExtensionPath);
+            if (RegistryHelpers.CheckStringValue(ShellCustomUploaderExtensionPath, null, ShellCustomUploaderExtensionValue))
+            {
+                RegistryHelpers.RemoveRegistry(ShellCustomUploaderExtensionPath);
+            }
+
             RegistryHelpers.RemoveRegistry(ShellCustomUploaderAssociatePath);
         }
 
@@ -266,18 +270,22 @@ namespace ShareX
 
         private static void UnregisterImageEffectExtension()
         {
-            RegistryHelpers.RemoveRegistry(ShellImageEffectExtensionPath);
+            if (RegistryHelpers.CheckStringValue(ShellImageEffectExtensionPath, null, ShellImageEffectExtensionValue))
+            {
+                RegistryHelpers.RemoveRegistry(ShellImageEffectExtensionPath);
+            }
+
             RegistryHelpers.RemoveRegistry(ShellImageEffectAssociatePath);
         }
 
         public static bool CheckSendToMenuButton()
         {
-            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, "ShareX", Application.ExecutablePath);
+            return ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.SendTo, Program.AppName, Application.ExecutablePath);
         }
 
         public static bool CreateSendToMenuButton(bool create)
         {
-            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, "ShareX", Application.ExecutablePath);
+            return ShortcutHelpers.SetShortcut(create, Environment.SpecialFolder.SendTo, Program.AppName, Application.ExecutablePath);
         }
 
         public static bool CheckSteamShowInApp()

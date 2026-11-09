@@ -65,16 +65,9 @@ namespace ShareX
 #endif
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Links, FontStyle.Bold, 13);
-            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.Website}
-{Resources.AboutForm_AboutForm_Project_page}: {Links.GitHub}
+            rtbInfo.AppendLine($@"{Resources.AboutForm_AboutForm_Website}: {Links.GitHub}
+Original project: https://github.com/ShareX/ShareX
 {Resources.AboutForm_AboutForm_Changelog}: {Links.Changelog}
-{Resources.AboutForm_AboutForm_Privacy_policy}: {Links.PrivacyPolicy}
-{Resources.AboutForm_AboutForm_Donate}: {Links.Donate}
-X: {Links.X}
-Discord: {Links.Discord}
-Reddit: {Links.Reddit}
-Steam: {Links.Steam}
-Microsoft Store: {Links.MicrosoftStore}
 ", FontStyle.Regular);
 
             rtbInfo.AppendLine(Resources.AboutForm_AboutForm_Team, FontStyle.Bold, 13);

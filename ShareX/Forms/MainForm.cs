@@ -1960,7 +1960,7 @@ namespace ShareX
         private void tsbDonate_Click(object sender, EventArgs e)
         {
 #if STEAM
-            URLHelpers.OpenURL(Links.Website);
+            URLHelpers.OpenURL(Links.GitHub);
 #else
             URLHelpers.OpenURL(Links.Donate);
 #endif

@@ -54,7 +54,7 @@ namespace ShareX
 
                     if (Program.Settings.AutoCleanupLogFiles)
                     {
-                        CleanupFolder(Program.LogsFolder, "ShareX-Log-*.txt", keepFileCount);
+                        CleanupFolder(Program.LogsFolder, "ShareY-Log-*.txt", keepFileCount);
                     }
                 }
             }
@@ -96,13 +96,13 @@ namespace ShareX
 
             if (!string.IsNullOrEmpty(tempFolder))
             {
-                string folderPath = Path.Combine(tempFolder, "ShareX");
+                string folderPath = Path.Combine(tempFolder, Program.AppName);
 
                 if (Directory.Exists(folderPath))
                 {
                     Directory.Delete(folderPath, true);
 
-                    DebugHelper.WriteLine($"ShareX temp folder cleaned: {folderPath}");
+                    DebugHelper.WriteLine($"{Program.AppName} temp folder cleaned: {folderPath}");
                 }
             }
         }

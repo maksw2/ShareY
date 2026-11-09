@@ -1,4 +1,4 @@
-name: Build ShareX
+name: Build ShareY
 
 on:
   push:
@@ -34,7 +34,7 @@ jobs:
       ASSEMBLY_INFO_PATH: Directory.build.props
 
     outputs:
-      APP_VERSION: ${{ env.APP_VERSION }}
+      APP_VERSION: ${{ steps.app_version.outputs.APP_VERSION }}
 
     steps:
       - name: Checkout
@@ -52,6 +52,7 @@ jobs:
           echo "RUNTIME_ID=win-$platform" >> $env:GITHUB_ENV
 
       - name: Set APP_VERSION
+        id: app_version
         run: |
           $content = Get-Content "${{ env.ASSEMBLY_INFO_PATH }}" -Raw
           $pattern = '<Version>([0-9]+(?:\.[0-9]+){1,3})</Version>'
@@ -64,6 +65,7 @@ jobs:
           }
           echo $version
           echo "APP_VERSION=$version" >> $env:GITHUB_ENV
+          echo "APP_VERSION=$version" >> $env:GITHUB_OUTPUT
 
       - name: Download API keys
         env:
@@ -100,42 +102,42 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: Setup-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-setup-${{ env.PLATFORM }}.exe
+          path: Output\ShareY-${{ env.APP_VERSION }}-setup-${{ env.PLATFORM }}.exe
 
       - name: Upload artifact (Setup-ARM64)
         if: matrix.configuration == 'Release' && matrix.platform == 'ARM64'
         uses: actions/upload-artifact@v7
         with:
           name: Setup-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-setup-${{ env.PLATFORM }}.exe
+          path: Output\ShareY-${{ env.APP_VERSION }}-setup-${{ env.PLATFORM }}.exe
 
       - name: Upload artifact (Portable-x64)
         if: matrix.configuration == 'Release' && matrix.platform == 'x64'
         uses: actions/upload-artifact@v7
         with:
           name: Portable-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-portable-${{ env.PLATFORM }}.zip
+          path: Output\ShareY-${{ env.APP_VERSION }}-portable-${{ env.PLATFORM }}.zip
 
       - name: Upload artifact (Portable-ARM64)
         if: matrix.configuration == 'Release' && matrix.platform == 'ARM64'
         uses: actions/upload-artifact@v7
         with:
           name: Portable-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-portable-${{ env.PLATFORM }}.zip
+          path: Output\ShareY-${{ env.APP_VERSION }}-portable-${{ env.PLATFORM }}.zip
 
       - name: Upload artifact (Debug-x64)
         if: matrix.configuration == 'Debug' && matrix.platform == 'x64'
         uses: actions/upload-artifact@v7
         with:
           name: Debug-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug-${{ env.PLATFORM }}.zip
+          path: Output\ShareY-${{ env.APP_VERSION }}-debug-${{ env.PLATFORM }}.zip
 
       - name: Upload artifact (Debug-ARM64)
         if: matrix.configuration == 'Debug' && matrix.platform == 'ARM64'
         uses: actions/upload-artifact@v7
         with:
           name: Debug-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-debug-${{ env.PLATFORM }}.zip
+          path: Output\ShareY-${{ env.APP_VERSION }}-debug-${{ env.PLATFORM }}.zip
 
   release:
     name: Release
@@ -147,7 +149,7 @@ jobs:
       contents: write
 
     env:
-      REPO_DEV_BUILDS: ${{ github.repository_owner }}/DevBuilds
+      REPO_DEV_BUILDS: ${{ github.repository }}
       RELEASE_BODY_PATH: RELEASE_BODY.md
       APP_VERSION: ${{ needs.build.outputs.APP_VERSION }}
 
@@ -201,47 +203,47 @@ jobs:
           $output = "| File | SHA256 |`r`n| --- | --- |`r`n$($checksums.Trim())"
           echo $output >> $env:GITHUB_STEP_SUMMARY
           if ($env:GITHUB_REF.StartsWith("refs/tags/v")) {
-            $output = "**Changelog:** https://getsharex.com/changelog#$env:GITHUB_REF_NAME`r`n`r`n$output"
+            $output = "**Changelog:** https://github.com/maksw2/ShareY/releases/tag/$env:GITHUB_REF_NAME`r`n`r`n$output"
           }
           echo $output
           Set-Content -Path "${{ env.RELEASE_BODY_PATH }}" -Value "$output" -NoNewline
 
       - name: Release (Dev)
         env:
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && env.REPO_DEV_BUILDS != '' && github.ref == 'refs/heads/develop'
         uses: softprops/action-gh-release@v3
         with:
           repository: ${{ env.REPO_DEV_BUILDS }}
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
           tag_name: v${{ env.APP_VERSION }}
-          name: ShareX ${{ env.APP_VERSION }} Dev
+          name: ShareY ${{ env.APP_VERSION }} Dev
           body_path: ${{ env.RELEASE_BODY_PATH }}
           draft: false
-          prerelease: false
+          prerelease: true
           files: |
-            Output/ShareX-${{ env.APP_VERSION }}-setup-x64.exe
-            # Output/ShareX-${{ env.APP_VERSION }}-setup-arm64.exe
-            Output/ShareX-${{ env.APP_VERSION }}-portable-x64.zip
-            # Output/ShareX-${{ env.APP_VERSION }}-portable-arm64.zip
-            Output/ShareX-${{ env.APP_VERSION }}-debug-x64.zip
-            Output/ShareX-${{ env.APP_VERSION }}-debug-arm64.zip
+            Output/ShareY-${{ env.APP_VERSION }}-setup-x64.exe
+            # Output/ShareY-${{ env.APP_VERSION }}-setup-arm64.exe
+            Output/ShareY-${{ env.APP_VERSION }}-portable-x64.zip
+            # Output/ShareY-${{ env.APP_VERSION }}-portable-arm64.zip
+            Output/ShareY-${{ env.APP_VERSION }}-debug-x64.zip
+            Output/ShareY-${{ env.APP_VERSION }}-debug-arm64.zip
 
       - name: Release (Stable)
         env:
-          CUSTOM_GITHUB_TOKEN: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: env.CUSTOM_GITHUB_TOKEN != '' && startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v3
         with:
           repository: ${{ github.repository }}
           token: ${{ env.CUSTOM_GITHUB_TOKEN }}
           tag_name: ${{ github.ref_name }}
-          name: ShareX ${{ env.APP_VERSION }}
+          name: ShareY ${{ env.APP_VERSION }}
           body_path: ${{ env.RELEASE_BODY_PATH }}
           draft: true
-          prerelease: true
+          prerelease: false
           files: |
-            Output/ShareX-${{ env.APP_VERSION }}-setup-x64.exe
-            # Output/ShareX-${{ env.APP_VERSION }}-setup-arm64.exe
-            Output/ShareX-${{ env.APP_VERSION }}-portable-x64.zip
-            # Output/ShareX-${{ env.APP_VERSION }}-portable-arm64.zip
+            Output/ShareY-${{ env.APP_VERSION }}-setup-x64.exe
+            # Output/ShareY-${{ env.APP_VERSION }}-setup-arm64.exe
+            Output/ShareY-${{ env.APP_VERSION }}-portable-x64.zip
+            # Output/ShareY-${{ env.APP_VERSION }}-portable-arm64.zip

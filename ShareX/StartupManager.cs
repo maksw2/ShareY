@@ -60,10 +60,10 @@ namespace ShareX
 #if MicrosoftStore
                 return (StartupState)packageTask.State;
 #else
-                if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath))
+                if (ShortcutHelpers.CheckShortcut(Environment.SpecialFolder.Startup, Program.AppName, StartupTargetPath))
                 {
                     if (Registry.GetValue(@"HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\StartupApproved\StartupFolder",
-                        "ShareX.lnk", null) is byte[] status && status.Length > 0 && status[0] == 3)
+                        "ShareY.lnk", null) is byte[] status && status.Length > 0 && status[0] == 3)
                     {
                         return StartupState.DisabledByUser;
                     }
@@ -96,7 +96,7 @@ namespace ShareX
 #else
                 if (value == StartupState.Enabled || value == StartupState.Disabled)
                 {
-                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, "ShareX", StartupTargetPath, "-silent");
+                    ShortcutHelpers.SetShortcut(value == StartupState.Enabled, Environment.SpecialFolder.Startup, Program.AppName, StartupTargetPath, "-silent");
                 }
                 else
                 {

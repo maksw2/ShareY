@@ -46,8 +46,8 @@ namespace ShareX
 {
     internal static class Program
     {
-        public const string AppName = "ShareX";
-        public const string MutexName = "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC";
+        public const string AppName = "ShareY";
+        public const string MutexName = "DB8690A9-45E7-5799-BA01-7F86317BFDFA";
         public static readonly string PipeName = $"{Environment.MachineName}-{Environment.UserName}-{AppName}";
 
         public const ShareXBuild Build =
@@ -218,7 +218,7 @@ namespace ShareX
                     return null;
                 }
 
-                string fileName = string.Format("ShareX-Log-{0:yyyy-MM}.txt", DateTime.Now);
+                string fileName = string.Format("ShareY-Log-{0:yyyy-MM}.txt", DateTime.Now);
                 return Path.Combine(LogsFolder, fileName);
             }
         }
@@ -301,7 +301,7 @@ namespace ShareX
 
                     if (restartRequested)
                     {
-                        DebugHelper.WriteLine("ShareX restarting.");
+                        DebugHelper.WriteLine("ShareY restarting.");
 
                         if (restartAsAdmin)
                         {
@@ -322,7 +322,7 @@ namespace ShareX
         {
             ApplicationConfiguration.Initialize();
 
-            DebugHelper.WriteLine("ShareX starting.");
+            DebugHelper.WriteLine("ShareY starting.");
             DebugHelper.WriteLine("Version: " + VersionText);
             DebugHelper.WriteLine("Build: " + Build);
             DebugHelper.WriteLine("Command line: " + Environment.CommandLine);
@@ -347,7 +347,6 @@ namespace ShareX
             IgnoreHotkeyWarning = CLI.IsCommandExist("NoHotkeys");
 
             CreateParentFolders();
-            RegisterExtensions();
             CheckPuushMode();
             DebugWriteFlags();
 
@@ -372,13 +371,13 @@ namespace ShareX
             {
                 closeSequenceStarted = true;
 
-                DebugHelper.WriteLine("ShareX closing.");
+                DebugHelper.WriteLine("ShareY closing.");
 
                 WatchFolderManager?.Dispose();
                 SettingManager.HistoryClose();
                 SettingManager.SaveAllSettings();
 
-                DebugHelper.WriteLine("ShareX closed.");
+                DebugHelper.WriteLine("ShareY closed.");
             }
         }
 
@@ -510,7 +509,7 @@ namespace ShareX
                         sb.AppendLine();
                         sb.Append(e);
 
-                        MessageBox.Show(sb.ToString(), "ShareX - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(sb.ToString(), AppName + " - " + Resources.Error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         CustomPersonalPath = "";
                     }
                 }
@@ -525,24 +524,6 @@ namespace ShareX
                 FileHelpers.CreateDirectory(ImageEffectsFolder);
                 FileHelpers.CreateDirectory(ScreenshotsParentFolder);
             }
-        }
-
-        private static void RegisterExtensions()
-        {
-#if !MicrosoftStore
-            if (!Portable)
-            {
-                if (!IntegrationHelpers.CheckCustomUploaderExtension())
-                {
-                    IntegrationHelpers.CreateCustomUploaderExtension(true);
-                }
-
-                if (!IntegrationHelpers.CheckImageEffectExtension())
-                {
-                    IntegrationHelpers.CreateImageEffectExtension(true);
-                }
-            }
-#endif
         }
 
         public static void UpdateHelpersSpecialFolders()

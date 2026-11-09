@@ -69,11 +69,11 @@ namespace ShareX.Setup
         private static string SolutionPath => Path.Combine(ParentDir, "ShareX.sln");
         private static string BinDir => Path.Combine(ParentDir, "ShareX", "bin", Configuration, RuntimeId);
         private static string SteamLauncherDir => Path.Combine(ParentDir, "ShareX.Steam", "bin", Configuration);
-        private static string ExecutablePath => Path.Combine(BinDir, "ShareX.exe");
+        private static string ExecutablePath => Path.Combine(BinDir, "ShareY.exe");
 
         private static string OutputDir => Path.Combine(ParentDir, "Output");
-        private static string PortableOutputDir => Path.Combine(OutputDir, "ShareX-portable");
-        private static string DebugOutputDir => Path.Combine(OutputDir, "ShareX-debug");
+        private static string PortableOutputDir => Path.Combine(OutputDir, "ShareY-portable");
+        private static string DebugOutputDir => Path.Combine(OutputDir, "ShareY-debug");
         private static string SteamOutputDir => Path.Combine(OutputDir, "ShareX-Steam");
         private static string MicrosoftStoreOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore");
         private static string MicrosoftStoreDebugOutputDir => Path.Combine(OutputDir, "ShareX-MicrosoftStore-debug");
@@ -82,9 +82,9 @@ namespace ShareX.Setup
         private static string InnoSetupDir => Path.Combine(SetupDir, "InnoSetup");
         private static string MicrosoftStorePackageFilesDir => Path.Combine(SetupDir, "MicrosoftStore");
 
-        private static string SetupPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-setup-{Platform}.exe");
-        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-portable-{Platform}.zip");
-        private static string DebugZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-debug-{Platform}.zip");
+        private static string SetupPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-setup-{Platform}.exe");
+        private static string PortableZipPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-portable-{Platform}.zip");
+        private static string DebugZipPath => Path.Combine(OutputDir, $"ShareY-{AppVersion}-debug-{Platform}.zip");
         private static string SteamUpdatesDir => Path.Combine(SteamOutputDir, "Updates");
         private static string SteamZipPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-Steam-{Platform}.zip");
         private static string MicrosoftStoreAppxPath => Path.Combine(OutputDir, $"ShareX-{AppVersion}-MicrosoftStore-{Platform}.appx");
@@ -104,7 +104,7 @@ namespace ShareX.Setup
 
         private static void Main(string[] args)
         {
-            Console.WriteLine("ShareX setup started.");
+            Console.WriteLine("ShareY setup started.");
 
             CheckArgs(args);
 
@@ -177,7 +177,7 @@ namespace ShareX.Setup
                 FileHelpers.OpenFolder(OutputDir, false);
             }
 
-            Console.WriteLine("ShareX setup successfully completed.");
+            Console.WriteLine("ShareY setup successfully completed.");
         }
 
         private static void CheckArgs(string[] args)

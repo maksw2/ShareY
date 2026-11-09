@@ -202,7 +202,7 @@ namespace ShareX.HelpersLib
                 Status = DownloaderFormStatus.DownloadStarted;
                 btnAction.Text = Resources.DownloaderForm_StartDownload_Cancel;
 
-                string folderPath = Path.Combine(Path.GetTempPath(), "ShareX");
+                string folderPath = Path.Combine(Path.GetTempPath(), "ShareY");
                 FileHelpers.CreateDirectory(folderPath);
                 DownloadLocation = Path.Combine(folderPath, FileName);
 

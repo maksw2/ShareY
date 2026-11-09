@@ -1,4 +1,4 @@
-#define MyAppName "ShareX"
+#define MyAppName "ShareY"
 #ifndef Platform
   #define Platform "x64"
 #endif
@@ -11,16 +11,16 @@
 #endif
 #define MyAppRootDirectory "..\.."
 #define MyAppOutputDirectory MyAppRootDirectory + "\Output"
-#define MyAppReleaseDirectory MyAppRootDirectory + "\" + MyAppName + "\bin\Release\" + RuntimeId
+#define MyAppReleaseDirectory MyAppRootDirectory + "\ShareX\bin\Release\" + RuntimeId
 #define MyAppFileName MyAppName + ".exe"
 #define MyAppFilePath MyAppReleaseDirectory + "\" + MyAppFileName
 #define MyAppVersion GetStringFileInfo(MyAppFilePath, "ProductVersion")
-#define MyAppPublisher "ShareX Team"
-#define MyAppURL "https://getsharex.com"
-#define MyAppId "82E6AC09-0FEF-4390-AD9F-0DD3F5561EFC"
+#define MyAppPublisher "ShareY contributors"
+#define MyAppURL "https://github.com/maksw2/ShareY"
+#define MyAppId "DB8690A9-45E7-5799-BA01-7F86317BFDFA"
 
 [Setup]
-AppCopyright=Copyright (c) 2007-2026 ShareX Team
+AppCopyright=Copyright (c) 2007-2026 ShareX Team; ShareY contributors
 AppId={#MyAppId}
 AppMutex={#MyAppId}
 AppName={#MyAppName}
@@ -34,7 +34,7 @@ DefaultDirName={commonpf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile={#MyAppRootDirectory}\LICENSE.txt
-MinVersion=10.0.14393
+MinVersion=10.0.22621
 OutputBaseFilename={#MyAppName}-{#MyAppVersion}-setup-{#Platform}
 OutputDir={#MyAppOutputDirectory}
 PrivilegesRequired=none
@@ -47,9 +47,9 @@ VersionInfoVersion={#MyAppVersion}
 
 [Tasks]
 Name: "CreateDesktopIcon"; Description: "Create a desktop shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating and not DesktopIconExists
-Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareX"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
+Name: "CreateContextMenuButton"; Description: "Show ""Upload with ShareY"" button in Windows Explorer context menu"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
 Name: "CreateSendToIcon"; Description: "Create a send to shortcut"; GroupDescription: "Additional shortcuts:"; Check: not IsUpdating
-Name: "CreateStartupIcon"; Description: "Run ShareX when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
+Name: "CreateStartupIcon"; Description: "Run ShareY when Windows starts"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 Name: "DisablePrintScreenKeyForSnippingTool"; Description: "Disable Print Screen key for Snipping Tool"; GroupDescription: "Other tasks:"; Check: not IsUpdating
 
 [Files]
@@ -104,14 +104,25 @@ Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; ValueType
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}\command"; ValueType: string; ValueData: """{app}\{#MyAppFileName}"" ""%1"""; Tasks: CreateContextMenuButton
 Root: "HKCU"; Subkey: "Software\Classes\*\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Software\Classes\Directory\shell\{#MyAppName}"; Flags: dontcreatekey uninsdeletekey
-Root: "HKCU"; Subkey: "Software\Classes\.sxcu"; Flags: dontcreatekey uninsdeletekey
-Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxcu"; Flags: dontcreatekey uninsdeletekey
-Root: "HKCU"; Subkey: "Software\Classes\.sxie"; Flags: dontcreatekey uninsdeletekey
-Root: "HKCU"; Subkey: "Software\Classes\ShareX.sxie"; Flags: dontcreatekey uninsdeletekey
-Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareXImageEditor"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\ShareY.sxcu"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\ShareY.sxie"; Flags: dontcreatekey uninsdeletekey
+Root: "HKCU"; Subkey: "Software\Classes\SystemFileAssociations\image\shell\ShareYImageEditor"; Flags: dontcreatekey uninsdeletekey
 Root: "HKCU"; Subkey: "Control Panel\Keyboard"; ValueType: dword; ValueName: "PrintScreenKeyForSnippingEnabled"; ValueData: "0"; Flags: uninsdeletevalue; Tasks: DisablePrintScreenKeyForSnippingTool
 
 [Code]
+procedure CurUninstallStepChanged(CurUninstallStep: TUninstallStep);
+var
+  Handler: string;
+begin
+  if CurUninstallStep = usUninstall then
+  begin
+    if RegQueryStringValue(HKCU, 'Software\Classes\.sxcu', '', Handler) and (Handler = 'ShareY.sxcu') then
+      RegDeleteValue(HKCU, 'Software\Classes\.sxcu', '');
+    if RegQueryStringValue(HKCU, 'Software\Classes\.sxie', '', Handler) and (Handler = 'ShareY.sxie') then
+      RegDeleteValue(HKCU, 'Software\Classes\.sxie', '');
+  end;
+end;
+
 procedure InitializeWizard;
 begin
   if not IsAdmin then
