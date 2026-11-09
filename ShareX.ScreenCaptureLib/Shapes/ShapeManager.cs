@@ -507,29 +507,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void form_MouseWheel(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.None)
+            if (Control.ModifierKeys == Keys.None && e.Delta != 0)
             {
-                if (e.Delta > 0)
-                {
-                    if (Options.ShowMagnifier)
-                    {
-                        Options.MagnifierPixelCount = Math.Min(Options.MagnifierPixelCount + 2, RegionCaptureOptions.MagnifierPixelCountMaximum);
-                    }
-                    else
-                    {
-                        Options.ShowMagnifier = true;
-                    }
-                }
-                else if (e.Delta < 0)
-                {
-                    int magnifierPixelCount = Options.MagnifierPixelCount - 2;
-                    if (magnifierPixelCount < RegionCaptureOptions.MagnifierPixelCountMinimum)
-                    {
-                        magnifierPixelCount = RegionCaptureOptions.MagnifierPixelCountMinimum;
-                        Options.ShowMagnifier = false;
-                    }
-                    Options.MagnifierPixelCount = magnifierPixelCount;
-                }
+                int maxCount = Math.Min(RegionCaptureOptions.MagnifierPixelCountMaximum,
+                    Options.MagnifierPixelSize.Clamp(RegionCaptureOptions.MagnifierPixelSizeMinimum, RegionCaptureOptions.MagnifierPixelSizeMaximum) * 15 / RegionCaptureOptions.MagnifierPixelSizeMinimum);
+                if ((maxCount & 1) == 0) maxCount--;
+
+                int count = Math.Min(Options.MagnifierPixelCount | 1, maxCount);
+                Options.MagnifierPixelCount = (count + (e.Delta > 0 ? -2 : 2)).Clamp(RegionCaptureOptions.MagnifierPixelCountMinimum, maxCount);
+                Options.ShowMagnifier = true;
 
                 if (Form.IsAnnotationMode)
                 {

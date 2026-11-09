@@ -1298,7 +1298,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawCursorGraphics(Graphics g)
         {
-            int cursorOffsetX = 10, cursorOffsetY = 10, itemGap = 10, itemCount = 0;
+            int cursorOffsetX = 18, cursorOffsetY = 18, itemGap = 10, itemCount = 0;
             Size totalSize = Size.Empty;
 
             int magnifierPosition = 0;
@@ -1309,7 +1309,7 @@ namespace ShareX.ScreenCaptureLib
                 if (itemCount > 0) totalSize.Height += itemGap;
                 magnifierPosition = totalSize.Height;
 
-                magnifier = Magnifier(Canvas, ScaledClientMousePosition, Options.MagnifierPixelCount, Options.MagnifierPixelCount, Options.MagnifierPixelSize);
+                magnifier = Magnifier(Canvas, ScaledClientMousePosition, Options.MagnifierPixelCount, Options.MagnifierPixelSize * 15);
                 totalSize.Width = Math.Max(totalSize.Width, magnifier.Width);
 
                 totalSize.Height += magnifier.Height;
@@ -1410,27 +1410,24 @@ namespace ShareX.ScreenCaptureLib
                     g.Transform = initialTranform;
                 }
             }
+
+            magnifier?.Dispose();
         }
 
-        private Bitmap Magnifier(Image img, PointF position, int horizontalPixelCount, int verticalPixelCount, int pixelSize)
+        private Bitmap Magnifier(Image img, PointF position, int pixelCount, int diameter)
         {
-            horizontalPixelCount = (horizontalPixelCount | 1).Clamp(1, 101);
-            verticalPixelCount = (verticalPixelCount | 1).Clamp(1, 101);
-            pixelSize = pixelSize.Clamp(1, 1000);
+            diameter = diameter.Clamp(RegionCaptureOptions.MagnifierPixelSizeMinimum * 15,
+                RegionCaptureOptions.MagnifierPixelSizeMaximum * 15);
+            int maxCount = Math.Min(RegionCaptureOptions.MagnifierPixelCountMaximum,
+                diameter / RegionCaptureOptions.MagnifierPixelSizeMinimum);
+            if ((maxCount & 1) == 0) maxCount--;
+            pixelCount = Math.Min((pixelCount | 1).Clamp(RegionCaptureOptions.MagnifierPixelCountMinimum,
+                RegionCaptureOptions.MagnifierPixelCountMaximum), maxCount);
 
-            if (horizontalPixelCount * pixelSize > ClientArea.Width || verticalPixelCount * pixelSize > ClientArea.Height)
-            {
-                horizontalPixelCount = verticalPixelCount = 15;
-                pixelSize = 10;
-            }
+            RectangleF srcRect = new RectangleF(position.X - (pixelCount / 2) - CanvasRectangle.X,
+                position.Y - (pixelCount / 2) - CanvasRectangle.Y, pixelCount, pixelCount).Round();
 
-            RectangleF srcRect = new RectangleF(position.X - (horizontalPixelCount / 2) - CanvasRectangle.X,
-                position.Y - (verticalPixelCount / 2) - CanvasRectangle.Y, horizontalPixelCount, verticalPixelCount).Round();
-
-            int width = horizontalPixelCount * pixelSize;
-            int height = verticalPixelCount * pixelSize;
-            Bitmap bmp = new Bitmap(width - 1, height - 1);
-
+            Bitmap bmp = new Bitmap(diameter, diameter);
             using (Graphics g = Graphics.FromImage(bmp))
             {
                 g.InterpolationMode = InterpolationMode.NearestNeighbor;
@@ -1441,35 +1438,36 @@ namespace ShareX.ScreenCaptureLib
                 }
 
                 g.PixelOffsetMode = PixelOffsetMode.Half;
-                g.DrawImage(img, new Rectangle(0, 0, width, height), srcRect, GraphicsUnit.Pixel);
+                g.DrawImage(img, new Rectangle(0, 0, diameter, diameter), srcRect, GraphicsUnit.Pixel);
                 g.PixelOffsetMode = PixelOffsetMode.None;
 
-                using (SolidBrush crosshairBrush = new SolidBrush(Color.FromArgb(125, Color.LightBlue)))
+                int center = pixelCount / 2;
+                int centerLeft = (int)Math.Round(center * (double)diameter / pixelCount);
+                int centerRight = (int)Math.Round((center + 1) * (double)diameter / pixelCount);
+                int centerSize = centerRight - centerLeft;
+
+                using (SolidBrush brush = new SolidBrush(Color.FromArgb(75, Color.LightBlue)))
                 {
-                    g.FillRectangle(crosshairBrush, new Rectangle(0, (height - pixelSize) / 2, (width - pixelSize) / 2, pixelSize)); // Left
-                    g.FillRectangle(crosshairBrush, new Rectangle((width + pixelSize) / 2, (height - pixelSize) / 2, (width - pixelSize) / 2, pixelSize)); // Right
-                    g.FillRectangle(crosshairBrush, new Rectangle((width - pixelSize) / 2, 0, pixelSize, (height - pixelSize) / 2)); // Top
-                    g.FillRectangle(crosshairBrush, new Rectangle((width - pixelSize) / 2, (height + pixelSize) / 2, pixelSize, (height - pixelSize) / 2)); // Bottom
+                    g.FillRectangle(brush, 0, centerLeft, centerLeft, centerSize);
+                    g.FillRectangle(brush, centerRight, centerLeft, diameter - centerRight, centerSize);
+                    g.FillRectangle(brush, centerLeft, 0, centerSize, centerLeft);
+                    g.FillRectangle(brush, centerLeft, centerRight, centerSize, diameter - centerRight);
                 }
 
                 using (Pen pen = new Pen(Color.FromArgb(75, Color.Black)))
                 {
-                    for (int x = 1; x < horizontalPixelCount; x++)
+                    for (int i = 1; i < pixelCount; i++)
                     {
-                        g.DrawLine(pen, new Point((x * pixelSize) - 1, 0), new Point((x * pixelSize) - 1, height - 1));
-                    }
-
-                    for (int y = 1; y < verticalPixelCount; y++)
-                    {
-                        g.DrawLine(pen, new Point(0, (y * pixelSize) - 1), new Point(width - 1, (y * pixelSize) - 1));
+                        int edge = (int)Math.Round(i * (double)diameter / pixelCount) - 1;
+                        g.DrawLine(pen, edge, 0, edge, diameter - 1);
+                        g.DrawLine(pen, 0, edge, diameter - 1, edge);
                     }
                 }
 
-                g.DrawRectangle(Pens.Black, ((width - pixelSize) / 2) - 1, ((height - pixelSize) / 2) - 1, pixelSize, pixelSize);
-
-                if (pixelSize >= 6)
+                g.DrawRectangle(Pens.Black, centerLeft - 1, centerLeft - 1, centerSize, centerSize);
+                if (centerSize >= 3)
                 {
-                    g.DrawRectangle(Pens.White, (width - pixelSize) / 2, (height - pixelSize) / 2, pixelSize - 2, pixelSize - 2);
+                    g.DrawRectangle(Pens.White, centerLeft, centerLeft, centerSize - 2, centerSize - 2);
                 }
             }
 
