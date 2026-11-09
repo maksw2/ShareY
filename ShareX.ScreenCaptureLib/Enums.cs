@@ -29,8 +29,8 @@ namespace ShareX.ScreenCaptureLib
 {
     public enum ScreenRecordOutput
     {
-        [Description("FFmpeg")]
-        FFmpeg,
+        [Description("MP4")]
+        MP4,
         [Description("Animated GIF")]
         GIF
     }

@@ -149,16 +149,16 @@ namespace ShareX
                     break;
                 // Screen record
                 case HotkeyType.ScreenRecorder:
-                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region, safeTaskSettings);
+                    StartScreenRecording(ScreenRecordOutput.MP4, ScreenRecordStartMethod.Region, safeTaskSettings);
                     break;
                 case HotkeyType.ScreenRecorderActiveWindow:
-                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
+                    StartScreenRecording(ScreenRecordOutput.MP4, ScreenRecordStartMethod.ActiveWindow, safeTaskSettings);
                     break;
                 case HotkeyType.ScreenRecorderCustomRegion:
-                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
+                    StartScreenRecording(ScreenRecordOutput.MP4, ScreenRecordStartMethod.CustomRegion, safeTaskSettings);
                     break;
                 case HotkeyType.StartScreenRecorder:
-                    StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
+                    StartScreenRecording(ScreenRecordOutput.MP4, ScreenRecordStartMethod.LastRegion, safeTaskSettings);
                     break;
                 case HotkeyType.ScreenRecorderGIF:
                     StartScreenRecording(ScreenRecordOutput.GIF, ScreenRecordStartMethod.Region, safeTaskSettings);

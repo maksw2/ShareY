@@ -28,6 +28,7 @@ using ShareX.ScreenCaptureLib.Properties;
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -36,6 +37,10 @@ namespace ShareX.ScreenCaptureLib
     public partial class ScreenRecordForm : Form
     {
         public event Action StopRequested;
+        public event Action PauseRequested;
+        public event Action ResumeRequested;
+        public bool UseInProcessPause { get; set; }
+        public bool ExcludeFromCapture { get; set; }
 
         private ScreenRecordingStatus status;
 
@@ -167,6 +172,7 @@ namespace ShareX.ScreenCaptureLib
             {
                 Status = ScreenRecordingStatus.Stopped;
                 RecordResetEvent?.Set();
+                OnStopRequested();
             }
             else
             {
@@ -180,12 +186,36 @@ namespace ShareX.ScreenCaptureLib
             {
                 Status = ScreenRecordingStatus.Paused;
                 RecordResetEvent?.Reset();
-                OnStopRequested();
+                if (UseInProcessPause)
+                {
+                    Timer.Stop();
+                    timerRefresh.Stop();
+                    PauseRequested?.Invoke();
+                    UpdateUI();
+                }
+                else
+                {
+                    OnStopRequested();
+                }
+            }
+            else if (UseInProcessPause && Status == ScreenRecordingStatus.Paused)
+            {
+                Status = ScreenRecordingStatus.Recording;
+                Timer.Start();
+                timerRefresh.Start();
+                ResumeRequested?.Invoke();
+                UpdateUI();
             }
             else
             {
                 RecordResetEvent?.Set();
             }
+        }
+
+        public void CompleteRecording()
+        {
+            Status = ScreenRecordingStatus.Stopped;
+            ChangeState(ScreenRecordState.RecordingEnd);
         }
 
         public void AbortRecording()
@@ -394,6 +424,18 @@ namespace ShareX.ScreenCaptureLib
 
         private void ScreenRegionForm_Shown(object sender, EventArgs e)
         {
+            if (ExcludeFromCapture && !NativeMethods.SetWindowDisplayAffinity(Handle, 0x11))
+            {
+                DebugHelper.WriteLine("Could not exclude recording controls from capture. Win32 error: {0}", Marshal.GetLastWin32Error());
+            }
+
+            if (ExcludeFromCapture)
+            {
+                Region region = Region;
+                Region = region.Clone();
+                region.Dispose();
+            }
+
             if (ActivateWindow)
             {
                 this.ForceActivate();

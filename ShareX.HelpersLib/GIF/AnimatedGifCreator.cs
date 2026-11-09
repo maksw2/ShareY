@@ -35,6 +35,9 @@ namespace ShareX.HelpersLib
         public int Delay { get; private set; }
         public int Repeat { get; private set; }
         public int FrameCount { get; private set; }
+        public bool UseGlobalPalette { get; init; }
+
+        private Color[] globalPalette;
 
         private FileStream stream;
 
@@ -72,6 +75,33 @@ namespace ShareX.HelpersLib
             {
                 AddFrame(bmp, quality);
             }
+        }
+
+        public void AddFrame(IndexedImage image, int delay, int left, int top, bool restoreBackground, int? transparentIndex)
+        {
+            if (stream == null)
+            {
+                globalPalette = UseGlobalPalette ? (Color[])image.Palette.Clone() : null;
+                stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write, FileShare.Read);
+                image.WriteHeader(stream, UseGlobalPalette);
+                stream.Write(CreateApplicationExtensionBlock(Repeat));
+            }
+
+            bool sharedPalette = globalPalette != null && image.Palette.Length == globalPalette.Length;
+            if (sharedPalette)
+            {
+                for (int i = 0; i < image.Palette.Length; i++)
+                {
+                    if ((image.Palette[i].ToArgb() & 0xFFFFFF) != (globalPalette[i].ToArgb() & 0xFFFFFF))
+                    {
+                        sharedPalette = false;
+                        break;
+                    }
+                }
+            }
+
+            image.WriteFrame(stream, delay, left, top, restoreBackground, sharedPalette, transparentIndex);
+            FrameCount++;
         }
 
         private void Finish()

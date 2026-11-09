@@ -396,6 +396,14 @@ namespace ShareX
         public int ScreenRecordFPS = 30;
         public int GIFFPS = 15;
         public bool ScreenRecordShowCursor = true;
+        public int ScreenRecordVideoBitrate = 8000;
+        public bool ScreenRecordSystemAudio = true;
+        public bool ScreenRecordMicrophone = false;
+        public bool ScreenRecordCamera = false;
+        public bool ScreenRecordRequireHardwareEncoder = false;
+        public string ScreenRecordSystemAudioDeviceId;
+        public string ScreenRecordMicrophoneDeviceId;
+        public string ScreenRecordCameraDeviceId;
         public bool ScreenRecordAutoStart = true;
         public float ScreenRecordStartDelay = 0f;
         public bool ScreenRecordFixedDuration = false;

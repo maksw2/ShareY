@@ -8,5 +8,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="SkiaSharp" />
   </ItemGroup>
 </Project>

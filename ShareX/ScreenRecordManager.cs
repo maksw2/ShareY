@@ -24,14 +24,14 @@
 #endregion License Information (GPL v3)
 
 using ShareX.HelpersLib;
-using ShareX.MediaLib;
-using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
+using ShareX.ScreenRecordingLib;
 using System;
 using System.Drawing;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using NativeScreenRecorder = ShareX.ScreenRecordingLib.ScreenRecorder;
 
 namespace ShareX
 {
@@ -39,7 +39,7 @@ namespace ShareX
     {
         public static bool IsRecording { get; private set; }
 
-        private static ScreenRecorder screenRecorder;
+        private static NativeScreenRecorder nativeRecorder;
         private static ScreenRecordForm recordForm;
 
         public static void StartStopRecording(ScreenRecordOutput outputType, ScreenRecordStartMethod startMethod, TaskSettings taskSettings)
@@ -59,9 +59,19 @@ namespace ShareX
 
         public static void StopRecording()
         {
-            if (IsRecording && screenRecorder != null)
+            if (recordForm?.Status is ScreenRecordingStatus.Waiting or ScreenRecordingStatus.Working)
             {
-                screenRecorder.StopRecording();
+                recordForm.AbortRecording();
+                return;
+            }
+
+            if (recordForm?.Status == ScreenRecordingStatus.Aborted)
+            {
+                nativeRecorder?.RequestAbort();
+            }
+            else
+            {
+                nativeRecorder?.RequestStop();
             }
         }
 
@@ -81,50 +91,15 @@ namespace ShareX
             }
         }
 
-        private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod = ScreenRecordStartMethod.Region)
+        private static void StartRecording(ScreenRecordOutput outputType, TaskSettings taskSettings, ScreenRecordStartMethod startMethod)
         {
-            if (outputType == ScreenRecordOutput.GIF)
-            {
-                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec = FFmpegVideoCodec.gif;
-            }
-
-            if (taskSettings.CaptureSettings.FFmpegOptions.IsAnimatedImage)
-            {
-                taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding = true;
-            }
-
-            int fps;
-
-            if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
-            {
-                fps = taskSettings.CaptureSettings.GIFFPS;
-            }
-            else
-            {
-                fps = taskSettings.CaptureSettings.ScreenRecordFPS;
-            }
-
-            DebugHelper.WriteLine("Starting screen recording. Video encoder: \"{0}\", Audio encoder: \"{1}\", FPS: {2}",
-                taskSettings.CaptureSettings.FFmpegOptions.VideoCodec.GetDescription(), taskSettings.CaptureSettings.FFmpegOptions.AudioCodec.GetDescription(), fps);
-
-            if (!TaskHelpers.CheckFFmpeg(taskSettings))
-            {
-                return;
-            }
-
-            if (!taskSettings.CaptureSettings.FFmpegOptions.IsSourceSelected)
-            {
-                MessageBox.Show(Resources.FFmpeg_FFmpeg_video_and_audio_source_both_can_t_be__None__,
-                    "ShareX - " + Resources.FFmpeg_FFmpeg_error, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
             if (taskSettings.GeneralSettings.ToastWindowAutoHide)
             {
                 NotificationForm.CloseActiveForm();
             }
 
-            Rectangle captureRectangle = Rectangle.Empty;
+            bool isGif = outputType == ScreenRecordOutput.GIF;
+            Rectangle region = Rectangle.Empty;
             TaskMetadata metadata = new TaskMetadata();
 
             switch (startMethod)
@@ -132,272 +107,225 @@ namespace ShareX
                 case ScreenRecordStartMethod.Region:
                     if (taskSettings.CaptureSettings.ScreenRecordTransparentRegion)
                     {
-                        RegionCaptureTasks.GetRectangleRegionTransparent(out captureRectangle);
+                        RegionCaptureTasks.GetRectangleRegionTransparent(out region);
                     }
                     else
                     {
-                        RegionCaptureTasks.GetRectangleRegion(out captureRectangle, out WindowInfo windowInfo, taskSettings.CaptureSettings.SurfaceOptions);
-
+                        RegionCaptureTasks.GetRectangleRegion(out region, out WindowInfo windowInfo, taskSettings.CaptureSettings.SurfaceOptions);
                         metadata.UpdateInfo(windowInfo);
                     }
                     break;
                 case ScreenRecordStartMethod.ActiveWindow:
-                    if (taskSettings.CaptureSettings.CaptureClientArea)
-                    {
-                        captureRectangle = CaptureHelpers.GetActiveWindowClientRectangle();
-                    }
-                    else
-                    {
-                        captureRectangle = CaptureHelpers.GetActiveWindowRectangle();
-                    }
-
-                    IntPtr handle = NativeMethods.GetForegroundWindow();
-                    WindowInfo activeWindowInfo = new WindowInfo(handle);
-                    metadata.UpdateInfo(activeWindowInfo);
+                    region = taskSettings.CaptureSettings.CaptureClientArea
+                        ? CaptureHelpers.GetActiveWindowClientRectangle()
+                        : CaptureHelpers.GetActiveWindowRectangle();
+                    metadata.UpdateInfo(new WindowInfo(NativeMethods.GetForegroundWindow()));
                     break;
                 case ScreenRecordStartMethod.CustomRegion:
-                    captureRectangle = taskSettings.CaptureSettings.CaptureCustomRegion;
+                    region = taskSettings.CaptureSettings.CaptureCustomRegion;
                     break;
                 case ScreenRecordStartMethod.LastRegion:
-                    captureRectangle = Program.Settings.ScreenRecordRegion;
+                    region = Program.Settings.ScreenRecordRegion;
                     break;
             }
 
-            Rectangle screenRectangle = CaptureHelpers.GetScreenBounds();
-            captureRectangle = Rectangle.Intersect(captureRectangle, screenRectangle);
-
-            if (taskSettings.CaptureSettings.FFmpegOptions.IsEvenSizeRequired)
+            region = Rectangle.Intersect(region, CaptureHelpers.GetScreenBounds());
+            if (!isGif)
             {
-                captureRectangle = CaptureHelpers.EvenRectangleSize(captureRectangle);
+                region = CaptureHelpers.EvenRectangleSize(region);
             }
 
-            if (IsRecording || !captureRectangle.IsValid() || screenRecorder != null)
+            if (IsRecording || nativeRecorder != null || !region.IsValid())
             {
                 return;
             }
 
-            Program.Settings.ScreenRecordRegion = captureRectangle;
-
+            Program.Settings.ScreenRecordRegion = region;
             IsRecording = true;
-
-            string path = "";
-            string concatPath = "";
-            string tempPath = "";
-            bool abortRequested = false;
-
-            float duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0;
-
-            recordForm = new ScreenRecordForm(captureRectangle)
+            recordForm = new ScreenRecordForm(region)
             {
                 ActivateWindow = startMethod == ScreenRecordStartMethod.Region,
-                Duration = duration,
-                AskConfirmationOnAbort = taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort
+                Duration = taskSettings.CaptureSettings.ScreenRecordFixedDuration ? taskSettings.CaptureSettings.ScreenRecordDuration : 0,
+                AskConfirmationOnAbort = taskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort,
+                UseInProcessPause = true,
+                ExcludeFromCapture = true
             };
-
             recordForm.StopRequested += StopRecording;
+            recordForm.PauseRequested += () => nativeRecorder?.Pause();
+            recordForm.ResumeRequested += () => nativeRecorder?.Resume(recordForm.RecordingRegion);
             recordForm.Show();
 
-            Task.Run(() =>
+            string path = null;
+            string error = null;
+            bool aborted = false;
+            bool completed = false;
+
+            Task.Run(async () =>
             {
+                string temporaryPath = null;
                 try
                 {
-                    string extension;
-                    if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding)
-                    {
-                        extension = "mp4";
-                    }
-                    else
-                    {
-                        extension = taskSettings.CaptureSettings.FFmpegOptions.Extension;
-                    }
-                    string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
-                    string fileName = TaskHelpers.GetFileName(taskSettings, extension, metadata);
-                    path = TaskHelpers.HandleExistsFile(screenshotsFolder, fileName, taskSettings);
-
+                    string extension = isGif ? "gif" : "mp4";
+                    string folder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
+                    string name = TaskHelpers.GetFileName(taskSettings, extension, metadata);
+                    path = TaskHelpers.HandleExistsFile(folder, name, taskSettings);
                     if (string.IsNullOrEmpty(path))
                     {
-                        abortRequested = true;
+                        aborted = true;
+                        return;
+                    }
+
+                    temporaryPath = Path.Combine(Path.GetDirectoryName(path),
+                        $"{Path.GetFileNameWithoutExtension(path)}-recording-{Guid.NewGuid():N}.{extension}");
+                    var settings = taskSettings.CaptureSettings;
+                    var options = new RecordingOptions
+                    {
+                        OutputPath = temporaryPath,
+                        Region = recordForm.RecordingRegion,
+                        FramesPerSecond = isGif ? Math.Clamp(settings.GIFFPS, 1, 100) : Math.Clamp(settings.ScreenRecordFPS, 1, 240),
+                        VideoBitrate = settings.ScreenRecordVideoBitrate * 1000,
+                        CaptureSystemAudio = !isGif && settings.ScreenRecordSystemAudio,
+                        CaptureMicrophone = !isGif && settings.ScreenRecordMicrophone,
+                        SystemAudioDeviceId = settings.ScreenRecordSystemAudioDeviceId,
+                        MicrophoneDeviceId = settings.ScreenRecordMicrophoneDeviceId,
+                        CaptureCamera = settings.ScreenRecordCamera,
+                        CameraDeviceId = settings.ScreenRecordCameraDeviceId,
+                        RequireHardwareEncoder = settings.ScreenRecordRequireHardwareEncoder,
+                        IncludeCursor = settings.ScreenRecordShowCursor,
+                        Duration = settings.ScreenRecordFixedDuration ? TimeSpan.FromSeconds(settings.ScreenRecordDuration) : TimeSpan.Zero
+                    };
+
+                    nativeRecorder = new NativeScreenRecorder(options);
+                    nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
+                    nativeRecorder.EncodingProgressChanged += progress =>
+                    {
+                        recordForm.InvokeSafe(() =>
+                        {
+                            if (progress == 0)
+                            {
+                                recordForm.ChangeState(ScreenRecordState.RecordingEnd);
+                                recordForm.ChangeState(ScreenRecordState.Encoding);
+                            }
+                            recordForm.ChangeStateProgress(progress);
+                        });
+                    };
+
+                    recordForm.ChangeState(ScreenRecordState.BeforeStart);
+                    await nativeRecorder.PrepareAsync();
+
+                    if (!settings.ScreenRecordAutoStart)
+                    {
+                        recordForm.RecordResetEvent.WaitOne();
+                    }
+                    else if (settings.ScreenRecordStartDelay > 0)
+                    {
+                        int delay = checked((int)(settings.ScreenRecordStartDelay * 1000));
+                        recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
+                        recordForm.RecordResetEvent.WaitOne(delay);
+                    }
+
+                    if (recordForm.Status is ScreenRecordingStatus.Aborted or ScreenRecordingStatus.Stopped)
+                    {
+                        aborted = true;
+                        nativeRecorder.RequestAbort();
+                        return;
+                    }
+
+                    if (recordForm.RecordingRegion != options.Region)
+                    {
+                        await nativeRecorder.DisposeAsync();
+                        nativeRecorder = new NativeScreenRecorder(options with { Region = recordForm.RecordingRegion });
+                        nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
+                        nativeRecorder.EncodingProgressChanged += progress =>
+                            recordForm.InvokeSafe(() =>
+                            {
+                                if (progress == 0)
+                                {
+                                    recordForm.ChangeState(ScreenRecordState.RecordingEnd);
+                                    recordForm.ChangeState(ScreenRecordState.Encoding);
+                                }
+                                recordForm.ChangeStateProgress(progress);
+                            });
+                        await nativeRecorder.PrepareAsync();
+                    }
+
+                    recordForm.ChangeState(ScreenRecordState.AfterStart);
+                    await nativeRecorder.StartAsync();
+                    if (recordForm.Status == ScreenRecordingStatus.Aborted)
+                    {
+                        nativeRecorder.RequestAbort();
+                    }
+                    else if (recordForm.Status == ScreenRecordingStatus.Stopped)
+                    {
+                        nativeRecorder.RequestStop();
                     }
                     else
                     {
-                        concatPath = FileHelpers.AppendTextToFileName(path, "-concat");
-                        FileHelpers.DeleteFile(concatPath);
-                        tempPath = FileHelpers.AppendTextToFileName(path, "-temp");
-                        FileHelpers.DeleteFile(tempPath);
+                        recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
                     }
 
-                    while (!abortRequested && (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused))
+                    RecordingResult result = await nativeRecorder.Completion;
+                    DebugHelper.WriteLine("Native recording: {0}, frames: {1}, dropped: {2}",
+                        result.Encoder.Name, result.VideoFrames, result.DroppedVideoFrames);
+                    aborted = recordForm.Status == ScreenRecordingStatus.Aborted;
+                    if (!aborted)
                     {
-                        recordForm.ChangeState(ScreenRecordState.BeforeStart);
-
-                        if (recordForm.Status == ScreenRecordingStatus.Paused || !taskSettings.CaptureSettings.ScreenRecordAutoStart)
-                        {
-                            recordForm.RecordResetEvent.WaitOne();
-                        }
-                        else
-                        {
-                            int delay = (int)(taskSettings.CaptureSettings.ScreenRecordStartDelay * 1000);
-
-                            if (delay > 0)
-                            {
-                                recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
-
-                                recordForm.RecordResetEvent.WaitOne(delay);
-                            }
-                        }
-
-                        if (recordForm.Status == ScreenRecordingStatus.Aborted)
-                        {
-                            abortRequested = true;
-                        }
-
-                        if (recordForm.Status == ScreenRecordingStatus.Waiting || recordForm.Status == ScreenRecordingStatus.Paused)
-                        {
-                            if (recordForm.Status == ScreenRecordingStatus.Paused && File.Exists(path))
-                            {
-                                FileHelpers.RenameFile(path, concatPath);
-                            }
-
-                            recordForm.ChangeState(ScreenRecordState.AfterStart);
-
-                            captureRectangle = recordForm.RecordingRegion;
-
-                            ScreenRecordingOptions options = new ScreenRecordingOptions()
-                            {
-                                IsRecording = true,
-                                IsLossless = taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding,
-                                FFmpeg = taskSettings.CaptureSettings.FFmpegOptions,
-                                FPS = fps,
-                                Duration = duration,
-                                OutputPath = path,
-                                CaptureArea = captureRectangle,
-                                DrawCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor
-                            };
-
-                            Screenshot screenshot = TaskHelpers.GetScreenshot(taskSettings);
-                            screenshot.CaptureCursor = taskSettings.CaptureSettings.ScreenRecordShowCursor;
-
-                            screenRecorder?.Dispose();
-                            screenRecorder = new ScreenRecorder(ScreenRecordOutput.FFmpeg, options, screenshot, captureRectangle);
-                            screenRecorder.RecordingStarted += ScreenRecorder_RecordingStarted;
-                            screenRecorder.EncodingProgressChanged += ScreenRecorder_EncodingProgressChanged;
-                            screenRecorder.StartRecording();
-                            recordForm.ChangeState(ScreenRecordState.RecordingEnd);
-
-                            if (recordForm.Status == ScreenRecordingStatus.Aborted)
-                            {
-                                abortRequested = true;
-                            }
-                        }
-
+                        File.Move(temporaryPath, path, true);
+                        completed = true;
                         TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
-
-                        if (File.Exists(concatPath))
-                        {
-                            using (FFmpegCLIManager ffmpeg = new FFmpegCLIManager(taskSettings.CaptureSettings.FFmpegOptions.FFmpegPath))
-                            {
-                                ffmpeg.ShowError = true;
-                                ffmpeg.ConcatenateVideos(new string[] { concatPath, path }, tempPath, true);
-                                FileHelpers.RenameFile(tempPath, path);
-                            }
-                        }
                     }
                 }
-                catch (Exception e)
+                catch (OperationCanceledException) when (recordForm?.Status is ScreenRecordingStatus.Aborted or ScreenRecordingStatus.Stopped)
                 {
-                    DebugHelper.WriteException(e);
+                    aborted = true;
                 }
-
-                if (taskSettings.CaptureSettings.ScreenRecordTwoPassEncoding && !abortRequested && screenRecorder != null && File.Exists(path))
+                catch (Exception exception)
                 {
-                    recordForm.ChangeState(ScreenRecordState.Encoding);
-
-                    path = ProcessTwoPassEncoding(path, metadata, taskSettings);
+                    error = exception.Message;
+                    DebugHelper.WriteException(exception);
                 }
-
-                if (recordForm != null)
+                finally
                 {
-                    recordForm.InvokeSafe(() =>
+                    if (nativeRecorder != null)
                     {
-                        recordForm.Close();
-                        recordForm.Dispose();
-                        recordForm = null;
-                    });
+                        await nativeRecorder.DisposeAsync();
+                        nativeRecorder = null;
+                    }
+                    if (!completed && !string.IsNullOrEmpty(temporaryPath))
+                    {
+                        FileHelpers.DeleteFile(temporaryPath);
+                    }
+                    if (recordForm != null)
+                    {
+                        recordForm.InvokeSafe(() =>
+                        {
+                            recordForm.CompleteRecording();
+                            recordForm.Close();
+                            recordForm.Dispose();
+                            recordForm = null;
+                        });
+                    }
                 }
-
-                if (screenRecorder != null)
-                {
-                    screenRecorder.Dispose();
-                    screenRecorder = null;
-                }
-
-                if (abortRequested)
-                {
-                    FileHelpers.DeleteFile(path);
-                }
-
-                FileHelpers.DeleteFile(concatPath);
-                FileHelpers.DeleteFile(tempPath);
             }).ContinueInCurrentContext(() =>
             {
-                if (!abortRequested && !string.IsNullOrEmpty(path) && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out string customFileName, null, path))
+                if (!string.IsNullOrEmpty(error))
+                {
+                    MessageBox.Show(error, "ShareX - Screen recording", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                if (!aborted && completed && File.Exists(path) && TaskHelpers.ShowAfterCaptureForm(taskSettings, out string customFileName, null, path))
                 {
                     if (!string.IsNullOrEmpty(customFileName))
                     {
-                        string currentFileName = Path.GetFileNameWithoutExtension(path);
-                        string ext = Path.GetExtension(path);
-
-                        if (!currentFileName.Equals(customFileName, StringComparison.OrdinalIgnoreCase))
+                        string originalName = Path.GetFileNameWithoutExtension(path);
+                        if (!originalName.Equals(customFileName, StringComparison.OrdinalIgnoreCase))
                         {
-                            path = FileHelpers.RenameFile(path, customFileName + ext);
+                            path = FileHelpers.RenameFile(path, customFileName + Path.GetExtension(path));
                         }
                     }
-
-                    WorkerTask task = WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName);
-                    TaskManager.Start(task);
+                    TaskManager.Start(WorkerTask.CreateFileJobTask(path, metadata, taskSettings, customFileName));
                 }
-
-                abortRequested = false;
                 IsRecording = false;
             });
-        }
-
-        private static void ScreenRecorder_RecordingStarted()
-        {
-            recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
-        }
-
-        private static void ScreenRecorder_EncodingProgressChanged(int progress)
-        {
-            recordForm.ChangeStateProgress(progress);
-        }
-
-        private static string ProcessTwoPassEncoding(string input, TaskMetadata metadata, TaskSettings taskSettings, bool deleteInputFile = true)
-        {
-            string screenshotsFolder = TaskHelpers.GetScreenshotsFolder(taskSettings, metadata);
-            string fileName = TaskHelpers.GetFileName(taskSettings, taskSettings.CaptureSettings.FFmpegOptions.Extension, metadata);
-            string output = Path.Combine(screenshotsFolder, fileName);
-
-            try
-            {
-                if (taskSettings.CaptureSettings.FFmpegOptions.VideoCodec == FFmpegVideoCodec.gif)
-                {
-                    screenRecorder.FFmpegEncodeAsGIF(input, output);
-                }
-                else
-                {
-                    screenRecorder.FFmpegEncodeVideo(input, output);
-                }
-            }
-            finally
-            {
-                if (deleteInputFile && !input.Equals(output, StringComparison.OrdinalIgnoreCase) && File.Exists(input))
-                {
-                    File.Delete(input);
-                }
-            }
-
-            return output;
         }
     }
 }

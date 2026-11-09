@@ -346,7 +346,8 @@ namespace ShareX
             cbScreenRecordAutoStart.Checked = nudScreenRecorderStartDelay.Enabled = TaskSettings.CaptureSettings.ScreenRecordAutoStart;
             nudScreenRecorderStartDelay.SetValue((decimal)TaskSettings.CaptureSettings.ScreenRecordStartDelay);
             cbScreenRecorderShowCursor.Checked = TaskSettings.CaptureSettings.ScreenRecordShowCursor;
-            cbScreenRecordTwoPassEncoding.Checked = TaskSettings.CaptureSettings.ScreenRecordTwoPassEncoding;
+            cbScreenRecordTwoPassEncoding.Visible = false;
+            btnScreenRecorderFFmpegOptions.Text = "Native recording options...";
             cbScreenRecordTransparentRegion.Checked = TaskSettings.CaptureSettings.ScreenRecordTransparentRegion;
             cbScreenRecordConfirmAbort.Checked = TaskSettings.CaptureSettings.ScreenRecordAskConfirmationOnAbort;
 
@@ -1309,22 +1310,9 @@ namespace ShareX
 
         private void btnScreenRecorderFFmpegOptions_Click(object sender, EventArgs e)
         {
-            ScreenRecordingOptions options = new ScreenRecordingOptions
+            using (NativeRecorderSettingsForm form = new NativeRecorderSettingsForm(TaskSettings.CaptureSettings))
             {
-                IsRecording = true,
-                FFmpeg = TaskSettings.CaptureSettings.FFmpegOptions,
-                FPS = TaskSettings.CaptureSettings.ScreenRecordFPS,
-                Duration = TaskSettings.CaptureSettings.ScreenRecordFixedDuration ? TaskSettings.CaptureSettings.ScreenRecordDuration : 0,
-                OutputPath = "output.mp4",
-                CaptureArea = Screen.PrimaryScreen.Bounds,
-                DrawCursor = TaskSettings.CaptureSettings.ScreenRecordShowCursor
-            };
-
-            using (FFmpegOptionsForm form = new FFmpegOptionsForm(options))
-            {
-                form.ShowDialog();
-
-                TaskSettings.CaptureSettings.FFmpegOptions = form.Options.FFmpeg;
+                form.ShowDialog(this);
             }
         }
 

@@ -1623,7 +1623,7 @@ namespace ShareX
 
         private void tsmiScreenRecordingFFmpeg_Click(object sender, EventArgs e)
         {
-            TaskHelpers.StartScreenRecording(ScreenRecordOutput.FFmpeg, ScreenRecordStartMethod.Region);
+            TaskHelpers.StartScreenRecording(ScreenRecordOutput.MP4, ScreenRecordStartMethod.Region);
         }
 
         private void tsmiScreenRecordingGIF_Click(object sender, EventArgs e)
