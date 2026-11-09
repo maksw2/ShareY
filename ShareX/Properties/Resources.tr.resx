@@ -629,6 +629,9 @@ Orta fare tuşu kapatmak için</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Yalnızca bir kez</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>ShareY başlangıcında aç</value>
   </data>

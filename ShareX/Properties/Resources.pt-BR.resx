@@ -597,6 +597,9 @@ Clique do meio para fechar</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Atraso na captura de tela: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Apenas uma vez</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Abrir na inicialização do ShareY</value>
   </data>

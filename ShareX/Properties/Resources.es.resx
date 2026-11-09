@@ -635,6 +635,9 @@ Middle click to close</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Captura de pantalla delay: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Solo una vez</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Abrir at ShareY iniciarup</value>
   </data>

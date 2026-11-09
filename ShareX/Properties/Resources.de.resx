@@ -602,6 +602,9 @@ Mittlere Maustaste um die Aktionsleiste zu schließen</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot-Verzögerung: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Nur einmal</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Beim Start von ShareY öffnen</value>
   </data>

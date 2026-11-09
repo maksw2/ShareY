@@ -1117,6 +1117,9 @@ Please select a different hotkey or quit the conflicting application and reopen 
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Screenshot delay: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Just once</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Open at ShareY startup</value>
   </data>

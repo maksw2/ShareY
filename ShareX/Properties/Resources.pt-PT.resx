@@ -434,6 +434,9 @@ Botão do meio (scroll) para fechar</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Atraso de captura: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Apenas uma vez</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Abrir no inicio do ShareY</value>
   </data>

@@ -626,6 +626,9 @@ ShareY を再起動しますか？</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>スクリーンショットを{0}秒後に起動する</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>1 回だけ</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>ShareY 起動時に開く</value>
   </data>

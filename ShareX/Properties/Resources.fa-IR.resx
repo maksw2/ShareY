@@ -424,6 +424,9 @@
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تاخیر ضبط: {0} ثانیه</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>فقط یک بار</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>بازکردن برنامه در هنگام شروع ویندوز</value>
   </data>

@@ -624,6 +624,9 @@ Kliknij prawym przyciskiem myszy, aby otworzyć menu
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Opóźnienie zrzutu ekranu: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Tylko raz</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Otwórz przy starcie ShareY</value>
   </data>

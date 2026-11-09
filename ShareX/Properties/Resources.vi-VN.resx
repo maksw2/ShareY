@@ -606,6 +606,9 @@ Nhấn chuột giữa để đóng</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Thời gian trễ chụp ảnh màn hình: {0} giây</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Chỉ một lần</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Mở khi ShareY khởi động</value>
   </data>

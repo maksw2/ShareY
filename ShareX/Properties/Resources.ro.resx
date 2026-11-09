@@ -586,6 +586,9 @@ Clic în mijloc pentru a închide</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Întârzierea capturii: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Doar o dată</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Se deschide la pornirea ShareY</value>
   </data>

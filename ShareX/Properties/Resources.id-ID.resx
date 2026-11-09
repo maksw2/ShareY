@@ -639,6 +639,9 @@ Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Jeda tangkapan layar: {0}d</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Hanya sekali</value>
+  </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Admin sistem Anda menonaktifkan fitur unggah.</value>
   </data>

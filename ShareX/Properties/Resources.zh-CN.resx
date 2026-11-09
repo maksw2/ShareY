@@ -629,6 +629,9 @@
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>截图倒计时：{0} 秒</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>仅一次</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>ShareY 启动时打开</value>
   </data>

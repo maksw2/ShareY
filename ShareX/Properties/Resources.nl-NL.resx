@@ -635,6 +635,9 @@ Middle klik to close</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Schermshot vertraging: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Slechts één keer</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Openen at ShareY startenup</value>
   </data>

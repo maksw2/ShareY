@@ -2542,6 +2542,15 @@ namespace ShareX.Properties {
                 return ResourceManager.GetString("ScreenshotDelay0S", resourceCulture);
             }
         }
+
+        /// <summary>
+        ///   looks up the localized screenshot delay option.
+        /// </summary>
+        internal static string ScreenshotDelayJustOnce {
+            get {
+                return ResourceManager.GetString("ScreenshotDelayJustOnce", resourceCulture);
+            }
+        }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.

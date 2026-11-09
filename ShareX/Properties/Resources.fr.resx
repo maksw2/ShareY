@@ -608,6 +608,9 @@ Clique de la molette pour fermer</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Délai de capture d'écran : {0} s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Une seule fois</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Ouvrir au démarrage de ShareY</value>
   </data>

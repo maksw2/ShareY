@@ -47,6 +47,7 @@ namespace ShareX
         private UploadInfoManager uim;
         private ToolStripDropDownItem tsmiImageFileUploaders, tsmiTrayImageFileUploaders, tsmiTextFileUploaders, tsmiTrayTextFileUploaders;
         private ImageFilesCache actionsMenuIconCache = new ImageFilesCache();
+        private ToolStripMenuItem onceMain, onceTray;
 
         public MainForm()
         {
@@ -74,6 +75,21 @@ namespace ShareX
         private void InitializeControls()
         {
             InitializeComponent();
+
+            onceMain = new ToolStripMenuItem(Resources.ScreenshotDelayJustOnce) { CheckOnClick = true, Checked = Program.Settings.ScreenshotDelayJustOnce };
+            onceTray = new ToolStripMenuItem(Resources.ScreenshotDelayJustOnce) { CheckOnClick = true, Checked = Program.Settings.ScreenshotDelayJustOnce };
+            foreach (ToolStripMenuItem item in new[] { onceMain, onceTray })
+            {
+                item.Click += (sender, e) =>
+                {
+                    Program.Settings.ScreenshotDelayJustOnce = ((ToolStripMenuItem)sender).Checked;
+                    onceMain.Checked = onceTray.Checked = Program.Settings.ScreenshotDelayJustOnce;
+                };
+            }
+            tsmiScreenshotDelay.DropDownItems.Add(new ToolStripSeparator());
+            tsmiScreenshotDelay.DropDownItems.Add(onceMain);
+            tsmiTrayScreenshotDelay.DropDownItems.Add(new ToolStripSeparator());
+            tsmiTrayScreenshotDelay.DropDownItems.Add(onceTray);
 
             ShareXResources.UseWhiteIcon = Program.Settings.UseWhiteShareXIcon;
 
@@ -1135,7 +1151,7 @@ namespace ShareX
             }
         }
 
-        private void SetScreenshotDelay(decimal delay)
+        internal void SetScreenshotDelay(decimal delay)
         {
             Program.DefaultTaskSettings.CaptureSettings.ScreenshotDelay = delay;
 
@@ -1173,6 +1189,7 @@ namespace ShareX
 
             tsmiScreenshotDelay.Text = tsmiTrayScreenshotDelay.Text = string.Format(Resources.ScreenshotDelay0S, delay.ToString("0.#"));
             tsmiScreenshotDelay.Checked = tsmiTrayScreenshotDelay.Checked = delay > 0;
+            onceMain.Checked = onceTray.Checked = Program.Settings.ScreenshotDelayJustOnce;
         }
 
         private async Task PrepareCaptureMenuAsync(ToolStripMenuItem tsmiWindow, EventHandler handlerWindow, ToolStripMenuItem tsmiMonitor, EventHandler handlerMonitor)

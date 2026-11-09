@@ -636,6 +636,9 @@ Middle click to close</value>
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>Képernyőkép delay: {0}s</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>Csak egyszer</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>Megnyitás at ShareY indításup</value>
   </data>

@@ -45,6 +45,7 @@ namespace ShareX
 
         // Main window
         public bool FirstTimeMinimizeToTray = true;
+        public bool ScreenshotDelayJustOnce = false;
         public List<int> TaskListViewColumnWidths = new List<int>();
         public int PreviewSplitterDistance = 335;
 

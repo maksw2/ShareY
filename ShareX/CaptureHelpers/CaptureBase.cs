@@ -54,6 +54,11 @@ namespace ShareX
             {
                 int delay = (int)(taskSettings.CaptureSettings.ScreenshotDelay * 1000);
 
+                if (taskSettings.UseDefaultCaptureSettings && Program.Settings.ScreenshotDelayJustOnce)
+                {
+                    Program.MainForm?.InvokeSafe(() => Program.MainForm.SetScreenshotDelay(0));
+                }
+
                 Task.Delay(delay).ContinueInCurrentContext(() =>
                 {
                     CaptureInternal(taskSettings, autoHideForm);

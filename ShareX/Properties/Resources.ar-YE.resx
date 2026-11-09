@@ -624,6 +624,9 @@
   <data name="ScreenshotDelay0S" xml:space="preserve">
     <value>تأخير لقطة الشاشة: {0} ثوان</value>
   </data>
+  <data name="ScreenshotDelayJustOnce" xml:space="preserve">
+    <value>مرة واحدة فقط</value>
+  </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
     <value>فتح عند تشغيل ShareY</value>
   </data>
