@@ -310,7 +310,7 @@ namespace ShareX.HelpersLib
 
                 if (dataFormats.Contains(FORMAT_PNG))
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream)
+                    using (MemoryStream ms = dataObject.TryGetData<MemoryStream>(FORMAT_PNG, out MemoryStream png) ? png : null)
                     {
                         if (ms != null)
                         {
@@ -327,7 +327,7 @@ namespace ShareX.HelpersLib
                     {
                         if (dataFormats.Contains(format))
                         {
-                            using (MemoryStream ms = dataObject.GetData(format) as MemoryStream)
+                            using (MemoryStream ms = dataObject.TryGetData<MemoryStream>(format, out MemoryStream dib) ? dib : null)
                             {
                                 if (ms != null)
                                 {
@@ -347,7 +347,7 @@ namespace ShareX.HelpersLib
 
                 if (dataObject.GetDataPresent(DataFormats.Bitmap, true))
                 {
-                    return dataObject.GetData(DataFormats.Bitmap, true) as Image;
+                    return dataObject.TryGetData<Image>(DataFormats.Bitmap, true, out Image image) ? image : null;
                 }
             }
 
@@ -364,7 +364,7 @@ namespace ShareX.HelpersLib
 
                 if (dataFormats.Contains(FORMAT_PNG))
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_PNG) as MemoryStream)
+                    using (MemoryStream ms = dataObject.TryGetData<MemoryStream>(FORMAT_PNG, out MemoryStream png) ? png : null)
                     {
                         if (ms != null)
                         {
@@ -377,7 +377,7 @@ namespace ShareX.HelpersLib
                 }
                 else if (dataFormats.Contains(DataFormats.Dib))
                 {
-                    using (MemoryStream ms = dataObject.GetData(DataFormats.Dib) as MemoryStream)
+                    using (MemoryStream ms = dataObject.TryGetData<MemoryStream>(DataFormats.Dib, out MemoryStream dib) ? dib : null)
                     {
                         if (ms != null)
                         {
@@ -387,7 +387,7 @@ namespace ShareX.HelpersLib
                 }
                 else if (dataFormats.Contains(FORMAT_17))
                 {
-                    using (MemoryStream ms = dataObject.GetData(FORMAT_17) as MemoryStream)
+                    using (MemoryStream ms = dataObject.TryGetData<MemoryStream>(FORMAT_17, out MemoryStream dibv5) ? dibv5 : null)
                     {
                         if (ms != null)
                         {
@@ -397,7 +397,7 @@ namespace ShareX.HelpersLib
                 }
                 else if (dataFormats.Contains(DataFormats.Bitmap))
                 {
-                    return dataObject.GetData(DataFormats.Bitmap, true) as Bitmap;
+                    return dataObject.TryGetData<Bitmap>(DataFormats.Bitmap, true, out Bitmap image) ? image : null;
                 }
             }
 

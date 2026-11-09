@@ -86,7 +86,12 @@ namespace ShareX.HelpersLib
 
                 if (CurrentDataObject != null)
                 {
-                    object data = CurrentDataObject.GetData(format);
+                    object data = null;
+                    if (CurrentDataObject.TryGetData<MemoryStream>(format, out MemoryStream stream)) data = stream;
+                    else if (CurrentDataObject.TryGetData<Bitmap>(format, out Bitmap bitmap)) data = bitmap;
+                    else if (CurrentDataObject.TryGetData<string>(format, out string text)) data = text;
+                    else if (CurrentDataObject.TryGetData<string[]>(format, out string[] files)) data = files;
+                    else if (CurrentDataObject.TryGetData<byte[]>(format, out byte[] bytes)) data = bytes;
 
                     if (data != null)
                     {
