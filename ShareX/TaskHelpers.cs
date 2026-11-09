@@ -1172,12 +1172,39 @@ namespace ShareX
             clipboardViewerForm.Show();
         }
 
+        private static void PlaceEditorOnMainWindowScreen(Form form)
+        {
+            Screen screen = null;
+            Program.MainForm.InvokeSafe(() =>
+            {
+                if (Program.MainForm.Visible)
+                {
+                    screen = Screen.FromControl(Program.MainForm);
+                }
+            });
+
+            if (screen == null || (form.StartPosition == FormStartPosition.Manual &&
+                form.Location != Point.Empty && Screen.FromPoint(form.Location).DeviceName == screen.DeviceName))
+            {
+                return;
+            }
+
+            Rectangle area = screen.WorkingArea;
+            bool maximized = form.WindowState == FormWindowState.Maximized;
+            form.WindowState = FormWindowState.Normal;
+            form.StartPosition = FormStartPosition.Manual;
+            form.Location = new Point(area.X + (area.Width - form.Width) / 2, area.Y + (area.Height - form.Height) / 2);
+            if (maximized) form.WindowState = FormWindowState.Maximized;
+        }
+
         public static void OpenImageEditor(TaskSettings taskSettings = null)
         {
             if (taskSettings == null) taskSettings = TaskSettings.GetDefaultTaskSettings();
 
             using (EditorStartupForm editorStartupForm = new EditorStartupForm(taskSettings.CaptureSettingsReference.SurfaceOptions))
             {
+                PlaceEditorOnMainWindowScreen(editorStartupForm);
+
                 if (editorStartupForm.ShowDialog() == DialogResult.OK)
                 {
                     AnnotateImageAsync(editorStartupForm.Image, editorStartupForm.ImageFilePath, taskSettings);
@@ -1239,6 +1266,8 @@ namespace ShareX
 
                     using (RegionCaptureForm form = new RegionCaptureForm(mode, options, bmp))
                     {
+                        if (!form.IsFullscreen) PlaceEditorOnMainWindowScreen(form);
+
                         form.ImageFilePath = filePath;
 
                         form.SaveImageRequested += (output, newFilePath) =>
