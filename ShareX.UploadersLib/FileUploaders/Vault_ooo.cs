@@ -213,13 +213,13 @@ namespace ShareX.UploadersLib.FileUploaders
             RandomNumberGenerator rng = RandomNumberGenerator.Create(); // Cryptographically secure
             rng.GetBytes(salt);
 
-            Rfc2898DeriveBytes rfcDeriver = new Rfc2898DeriveBytes(key, salt, PBKDF2_ITERATIONS, HashAlgorithmName.SHA256);
+            byte[] derived = Rfc2898DeriveBytes.Pbkdf2(key, salt, PBKDF2_ITERATIONS, HashAlgorithmName.SHA256, (AES_KEY_SIZE + AES_BLOCK_SIZE) / 8);
 
             return new Vault_oooCryptoData
             {
                 Salt = salt,
-                Key = rfcDeriver.GetBytes(AES_KEY_SIZE / 8), // Derive the bytes from the rfcDeriver; Divide by 8 to input byte count
-                IV = rfcDeriver.GetBytes(AES_BLOCK_SIZE / 8)
+                Key = derived[..(AES_KEY_SIZE / 8)],
+                IV = derived[(AES_KEY_SIZE / 8)..]
             };
         }
 
