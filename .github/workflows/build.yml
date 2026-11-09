@@ -25,16 +25,9 @@ jobs:
         configuration:
           - Release
           - Debug
-          - Steam
-          - MicrosoftStore
-          - MicrosoftStoreDebug
         platform:
           - x64
           - ARM64
-        exclude:
-          # Steam configuration doesn't support ARM64
-          - configuration: Steam
-            platform: ARM64
 
     env:
       SOLUTION_FILE_PATH: ShareX.sln
@@ -144,48 +137,6 @@ jobs:
           name: Debug-ARM64
           path: Output\ShareX-${{ env.APP_VERSION }}-debug-${{ env.PLATFORM }}.zip
 
-      - name: Upload artifact (Steam-x64)
-        if: matrix.configuration == 'Steam' && matrix.platform == 'x64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: Steam-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-Steam-${{ env.PLATFORM }}.zip
-
-      - name: Upload artifact (Steam-ARM64)
-        if: matrix.configuration == 'Steam' && matrix.platform == 'ARM64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: Steam-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-Steam-${{ env.PLATFORM }}.zip
-
-      - name: Upload artifact (MicrosoftStore-x64)
-        if: matrix.configuration == 'MicrosoftStore' && matrix.platform == 'x64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: MicrosoftStore-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-MicrosoftStore-${{ env.PLATFORM }}.appx
-
-      - name: Upload artifact (MicrosoftStore-ARM64)
-        if: matrix.configuration == 'MicrosoftStore' && matrix.platform == 'ARM64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: MicrosoftStore-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-MicrosoftStore-${{ env.PLATFORM }}.appx
-
-      - name: Upload artifact (MicrosoftStoreDebug-x64)
-        if: matrix.configuration == 'MicrosoftStoreDebug' && matrix.platform == 'x64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: MicrosoftStoreDebug-x64
-          path: Output\ShareX-${{ env.APP_VERSION }}-MicrosoftStore-debug-${{ env.PLATFORM }}.appx
-
-      - name: Upload artifact (MicrosoftStoreDebug-ARM64)
-        if: matrix.configuration == 'MicrosoftStoreDebug' && matrix.platform == 'ARM64'
-        uses: actions/upload-artifact@v7
-        with:
-          name: MicrosoftStoreDebug-ARM64
-          path: Output\ShareX-${{ env.APP_VERSION }}-MicrosoftStore-debug-${{ env.PLATFORM }}.appx
-
   release:
     name: Release
     needs: build
@@ -241,48 +192,6 @@ jobs:
           name: Debug-ARM64
           path: Output
 
-      - name: Download artifact (Steam-x64)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v8
-        with:
-          name: Steam-x64
-          path: Output
-
-      # - name: Download artifact (Steam-ARM64)
-      #   if: github.ref == 'refs/heads/develop'
-      #   uses: actions/download-artifact@v8
-      #   with:
-      #     name: Steam-ARM64
-      #     path: Output
-
-      - name: Download artifact (MicrosoftStore-x64)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v8
-        with:
-          name: MicrosoftStore-x64
-          path: Output
-
-      - name: Download artifact (MicrosoftStore-ARM64)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v8
-        with:
-          name: MicrosoftStore-ARM64
-          path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug-x64)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v8
-        with:
-          name: MicrosoftStoreDebug-x64
-          path: Output
-
-      - name: Download artifact (MicrosoftStoreDebug-ARM64)
-        if: github.ref == 'refs/heads/develop'
-        uses: actions/download-artifact@v8
-        with:
-          name: MicrosoftStoreDebug-ARM64
-          path: Output
-
       - name: Create release body file
         run: |
           $checksums = Get-ChildItem -Path "Output\" -Recurse -File
@@ -317,12 +226,6 @@ jobs:
             # Output/ShareX-${{ env.APP_VERSION }}-portable-arm64.zip
             Output/ShareX-${{ env.APP_VERSION }}-debug-x64.zip
             Output/ShareX-${{ env.APP_VERSION }}-debug-arm64.zip
-            Output/ShareX-${{ env.APP_VERSION }}-Steam-x64.zip
-            # Output/ShareX-${{ env.APP_VERSION }}-Steam-arm64.zip
-            Output/ShareX-${{ env.APP_VERSION }}-MicrosoftStore-x64.appx
-            Output/ShareX-${{ env.APP_VERSION }}-MicrosoftStore-arm64.appx
-            Output/ShareX-${{ env.APP_VERSION }}-MicrosoftStore-debug-x64.appx
-            Output/ShareX-${{ env.APP_VERSION }}-MicrosoftStore-debug-arm64.appx
 
       - name: Release (Stable)
         env:
