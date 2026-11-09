@@ -862,43 +862,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Debug</value>
   </data>
-  <data name="tsbDonate.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbDonate.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDonate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 20</value>
-  </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donate...</value>
-  </data>
-  <data name="tsbX.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbX.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbX.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 20</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Follow @ShareX...</value>
-  </data>
-  <data name="tsbDiscord.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="tsbDiscord.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
-  <data name="tsbDiscord.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 20</value>
-  </data>
-  <data name="tsbDiscord.Text" xml:space="preserve">
-    <value>Discord...</value>
-    <comment>@Invariant</comment>
-  </data>
   <data name="tsbAbout.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -2061,7 +2024,7 @@
     <value>879, 531</value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>650, 500</value>
+    <value>650, 440</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
@@ -2629,24 +2592,6 @@
   </data>
   <data name="&gt;&gt;tsmiTestURLSharing.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbDonate.Name" xml:space="preserve">
-    <value>tsbDonate</value>
-  </data>
-  <data name="&gt;&gt;tsbDonate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbX.Name" xml:space="preserve">
-    <value>tsbX</value>
-  </data>
-  <data name="&gt;&gt;tsbX.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tsbDiscord.Name" xml:space="preserve">
-    <value>tsbDiscord</value>
-  </data>
-  <data name="&gt;&gt;tsbDiscord.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tsbAbout.Name" xml:space="preserve">
     <value>tsbAbout</value>

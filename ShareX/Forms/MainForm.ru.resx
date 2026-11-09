@@ -564,9 +564,6 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>О программе...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Пожертвовать...</value>
-  </data>
   <data name="tsmiUploadText.Text" xml:space="preserve">
     <value>Загрузить текст...</value>
   </data>
@@ -746,9 +743,6 @@
   </data>
   <data name="cHotkey.HeaderText" xml:space="preserve">
     <value>Клавиши</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Читать @ShareX...</value>
   </data>
   <data name="tsmiMetadata.Text" xml:space="preserve">
     <value>Метаданные...</value>

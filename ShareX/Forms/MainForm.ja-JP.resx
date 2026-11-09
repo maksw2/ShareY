@@ -306,9 +306,6 @@
   <data name="tsmiTestURLSharing.Text" xml:space="preserve">
     <value>URL共有のテスト</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>寄付する...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>ShareX について...</value>
   </data>
@@ -719,9 +716,6 @@
   </data>
   <data name="tsmiTrayBorderlessWindow.Text" xml:space="preserve">
     <value>ボーダーレスウィンドウ...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>@ShareXをフォロー...</value>
   </data>
   <data name="cHotkey.HeaderText" xml:space="preserve">
     <value>ホットキー</value>

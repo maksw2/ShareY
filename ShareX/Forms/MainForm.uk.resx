@@ -330,9 +330,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Налагодження</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Пожертвувати...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Про програму...</value>
   </data>
@@ -746,9 +743,6 @@
   </data>
   <data name="tsmiAddImageEffects.Text" xml:space="preserve">
     <value>Додати ефекти зображення...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Слідкуйте за @ShareX...</value>
   </data>
   <data name="tsmiMetadata.Text" xml:space="preserve">
     <value>Метадані...</value>

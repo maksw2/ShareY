@@ -129,9 +129,6 @@
             tsmiTestFileUpload = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTestURLShortener = new System.Windows.Forms.ToolStripMenuItem();
             tsmiTestURLSharing = new System.Windows.Forms.ToolStripMenuItem();
-            tsbDonate = new System.Windows.Forms.ToolStripButton();
-            tsbX = new System.Windows.Forms.ToolStripButton();
-            tsbDiscord = new System.Windows.Forms.ToolStripButton();
             tsbAbout = new System.Windows.Forms.ToolStripButton();
             cmsTaskInfo = new System.Windows.Forms.ContextMenuStrip(components);
             tsmiShowErrors = new System.Windows.Forms.ToolStripMenuItem();
@@ -389,7 +386,7 @@
             resources.ApplyResources(tsMain, "tsMain");
             tsMain.DrawCustomBorder = true;
             tsMain.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsddbCapture, tsddbUpload, tsddbWorkflows, tsddbTools, tssMain1, tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsddbDestinations, tssMain2, tsbApplicationSettings, tsbTaskSettings, tsbHotkeySettings, tsbDestinationSettings, tsbCustomUploaderSettings, tssMain3, tsbScreenshotsFolder, tsbHistory, tsbImageHistory, tssMain4, tsddbDebug, tsbDonate, tsbX, tsbDiscord, tsbAbout });
+            tsMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { tsddbCapture, tsddbUpload, tsddbWorkflows, tsddbTools, tssMain1, tsddbAfterCaptureTasks, tsddbAfterUploadTasks, tsddbDestinations, tssMain2, tsbApplicationSettings, tsbTaskSettings, tsbHotkeySettings, tsbDestinationSettings, tsbCustomUploaderSettings, tssMain3, tsbScreenshotsFolder, tsbHistory, tsbImageHistory, tssMain4, tsddbDebug, tsbAbout });
             tsMain.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.VerticalStackWithOverflow;
             tsMain.Name = "tsMain";
             tsMain.ShowItemToolTips = false;
@@ -964,27 +961,6 @@
             tsmiTestURLSharing.Name = "tsmiTestURLSharing";
             resources.ApplyResources(tsmiTestURLSharing, "tsmiTestURLSharing");
             tsmiTestURLSharing.Click += tsmiTestURLSharing_Click;
-            // 
-            // tsbDonate
-            // 
-            tsbDonate.Image = Properties.Resources.heart;
-            resources.ApplyResources(tsbDonate, "tsbDonate");
-            tsbDonate.Name = "tsbDonate";
-            tsbDonate.Click += tsbDonate_Click;
-            // 
-            // tsbX
-            // 
-            tsbX.Image = Properties.Resources.X_black;
-            resources.ApplyResources(tsbX, "tsbX");
-            tsbX.Name = "tsbX";
-            tsbX.Click += tsbX_Click;
-            // 
-            // tsbDiscord
-            // 
-            tsbDiscord.Image = Properties.Resources.Discord_black;
-            resources.ApplyResources(tsbDiscord, "tsbDiscord");
-            tsbDiscord.Name = "tsbDiscord";
-            tsbDiscord.Click += tsbDiscord_Click;
             // 
             // tsbAbout
             // 
@@ -2344,9 +2320,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesHorizontally;
         private System.Windows.Forms.ToolStripMenuItem tsmiCombineImagesVertically;
         private System.Windows.Forms.ToolStripMenuItem tsmiBingVisualSearch;
-        private System.Windows.Forms.ToolStripButton tsbDiscord;
         private System.Windows.Forms.ToolStripSeparator tssMain3;
-        private System.Windows.Forms.ToolStripButton tsbDonate;
         private System.Windows.Forms.ToolStripMenuItem tsmiBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayBorderlessWindow;
         private System.Windows.Forms.ToolStripMenuItem tsmiImageViewer;
@@ -2366,7 +2340,6 @@
         private System.Windows.Forms.DataGridView dgvHotkeys;
         internal System.Windows.Forms.Panel pHotkeys;
         private HelpersLib.MyListView lvUploads;
-        private System.Windows.Forms.ToolStripButton tsbX;
         private System.Windows.Forms.ToolStripMenuItem tsmiGoogleLens;
         private System.Windows.Forms.ToolStripMenuItem tsmiMetadata;
         private System.Windows.Forms.ToolStripMenuItem tsmiTrayMetadata;

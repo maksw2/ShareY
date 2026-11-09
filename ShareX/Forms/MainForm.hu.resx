@@ -606,12 +606,6 @@
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>Egyéni feltöltő beállítások...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Adományozás...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>@ShareX követése...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Névjegy...</value>
   </data>

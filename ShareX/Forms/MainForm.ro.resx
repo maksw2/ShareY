@@ -297,9 +297,6 @@
   <data name="tsmiTrayIndexFolder.Text" xml:space="preserve">
     <value>Indexator de foldere...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donați...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>Descărcare</value>
   </data>
@@ -740,9 +737,6 @@
   </data>
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>Setări încărcător personalizat...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Urmărește @ShareX...</value>
   </data>
   <data name="tsmiBeautifyImage.Text" xml:space="preserve">
     <value>Îmbunătățește imaginea...</value>

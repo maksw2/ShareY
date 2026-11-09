@@ -366,9 +366,6 @@
   <data name="tsmiInspectWindow.Text" xml:space="preserve">
     <value>בדוק חלון...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>תרומה...</value>
-  </data>
   <data name="tsmiTrayColorPicker.Text" xml:space="preserve">
     <value>בוחר הצבעים...</value>
   </data>
@@ -731,9 +728,6 @@
   </data>
   <data name="tsmiImageBeautifier.Text" xml:space="preserve">
     <value>מייפה תמונות...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>עקוב אחר @ShareX...</value>
   </data>
   <data name="tsmiBeautifyImage.Text" xml:space="preserve">
     <value>לייפות תמונה...</value>

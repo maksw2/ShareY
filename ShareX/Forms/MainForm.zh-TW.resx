@@ -596,9 +596,6 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>圖片縮圖工具...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>捐獻...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>關於...</value>
   </data>
@@ -736,9 +733,6 @@
   </data>
   <data name="tsmiHashChecker.Text" xml:space="preserve">
     <value>雜湊檢查...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>追蹤 @ShareX...</value>
   </data>
   <data name="tsmiGoogleLens.Text" xml:space="preserve">
     <value>Google 智慧鏡頭...</value>

@@ -546,9 +546,6 @@
   <data name="tsmiImageCombiner.Text" xml:space="preserve">
     <value>이미지 취합기...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>기부...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>정보...</value>
   </data>
@@ -707,9 +704,6 @@
   </data>
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>사용자 지정 업로더 설정...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>@ShareX 팔로우...</value>
   </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>이미지 크기</value>

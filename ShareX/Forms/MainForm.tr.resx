@@ -561,9 +561,6 @@
   <data name="tsmiImageThumbnailer.Text" xml:space="preserve">
     <value>Küçük resim yapıcı...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Bağış yap...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Hakkında...</value>
   </data>
@@ -755,9 +752,6 @@
   </data>
   <data name="cHotkey.HeaderText" xml:space="preserve">
     <value>Kısayol tuşu</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Bizi takip et: @ShareX...</value>
   </data>
   <data name="tsmiBeautifyImage.Text" xml:space="preserve">
     <value>Resmi güzelleştir...</value>

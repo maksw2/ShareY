@@ -549,9 +549,6 @@
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Über...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Spenden...</value>
-  </data>
   <data name="tsmiShortenURL.Text" xml:space="preserve">
     <value>URL kürzen...</value>
   </data>
@@ -737,9 +734,6 @@
   </data>
   <data name="tsmiInspectWindow.Text" xml:space="preserve">
     <value>Fenster überprüfen...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Folge @ShareX...</value>
   </data>
   <data name="cHotkey.HeaderText" xml:space="preserve">
     <value>Tastenkürzel</value>

@@ -375,9 +375,6 @@
   <data name="tsddbUpload.Text" xml:space="preserve">
     <value>Prześlij</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Dotacja...</value>
-  </data>
   <data name="tsbHistory.Text" xml:space="preserve">
     <value>Historia...</value>
   </data>
@@ -752,9 +749,6 @@
   </data>
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>Ustawienia własnego modułu wysyłania...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Obserwuj @ShareX...</value>
   </data>
   <data name="tsmiAnalyzeImage.Text" xml:space="preserve">
     <value>Analizuj obraz...</value>

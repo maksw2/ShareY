@@ -558,9 +558,6 @@
   <data name="tsmiTrayShortenURL.Text" xml:space="preserve">
     <value>Verkort URL...</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Doneer...</value>
-  </data>
   <data name="tsmiShowCursor.Text" xml:space="preserve">
     <value>Laat cursor zien</value>
   </data>
@@ -653,9 +650,6 @@
   </data>
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>Aangepaste uploadenerinstellingen...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>@ShareX volgen...</value>
   </data>
   <data name="tsmiCopyImageDimensions.Text" xml:space="preserve">
     <value>Afbeelding dimensions</value>

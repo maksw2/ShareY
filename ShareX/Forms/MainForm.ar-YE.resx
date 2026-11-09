@@ -234,9 +234,6 @@
   <data name="tsmiTrayToggleHotkeys.Text" xml:space="preserve">
     <value>تعطيل الاختصارات</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>تبرع...</value>
-  </data>
   <data name="tsmiDownloadSelectedURL.Text" xml:space="preserve">
     <value>تنزيل</value>
   </data>
@@ -737,9 +734,6 @@
   </data>
   <data name="tsmiBingVisualSearch.Text" xml:space="preserve">
     <value>بحث الصور باستخدام Bing...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>تابعنا على X...</value>
   </data>
   <data name="tsmiOpenURL.Text" xml:space="preserve">
     <value>عنوان URL</value>

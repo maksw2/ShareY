@@ -226,12 +226,6 @@ namespace ShareX
                 tsmiShareSelectedURL.Visible = false;
             }
 
-            // TODO: Translate
-#if STEAM
-            tsbDonate.Text = "ShareX website...";
-            tsbDonate.Image = Resources.globe;
-#endif
-
             HandleCreated += MainForm_HandleCreated;
         }
 
@@ -857,9 +851,6 @@ namespace ShareX
             scMain.SplitterLineColor = ShareXResources.Theme.BorderColor;
             ShareXResources.ApplyCustomThemeToControl(dgvHotkeys);
             dgvHotkeys.BackgroundColor = ShareXResources.Theme.BackgroundColor;
-
-            tsbX.Image = ShareXResources.IsDarkTheme ? Resources.X_white : Resources.X_black;
-            tsbDiscord.Image = ShareXResources.IsDarkTheme ? Resources.Discord_white : Resources.Discord_black;
 
             tsmiQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
             tsmiTrayQRCode.Image = TaskHelpers.FindMenuIcon(HotkeyType.QRCode);
@@ -1955,25 +1946,6 @@ namespace ShareX
         private void tsmiTestURLSharing_Click(object sender, EventArgs e)
         {
             UploadManager.ShareURL(Links.Website);
-        }
-
-        private void tsbDonate_Click(object sender, EventArgs e)
-        {
-#if STEAM
-            URLHelpers.OpenURL(Links.GitHub);
-#else
-            URLHelpers.OpenURL(Links.Donate);
-#endif
-        }
-
-        private void tsbX_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.XFollow);
-        }
-
-        private void tsbDiscord_Click(object sender, EventArgs e)
-        {
-            URLHelpers.OpenURL(Links.Discord);
         }
 
         private void tsbAbout_Click(object sender, EventArgs e)

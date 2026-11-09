@@ -303,9 +303,6 @@
   <data name="tsddbDebug.Text" xml:space="preserve">
     <value>Depurar</value>
   </data>
-  <data name="tsbDonate.Text" xml:space="preserve">
-    <value>Donar...</value>
-  </data>
   <data name="tsbAbout.Text" xml:space="preserve">
     <value>Acerca de...</value>
   </data>
@@ -755,9 +752,6 @@
   </data>
   <data name="tsbCustomUploaderSettings.Text" xml:space="preserve">
     <value>Configuración del cargador personalizado...</value>
-  </data>
-  <data name="tsbX.Text" xml:space="preserve">
-    <value>Seguir a @ShareX...</value>
   </data>
   <data name="tsmiAnalyzeImage.Text" xml:space="preserve">
     <value>Analizar imagen...</value>
