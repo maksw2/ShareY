@@ -936,6 +936,15 @@ namespace ShareX.ScreenCaptureLib
 
         private void DrawBackground(Graphics g)
         {
+            if (!IsEditorMode && CanvasRectangle.Location == PointF.Empty &&
+                CanvasRectangle.Width == backgroundBrush.Image.Width && CanvasRectangle.Height == backgroundBrush.Image.Height)
+            {
+                g.CompositingMode = CompositingMode.SourceCopy;
+                g.DrawImageUnscaled(backgroundBrush.Image, 0, 0);
+                g.CompositingMode = CompositingMode.SourceOver;
+                return;
+            }
+
             using (GraphicsQualityManager quality = new GraphicsQualityManager(g, false))
             {
                 g.CompositingMode = CompositingMode.SourceCopy;
