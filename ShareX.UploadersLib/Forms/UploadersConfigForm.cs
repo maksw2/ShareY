@@ -45,6 +45,7 @@ namespace ShareX.UploadersLib
         public UploadersConfig Config { get; private set; }
 
         private ImageList uploadersImageList;
+        internal TabPage tpImgFish;
 
         private UploadersConfigForm(UploadersConfig config)
         {
@@ -82,6 +83,10 @@ namespace ShareX.UploadersLib
             {
                 Text += " - " + Config.FilePath;
             }
+
+            tpImgFish = new TabPage("img.fish") { Name = "tpImgFish" };
+            tpImgFish.Controls.Add(new PropertyGrid { Dock = DockStyle.Fill, ToolbarVisible = false, SelectedObject = Config.ImgFishSettings });
+            tcFileUploaders.Controls.Add(tpImgFish);
 
             AddIconToTabs();
 

@@ -150,6 +150,8 @@ namespace ShareX.UploadersLib
 
         #region File uploaders
 
+        public ImgFishSettings ImgFishSettings { get; set; } = new ImgFishSettings();
+
         #region Dropbox
 
         public OAuth2Info DropboxOAuth2Info { get; set; } = null;
