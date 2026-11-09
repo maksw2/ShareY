@@ -213,6 +213,7 @@ namespace ShareX.Setup
         private static void CompileSetup()
         {
             CompileISSFile("ShareX-setup.iss");
+            if (!File.Exists(SetupPath)) throw new FileNotFoundException("Setup output is missing.", SetupPath);
             CreateChecksumFile(SetupPath);
         }
 
@@ -235,13 +236,14 @@ namespace ShareX.Setup
                     process.StartInfo = psi;
                     process.Start();
                     process.WaitForExit();
+                    if (process.ExitCode != 0) throw new InvalidOperationException($"Inno Setup failed with exit code {process.ExitCode}.");
                 }
 
                 Console.WriteLine("Setup file compiled: " + fileName);
             }
             else
             {
-                Console.WriteLine("InnoSetup compiler is missing: " + InnoSetupCompilerPath);
+                throw new FileNotFoundException("Inno Setup compiler is missing.", InnoSetupCompilerPath);
             }
         }
 

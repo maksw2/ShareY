@@ -121,7 +121,7 @@
     <value>Erweitert</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Anwendungseinstellungen</value>
+    <value>ShareY - Anwendungseinstellungen</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>
@@ -142,7 +142,7 @@
     <value>Puffergröße:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX-Einstellungsordner:</value>
+    <value>ShareY-Einstellungsordner:</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integration</value>
@@ -166,7 +166,7 @@
     <value>Beim Start in den Infobereich/Tray minimieren</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>ShareX im "Senden an"-Menü anzeigen</value>
+    <value>ShareY im "Senden an"-Menü anzeigen</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Position des Hauptfensters merken</value>
@@ -253,10 +253,10 @@
     <value>Sprache:</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>"In-App" in Steam anzeigen, während ShareX geöffnet ist</value>
+    <value>"In-App" in Steam anzeigen, während ShareY geöffnet ist</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>"Mit ShareX hochladen"-Eintrag im Kontextmenü anzeigen</value>
+    <value>"Mit ShareY hochladen"-Eintrag im Kontextmenü anzeigen</value>
   </data>
   <data name="tpUpload.Text" xml:space="preserve">
     <value>Upload</value>
@@ -301,10 +301,10 @@
     <value>Aktion bei Linksklick auf Tray-Symbol:</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>ShareX Chrome-Erweiterung installieren...</value>
+    <value>ShareY Chrome-Erweiterung installieren...</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>ShareX Firefox-Erweiterung installieren...</value>
+    <value>ShareY Firefox-Erweiterung installieren...</value>
   </data>
   <data name="btnResetSettings.Text" xml:space="preserve">
     <value>Einstellungen zurücksetzen...</value>
@@ -325,10 +325,10 @@
     <value>Entwicklungsversion installieren...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>"Mit ShareX bearbeiten"-Eintrag im Kontextmenü anzeigen</value>
+    <value>"Mit ShareY bearbeiten"-Eintrag im Kontextmenü anzeigen</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Weißes ShareX-Icon verwenden</value>
+    <value>Weißes ShareY-Icon verwenden</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Übernehmen</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX はシステムトレイに最小化されています。</value>
+    <value>ShareY はシステムトレイに最小化されています。</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>残り時間: {0}s ({1}%) 合計: {2}</value>
@@ -169,14 +169,14 @@
     <value>最前面表示</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>最新版のShareXです！</value>
+    <value>最新版のShareYです！</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新履歴</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>言語の変更はShareX の再起動後に反映されます。
-ShareX を再起動しますか？</value>
+    <value>言語の変更はShareY の再起動後に反映されます。
+ShareY を再起動しますか？</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>中国語（繁体字）</value>
@@ -206,7 +206,7 @@ ShareX を再起動しますか？</value>
     <value>ホットキーを入力...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Windows開始時に ShareX を起動</value>
+    <value>Windows開始時に ShareY を起動</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>ホットキーを無効にする</value>
@@ -222,7 +222,7 @@ ShareX を再起動しますか？</value>
 「いいえ」で、これを中止し、自動アップロードを無効化します。</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>ShareX の用意する FFmpeg は、64ビットOSにしか対応していません。</value>
+    <value>ShareY の用意する FFmpeg は、64ビットOSにしか対応していません。</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>アップロード中</value>
@@ -246,7 +246,7 @@ ShareX を再起動しますか？</value>
     <value>共有 URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>設定を反映するには、Steam から ShareX を開きなおしてください。</value>
+    <value>設定を反映するには、Steam から ShareY を開きなおしてください。</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>ダウンロード後にアップロードするファイルのあるURL</value>
@@ -267,7 +267,7 @@ ShareX を再起動しますか？</value>
     <value>X: {0}, Y: {1}, 幅: {2}, 高さ: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>ShareX の設定を初期化しますか？</value>
+    <value>ShareY の設定を初期化しますか？</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} を {1} にアップロードしようとしています。別のアップロード先を選択することもできます。</value>
@@ -357,7 +357,7 @@ ShareX を再起動しますか？</value>
     <value>プロジェクト ページ</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX で画像編集</value>
+    <value>ShareY で画像編集</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>画像保存フォルダー パスの選択</value>
@@ -372,7 +372,7 @@ ShareX を再起動しますか？</value>
     <value>エラー</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>アンチウィルスソフトやWindowsのフォルダアクセス権限により、ShareX の使用が阻止されている可能性があります。</value>
+    <value>アンチウィルスソフトやWindowsのフォルダアクセス権限により、ShareY の使用が阻止されている可能性があります。</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>すべてのクイックタスクを既定に戻しますか？</value>
@@ -429,7 +429,7 @@ ShareX を再起動しますか？</value>
     <value>閉じる</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX の再起動が必要です。
+    <value>ShareY の再起動が必要です。
 
 再起動しますか？</value>
   </data>
@@ -449,7 +449,7 @@ ShareX を再起動しますか？</value>
     <value>エラー</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>ShareX  個人フォルダー パスの選択</value>
+    <value>ShareY  個人フォルダー パスの選択</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>スペイン語</value>
@@ -476,7 +476,7 @@ ShareX を再起動しますか？</value>
     <value>ホットキーの設定からワークフローを追加できます...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - 確認</value>
+    <value>ShareY - 確認</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>ダウンロード中</value>
@@ -518,19 +518,19 @@ ShareX を再起動しますか？</value>
     <value>FFmpeg の映像とオーディオ両方を同時に None にはできません。</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>画面録画中はShareXを閉じることができません。
+    <value>画面録画中はShareYを閉じることができません。
 
 現在の画面録画を中止しますか？</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>ShareX でアップロード</value>
+    <value>ShareY でアップロード</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>ホットキーを無効にしました。</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>ファイル「{0}」にアクセスできません。
-個人フォルダー パスを変更するには、ShareX を管理者で実行してください。</value>
+個人フォルダー パスを変更するには、ShareY を管理者で実行してください。</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>スタートアップの設定はタスクマネージャーで無効にされています</value>
@@ -571,7 +571,7 @@ ShareX を再起動しますか？</value>
 
 {1}
 
-別のホットキーを選択するか、競合するアプリケーションを終了し、ShareXを再起動してください。</value>
+別のホットキーを選択するか、競合するアプリケーションを終了し、ShareYを再起動してください。</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>クライアント Rectangle</value>
@@ -627,7 +627,7 @@ ShareX を再起動しますか？</value>
     <value>スクリーンショットを{0}秒後に起動する</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>ShareX 起動時に開く</value>
+    <value>ShareY 起動時に開く</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>お使いのシステムの管理者がアップロード機能を無効にしています。</value>

@@ -265,7 +265,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - File downloader</value>
+    <value>ShareY - File downloader</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>DownloaderForm</value>

@@ -157,8 +157,8 @@
     <value>변경사항</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>언어 설정을 변경하려면 ShareX를 재시작해야 합니다.
-ShareX를 재시작할까요?</value>
+    <value>언어 설정을 변경하려면 ShareY를 재시작해야 합니다.
+ShareY를 재시작할까요?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>번체 중국어</value>
@@ -176,7 +176,7 @@ ShareX를 재시작할까요?</value>
     <value>단축키 누르기...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>컴퓨터를 켤 때 ShareX도 실행하기</value>
+    <value>컴퓨터를 켤 때 ShareY도 실행하기</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>단축키 비활성화</value>
@@ -210,7 +210,7 @@ ShareX를 재시작할까요?</value>
     <value>URL 공유하기 ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>설정을 적용하려면 스팀에서 ShareX를 다시 실행해야 합니다.</value>
+    <value>설정을 적용하려면 스팀에서 ShareY를 다시 실행해야 합니다.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>업로드 하기 위해 다운로드 받을 URL</value>
@@ -280,7 +280,7 @@ ShareX를 재시작할까요?</value>
     <value>프로젝트 페이지</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX로 편집하기</value>
+    <value>ShareY로 편집하기</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>스크린샷 폴더 경로 선택</value>
@@ -343,7 +343,7 @@ ShareX를 재시작할까요?</value>
     <value>테마를 초기화할까요?</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>ShareX 개인 폴더 선택</value>
+    <value>ShareY 개인 폴더 선택</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>스페인어</value>
@@ -361,7 +361,7 @@ ShareX를 재시작할까요?</value>
     <value>단축키 설정에서 워크플로우 추가하기...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - 확인</value>
+    <value>ShareY - 확인</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>다운로드 중</value>
@@ -385,17 +385,17 @@ ShareX를 재시작할까요?</value>
     <value>러시아어</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>ShareX로 업로드</value>
+    <value>ShareY로 업로드</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>단축키 활성화됨.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" 파일에 접근할 수 없습니다.
-개인 폴더를 변경하려면 ShareX를 관리자 권한으로 실행해 주세요.</value>
+개인 폴더를 변경하려면 ShareY를 관리자 권한으로 실행해 주세요.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
-    <value>작업 관리자에 의해 ShareX를 시작 프로그램으로 지정할 수 없습니다</value>
+    <value>작업 관리자에 의해 ShareY를 시작 프로그램으로 지정할 수 없습니다</value>
   </data>
   <data name="AboutForm_AboutForm_Language_it_IT" xml:space="preserve">
     <value>이탈리아어</value>
@@ -419,7 +419,7 @@ ShareX를 재시작할까요?</value>
 
 {1}
 
-다른 단축키를 사용하거나 충돌하는 어플리케이션을 종료한 뒤 ShareX를 다시 실행해 주세요.</value>
+다른 단축키를 사용하거나 충돌하는 어플리케이션을 종료한 뒤 ShareY를 다시 실행해 주세요.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>베트남어</value>
@@ -454,7 +454,7 @@ ShareX를 재시작할까요?</value>
     <value>단축키 등록 실패</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>ShareX 실행 시 열기</value>
+    <value>ShareY 실행 시 열기</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>준비 중</value>
@@ -464,7 +464,7 @@ ShareX를 재시작할까요?</value>
 {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX가 시스템 트레이로 최소화되었습니다.</value>
+    <value>ShareY가 시스템 트레이로 최소화되었습니다.</value>
   </data>
   <data name="PinToScreen" xml:space="preserve">
     <value>화면에 고정</value>
@@ -479,7 +479,7 @@ ShareX를 재시작할까요?</value>
     <value>Switch to 썸네일 view</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX가 최신 상태입니다!</value>
+    <value>ShareY가 최신 상태입니다!</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>디버그 로그에 민감한 정보가 포함될 수 있습니다. 계속하시겠습니까?</value>
@@ -497,7 +497,7 @@ ShareX를 재시작할까요?</value>
     <value>클립보드 내용: 파일(개수: {0})</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>ShareX에 포함된 FFmpeg는 64비트 운영 체제만 지원합니다.</value>
+    <value>ShareY에 포함된 FFmpeg는 64비트 운영 체제만 지원합니다.</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>클립보드 내용: 텍스트(길이: {0})</value>
@@ -509,7 +509,7 @@ ShareX를 재시작할까요?</value>
     <value>프로세스 파일 이름</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>ShareX 설정을 재설정하시겠습니까?</value>
+    <value>ShareY 설정을 재설정하시겠습니까?</value>
   </data>
   <data name="FFmpegIsMissing" xml:space="preserve">
     <value>FFmpeg가 없습니다</value>
@@ -547,7 +547,7 @@ You can later disable it from "After 캡처 tasks" 메뉴.</value>
     <value>클립보드 does not contain an 이미지.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the controlled 폴더 access feature in 창s could be blocking ShareX.</value>
+    <value>Your anti-virus software or the controlled 폴더 access feature in 창s could be blocking ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
     <value>아랍어</value>
@@ -559,9 +559,9 @@ You can later disable it from "After 캡처 tasks" 메뉴.</value>
     <value>기부</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX needs to be re시작ed for the personal 폴더 changes to apply.
+    <value>ShareY needs to be re시작ed for the personal 폴더 changes to apply.
 
-Would you like to re시작 ShareX?</value>
+Would you like to re시작 ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>우크라이나어</value>
@@ -600,7 +600,7 @@ Would you like to re시작 ShareX?</value>
     <value>FFmpeg 비디오 및 오디오 소스가 둘 다 "없음"일 수 없습니다.</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while 화면 녹화 is active.
+    <value>ShareY cannot be closed while 화면 녹화 is active.
 
 Do you want to abort the active 화면 녹화?</value>
   </data>

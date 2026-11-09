@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Використовувати білу піктограму ShareX</value>
+    <value>Використовувати білу піктограму ShareY</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Встановити збірку для розробників...</value>
@@ -175,31 +175,31 @@
     <value>Увімкнути підтримку додатку для Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Встановити додаток ShareX для Firefox...</value>
+    <value>Встановити додаток ShareY для Firefox...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Додаток для Firefox</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>При відкритому ShareX, показувати „У програмі“ у Steam</value>
+    <value>При відкритому ShareY, показувати „У програмі“ у Steam</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Увімкнути підтримку розширення для Chrome</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Встановити розширення ShareX для Chrome...</value>
+    <value>Встановити розширення ShareY для Chrome...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Розширення Chrome</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Показувати кнопку „Змінити із ShareX“ у контекстному меню Провідника Windows</value>
+    <value>Показувати кнопку „Змінити із ShareY“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Показати ShareX в меню „Надіслати“</value>
+    <value>Показати ShareY в меню „Надіслати“</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Показувати кнопку „Вивантажити із ShareX“ у контекстному меню Провідника Windows</value>
+    <value>Показувати кнопку „Вивантажити із ShareY“ у контекстному меню Провідника Windows</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Інтеграція</value>
@@ -214,7 +214,7 @@
     <value>Огляд...</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Особиста тека ShareX:</value>
+    <value>Особиста тека ShareY:</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Огляд...</value>
@@ -352,7 +352,7 @@
     <value>Розширені</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX — Налаштування програми</value>
+    <value>ShareY — Налаштування програми</value>
   </data>
   <data name="lblUpdateChannel.Text" xml:space="preserve">
     <value>Канал оновлень:</value>

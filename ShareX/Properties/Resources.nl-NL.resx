@@ -142,8 +142,8 @@
     <value>Updategeschiedenis</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX moet opnieuw opgestart worden om de taal te wijzigen.
-Wil je ShareX opnieuw opstarten?</value>
+    <value>ShareY moet opnieuw opgestart worden om de taal te wijzigen.
+Wil je ShareY opnieuw opstarten?</value>
   </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL is leeg.</value>
@@ -158,7 +158,7 @@ Wil je ShareX opnieuw opstarten?</value>
     <value>Selecteer een sneltoets...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Start ShareX als Windows start</value>
+    <value>Start ShareY als Windows start</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Schakel sneltoetsen uit</value>
@@ -186,7 +186,7 @@ Klik op "Nee" om de huidige upload te annuleren en het automatisch uploaden uit 
     <value>Deel link ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Om de instellingen toe te passen moet ShareX vanuit Steam heropgestart worden.</value>
+    <value>Om de instellingen toe te passen moet ShareY vanuit Steam heropgestart worden.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL om te downloaden en dan te uploaden</value>
@@ -295,7 +295,7 @@ Ben je zeker dat je door wilt gaan?</value>
     <value>Website</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Kies de persoonlijke map voor ShareX</value>
+    <value>Kies de persoonlijke map voor ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spaans</value>
@@ -328,14 +328,14 @@ Ben je zeker dat je door wilt gaan?</value>
     <value>Russisch</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Upload met ShareX</value>
+    <value>Upload met ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Sneltoetsen uitgeschakeld.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Kan het bestand "{0}" niet benaderen.
-Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
+Voer ShareY uit als beheerder om de persoonlijke map te wijzigen.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Opstarten is uitgeschakeld in Taakbeheer</value>
@@ -357,7 +357,7 @@ Voer ShareX uit als beheerder om de persoonlijke map te wijzigen.</value>
 
 {1}
 
-Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma af en start ShareX opnieuw op.</value>
+Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma af en start ShareY opnieuw op.</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Enable_hotkeys" xml:space="preserve">
     <value>Schakel sneltoetsen in</value>
@@ -385,7 +385,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
 {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX is geminimaliseerd naar het systeemvak.</value>
+    <value>ShareY is geminimaliseerd naar het systeemvak.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
     <value>Vereenvoudigd Chinees</value>
@@ -415,7 +415,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Stay boven most</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX is bijgewerkt!</value>
+    <value>ShareY is bijgewerkt!</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Traditioneel Chinees</value>
@@ -436,7 +436,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Klembord content: Bestand (Count: {0})</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>De FFmpeg die met ShareX wordt meegeleverd ondersteunt alleen 64-bits besturingssystemen.</value>
+    <value>De FFmpeg die met ShareY wordt meegeleverd ondersteunt alleen 64-bits besturingssystemen.</value>
   </data>
   <data name="QRCodeForm_InputTextToEncode" xml:space="preserve">
     <value>Invoertekst om te coderen</value>
@@ -454,7 +454,7 @@ Gelieve een andere sneltoets te selecteren of sluit het conflicterende programma
     <value>Process bestandsnaam</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Would you like to resetten ShareX instellingen?</value>
+    <value>Would you like to resetten ShareY instellingen?</value>
   </data>
   <data name="FFmpegIsMissing" xml:space="preserve">
     <value>FFmpeg ontbreekt</value>
@@ -495,7 +495,7 @@ You can later disable it from "After opname taken" menu.</value>
     <value>Portugees (Brazilië)</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Bewerken with ShareX</value>
+    <value>Bewerken with ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Links" xml:space="preserve">
     <value>Koppelingen</value>
@@ -504,7 +504,7 @@ You can later disable it from "After opname taken" menu.</value>
     <value>Klembord does not contain an afbeelding.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the besturingselementled map access feature in Vensters could be blocking ShareX.</value>
+    <value>Your anti-virus software or the besturingselementled map access feature in Vensters could be blocking ShareY.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Resetten all quick taken to standaards?</value>
@@ -525,9 +525,9 @@ You can later disable it from "After opname taken" menu.</value>
     <value>Mexicaans-Spaans</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX needs to be restartened for the persoonlijke map changes to apply.
+    <value>ShareY needs to be restartened for the persoonlijke map changes to apply.
 
-Would you like to restarten ShareX?</value>
+Would you like to restarten ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Oekraïens</value>
@@ -551,7 +551,7 @@ Would you like to restarten ShareX?</value>
     <value>Venster styles</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Bevestiging</value>
+    <value>ShareY - Bevestiging</value>
   </data>
   <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
     <value>Optical character recognition feature is only available with Vensters version {0} or newer.</value>
@@ -578,7 +578,7 @@ Would you like to restarten ShareX?</value>
     <value>FFmpeg-video- en audiobron kunnen niet allebei "Geen" zijn.</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while scherm opname is active.
+    <value>ShareY cannot be closed while scherm opname is active.
 
 Do you want to abort the active scherm opname?</value>
   </data>
@@ -636,7 +636,7 @@ Middle klik to close</value>
     <value>Schermshot vertraging: {0}s</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Openen at ShareX startenup</value>
+    <value>Openen at ShareY startenup</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin uitgeschakeld the uploaden feature.</value>

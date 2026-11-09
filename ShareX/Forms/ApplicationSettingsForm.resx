@@ -214,10 +214,10 @@
     <value>8</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Use white ShareX icon</value>
+    <value>Use white ShareY icon</value>
   </data>
   <data name="&gt;&gt;cbUseWhiteShareXIcon.Name" xml:space="preserve">
-    <value>cbUseWhiteShareXIcon</value>
+    <value>cbUseWhiteShareYIcon</value>
   </data>
   <data name="&gt;&gt;cbUseWhiteShareXIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -934,7 +934,7 @@
     <value>3</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Install ShareX Firefox addon...</value>
+    <value>Install ShareY Firefox addon...</value>
   </data>
   <data name="&gt;&gt;btnFirefoxOpenAddonPage.Name" xml:space="preserve">
     <value>btnFirefoxOpenAddonPage</value>
@@ -988,7 +988,7 @@
     <value>0</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>While ShareX is open, show "In-App" in Steam</value>
+    <value>While ShareY is open, show "In-App" in Steam</value>
   </data>
   <data name="&gt;&gt;cbSteamShowInApp.Name" xml:space="preserve">
     <value>cbSteamShowInApp</value>
@@ -1070,7 +1070,7 @@
     <value>3</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Install ShareX Chrome extension...</value>
+    <value>Install ShareY Chrome extension...</value>
   </data>
   <data name="&gt;&gt;btnChromeOpenExtensionPage.Name" xml:space="preserve">
     <value>btnChromeOpenExtensionPage</value>
@@ -1124,10 +1124,10 @@
     <value>3</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Show "Edit with ShareX" button in Windows Explorer context menu</value>
+    <value>Show "Edit with ShareY" button in Windows Explorer context menu</value>
   </data>
   <data name="&gt;&gt;cbEditWithShareX.Name" xml:space="preserve">
-    <value>cbEditWithShareX</value>
+    <value>cbEditWithShareY</value>
   </data>
   <data name="&gt;&gt;cbEditWithShareX.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1181,7 +1181,7 @@
     <value>2</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Show ShareX in "Send to" menu</value>
+    <value>Show ShareY in "Send to" menu</value>
   </data>
   <data name="&gt;&gt;cbSendToMenu.Name" xml:space="preserve">
     <value>cbSendToMenu</value>
@@ -1211,7 +1211,7 @@
     <value>1</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Show "Upload with ShareX" button in Windows Explorer context menu</value>
+    <value>Show "Upload with ShareY" button in Windows Explorer context menu</value>
   </data>
   <data name="&gt;&gt;cbShellContextMenu.Name" xml:space="preserve">
     <value>cbShellContextMenu</value>
@@ -1453,7 +1453,7 @@
     <value>0</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX personal folder:</value>
+    <value>ShareY personal folder:</value>
   </data>
   <data name="&gt;&gt;lblPersonalFolderPath.Name" xml:space="preserve">
     <value>lblPersonalFolderPath</value>
@@ -4077,7 +4077,7 @@
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Application settings</value>
+    <value>ShareY - Application settings</value>
   </data>
   <data name="&gt;&gt;chDescription.Name" xml:space="preserve">
     <value>chDescription</value>

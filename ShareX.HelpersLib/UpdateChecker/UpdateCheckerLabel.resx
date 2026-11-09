@@ -214,7 +214,7 @@
     <value>3</value>
   </data>
   <data name="llblUpdateAvailable.Text" xml:space="preserve">
-    <value>A newer version of ShareX is available</value>
+    <value>A newer version of ShareY is available</value>
   </data>
   <data name="llblUpdateAvailable.Visible" type="System.Boolean, mscorlib">
     <value>False</value>

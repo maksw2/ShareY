@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Definições de Aplicação</value>
+    <value>ShareY - Definições de Aplicação</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Procurar...</value>
@@ -130,7 +130,7 @@
     <value>Instalar versão para programadores</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Instalar a extensão ShareX do Chrome</value>
+    <value>Instalar a extensão ShareY do Chrome</value>
   </data>
   <data name="btnClipboardFormatAdd.Text" xml:space="preserve">
     <value>Adicionar...</value>
@@ -184,7 +184,7 @@
     <value>Não abrir janela de configuração de impressão de imagens</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Mostrar botão de "Editar com ShareX" no menu de contexto do Windows</value>
+    <value>Mostrar botão de "Editar com ShareY" no menu de contexto do Windows</value>
   </data>
   <data name="cbExportHistory.Text" xml:space="preserve">
     <value>Histórico</value>
@@ -226,10 +226,10 @@
     <value>Memorizar tamanho da janela principal</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX no menu de "Enviar para"</value>
+    <value>Mostrar ShareY no menu de "Enviar para"</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar botão de "Enviar com ShareX" no menu de contexto do Windows</value>
+    <value>Mostrar botão de "Enviar com ShareY" no menu de contexto do Windows</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Mostrar ícon na bandeja do sistema</value>
@@ -238,7 +238,7 @@
     <value>Minimizar para a bandeja do sistema ao iniciar</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Enquanto ShareX estiver aberto, mostrar "In-App" na Steam</value>
+    <value>Enquanto ShareY estiver aberto, mostrar "In-App" na Steam</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Mostra progresso na barra de tarefas</value>
@@ -250,7 +250,7 @@
     <value>Usar pasta personalizada para capturas</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Usar ícon branco do ShareX</value>
+    <value>Usar ícon branco do ShareY</value>
   </data>
   <data name="chDescription.Text" xml:space="preserve">
     <value>Descrição</value>
@@ -289,7 +289,7 @@
     <value>Idioma:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Pasta raiz do ShareX:</value>
+    <value>Pasta raiz do ShareY:</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>Domínio:</value>

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX is minimized to the system tray.</value>
+    <value>ShareY is minimized to the system tray.</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="kr" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -230,7 +230,7 @@
     <value>..\Resources\heart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX is up to date!</value>
+    <value>ShareY is up to date!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Changelog</value>
@@ -242,9 +242,9 @@
     <value>..\Resources\script--minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX needs to be restarted for the language changes to apply.
+    <value>ShareY needs to be restarted for the language changes to apply.
 
-Would you like to restart ShareX?</value>
+Would you like to restart ShareY?</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>The debug log can contain sensitive information. Are you sure you want to proceed?</value>
@@ -294,7 +294,7 @@ Middle click to close</value>
     <value>Select a hotkey...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Run ShareX when Windows starts</value>
+    <value>Run ShareY when Windows starts</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Disable hotkeys</value>
@@ -361,7 +361,7 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
     <value>..\Resources\globe--arrow.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg that comes with ShareX only supports 64-bit operating systems.</value>
+    <value>FFmpeg that comes with ShareY only supports 64-bit operating systems.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Uploading</value>
@@ -394,7 +394,7 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
     <value>..\Resources\globe-share.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>For settings to take effect ShareX needs to be reopened from Steam.</value>
+    <value>For settings to take effect ShareY needs to be reopened from Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL to download and upload</value>
@@ -421,7 +421,7 @@ Press 'No' to cancel the current upload and disable screenshot auto uploading.</
     <value>X: {0}, Y: {1}, Width: {2}, Height: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Would you like to reset ShareX settings?</value>
+    <value>Would you like to reset ShareY settings?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} is about to be uploaded to {1}. You may choose a different destination.</value>
@@ -521,7 +521,7 @@ Are you sure you want to continue?</value>
     <value>..\Resources\ro.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Choose ShareX personal folder path</value>
+    <value>Choose ShareY personal folder path</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ro" xml:space="preserve">
     <value>Romanian</value>
@@ -595,7 +595,7 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>..\Resources\pin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Edit with ShareX</value>
+    <value>Edit with ShareY</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Choose screenshots folder path</value>
@@ -628,7 +628,7 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>..\Resources\de.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the controlled folder access feature in Windows could be blocking ShareX.</value>
+    <value>Your anti-virus software or the controlled folder access feature in Windows could be blocking ShareY.</value>
   </data>
   <data name="keyboard__plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\keyboard--plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -760,9 +760,9 @@ You can later disable it from "After capture tasks" menu.</value>
     <value>Close</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX needs to be restarted for the personal folder changes to apply.
+    <value>ShareY needs to be restarted for the personal folder changes to apply.
 
-Would you like to restart ShareX?</value>
+Would you like to restart ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Website</value>
@@ -843,7 +843,7 @@ Would you like to restart ShareX?</value>
     <value>You can add workflows from hotkey settings...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Confirmation</value>
+    <value>ShareY - Confirmation</value>
   </data>
   <data name="document_break" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\document-break.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -906,12 +906,12 @@ Would you like to restart ShareX?</value>
     <value>..\Resources\layer-shape.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while screen recording is active.
+    <value>ShareY cannot be closed while screen recording is active.
 
 Do you want to abort the active screen recording?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Upload with ShareX</value>
+    <value>Upload with ShareY</value>
   </data>
   <data name="inbox" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inbox.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -921,7 +921,7 @@ Do you want to abort the active screen recording?</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Can't access to "{0}" file.
-Please run ShareX as administrator to change personal folder path.</value>
+Please run ShareY as administrator to change personal folder path.</value>
   </data>
   <data name="barcode_2d" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\barcode-2d.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -986,7 +986,7 @@ here</value>
 
 {1}
 
-Please select a different hotkey or quit the conflicting application and reopen ShareX.</value>
+Please select a different hotkey or quit the conflicting application and reopen ShareY.</value>
   </data>
   <data name="color" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\color.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -1118,7 +1118,7 @@ Please select a different hotkey or quit the conflicting application and reopen 
     <value>Screenshot delay: {0}s</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Open at ShareX startup</value>
+    <value>Open at ShareY startup</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the upload feature.</value>

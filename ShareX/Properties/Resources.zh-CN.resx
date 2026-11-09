@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX 已最小化到系统托盘。</value>
+    <value>ShareY 已最小化到系统托盘。</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>剩余时间：{0}秒 ({1}%) 总计：{2}</value>
@@ -169,14 +169,14 @@
     <value>保持在其他窗口前端</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX 已为最新版！</value>
+    <value>ShareY 已为最新版！</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>更新日志</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>语言更改需要重新启动 ShareX。
-你要重新启动 ShareX ？</value>
+    <value>语言更改需要重新启动 ShareY。
+你要重新启动 ShareY ？</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>繁体中文</value>
@@ -206,7 +206,7 @@
     <value>选择一个快捷键...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Windows 启动时运行 ShareX</value>
+    <value>Windows 启动时运行 ShareY</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>禁用快捷键</value>
@@ -222,7 +222,7 @@
 按"否",   取消当前文件的上传并禁用自动截图上传。</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>ShareX 内置的 FFmpeg 仅支持 64 位操作系统。</value>
+    <value>ShareY 内置的 FFmpeg 仅支持 64 位操作系统。</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>上传中</value>
@@ -246,7 +246,7 @@
     <value>分享 URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>为使设置生效，ShareX 需从 Steam 重新启动。</value>
+    <value>为使设置生效，ShareY 需从 Steam 重新启动。</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>下载和上传 URL</value>
@@ -267,7 +267,7 @@
     <value>X: {0}，Y: {1}， 宽: {2}，高: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>要重置 ShareX 设置项吗？</value>
+    <value>要重置 ShareY 设置项吗？</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} 将上传至 {1}，您可以选择不同的上传目标。</value>
@@ -357,7 +357,7 @@
     <value>项目页面</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>使用ShareX编辑</value>
+    <value>使用ShareY编辑</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>选择截图文件夹路径</value>
@@ -372,7 +372,7 @@
     <value>错误</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>您的防病毒软件或者 Windows 中的“受控制文件夹的访问”功能可能拦截了 ShareX。</value>
+    <value>您的防病毒软件或者 Windows 中的“受控制文件夹的访问”功能可能拦截了 ShareY。</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>重置所有快速任务为默认值？</value>
@@ -432,7 +432,7 @@
     <value>关闭</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX 需要重启以应用个人文件夹更改。
+    <value>ShareY 需要重启以应用个人文件夹更改。
 
 要重启吗？</value>
   </data>
@@ -452,7 +452,7 @@
     <value>错误</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>选择 ShareX 个人文件夹路径</value>
+    <value>选择 ShareY 个人文件夹路径</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>西班牙语</value>
@@ -479,7 +479,7 @@
     <value>您可以从快捷键设置添加快捷动作...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - 确认</value>
+    <value>ShareY - 确认</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>下载中</value>
@@ -521,19 +521,19 @@
     <value>FFmpeg 音频和视频源不能同时设为“无”。</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>屏幕录制时无法关闭 ShareX。
+    <value>屏幕录制时无法关闭 ShareY。
 
 是否要取消当前的屏幕录制？</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>使用 ShareX 上传</value>
+    <value>使用 ShareY 上传</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>快捷键已禁用。</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>无法访问 "{0}" 文件.
-请以管理员权限运行 ShareX 以更改个人文件夹路径。</value>
+请以管理员权限运行 ShareY 以更改个人文件夹路径。</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>开机启动项已被任务管理器禁用</value>
@@ -574,7 +574,7 @@
 
 {1}
 
-请选择一个不同的快捷键，或退出冲突的应用程序，并重新启动ShareX。</value>
+请选择一个不同的快捷键，或退出冲突的应用程序，并重新启动ShareY。</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>客户端矩形区域</value>
@@ -630,7 +630,7 @@
     <value>截图倒计时：{0} 秒</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>ShareX 启动时打开</value>
+    <value>ShareY 启动时打开</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>您的系统管理员禁止了上传功能。</value>

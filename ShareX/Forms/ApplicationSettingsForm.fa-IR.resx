@@ -221,7 +221,7 @@
     <value>افزونه فایرفاکس را فعال کن</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>نصب افزونه ShareX فایرفاکس ...</value>
+    <value>نصب افزونه ShareY فایرفاکس ...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>افزونه فایرفاکس</value>
@@ -272,7 +272,7 @@
     <value>113, 13</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>پوشه شخصی ShareX :</value>
+    <value>پوشه شخصی ShareY :</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>انتخاب ...</value>
@@ -461,7 +461,7 @@
     <value>پیشرفته</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - تنظیمات برنامه</value>
+    <value>ShareY - تنظیمات برنامه</value>
   </data>
   <data name="lblUpdateChannel.Text" xml:space="preserve">
     <value>کانال به‌روزرسانی:</value>
@@ -470,7 +470,7 @@
     <value>بررسی خودکار به‌روزرسانی‌ها</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>هنگامی که ShareX باز است، در Steam «درون‌برنامه» نمایش داده شود</value>
+    <value>هنگامی که ShareY باز است، در Steam «درون‌برنامه» نمایش داده شود</value>
   </data>
   <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
     <value>الگوی زیرپوشه برای پنجره:</value>

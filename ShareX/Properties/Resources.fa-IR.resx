@@ -148,9 +148,9 @@
     <value>تغییرات</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX برای تغییر زبان نیاز به راه اندازی مجدد دارد.
+    <value>ShareY برای تغییر زبان نیاز به راه اندازی مجدد دارد.
 
-آیا می خواهید ShareX را مجددا راه اندازی کنید؟</value>
+آیا می خواهید ShareY را مجددا راه اندازی کنید؟</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>چینی (سنتی)</value>
@@ -171,7 +171,7 @@
     <value>کلید میانبر را انتخاب کن...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>هنگام شروع ویندوز، ShareX را اجرا کن</value>
+    <value>هنگام شروع ویندوز، ShareY را اجرا کن</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>غیرفعال کردن کلیدهای سریع</value>
@@ -207,7 +207,7 @@
     <value>پیش نمایش:</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>آیا می خواهید تنظیمات ShareX را به حالت اولیه برگردانید؟</value>
+    <value>آیا می خواهید تنظیمات ShareY را به حالت اولیه برگردانید؟</value>
   </data>
   <data name="TaskSettingsForm_UpdateWindowTitle_Task_settings" xml:space="preserve">
     <value>تنظیمات وظیفه</value>
@@ -262,7 +262,7 @@
     <value>صفحه پروزّه</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ویرایش با ShareX ...</value>
+    <value>ویرایش با ShareY ...</value>
   </data>
   <data name="TaskManager_task_UploadCompleted_Error" xml:space="preserve">
     <value>خطا</value>
@@ -313,9 +313,9 @@
     <value>بستن</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>برای تغییر پوشه شخصی ShareX نیاز به راه اندازی مجدد دارد.
+    <value>برای تغییر پوشه شخصی ShareY نیاز به راه اندازی مجدد دارد.
 
-آیا می خواهید ShareX مجدد راه اندازی شود؟</value>
+آیا می خواهید ShareY مجدد راه اندازی شود؟</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>سایت</value>
@@ -342,7 +342,7 @@
     <value>تاییدیه حذف فایل</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - تاییدیه</value>
+    <value>ShareY - تاییدیه</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>در حال دانلود</value>
@@ -366,7 +366,7 @@
     <value>روسی</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>آپلود با ShareX</value>
+    <value>آپلود با ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>کلیدهای میانبر غیرفعال شدند.</value>
@@ -435,7 +435,7 @@
 {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX در سینی سیستم کمینه شده است.</value>
+    <value>ShareY در سینی سیستم کمینه شده است.</value>
   </data>
   <data name="ClipboardFormatForm_ClipboardFormatForm_Supported_variables___0__and_other_variables_such_as__1__etc_" xml:space="preserve">
     <value>متغیرهای پشتیبانی‌شده: {0} و متغیرهای دیگر مانند {1} و غیره.</value>
@@ -459,7 +459,7 @@
     <value>Stay بالا most</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX به‌روز است!</value>
+    <value>ShareY به‌روز است!</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>گزارش اشکال‌زدایی می‌تواند شامل اطلاعات حساس باشد. آیا مطمئنید می‌خواهید ادامه دهید؟</value>
@@ -478,7 +478,7 @@
 Press 'No' to cancel the current بارگذاری and disable اسکرین‌شات auto بارگذاریing.</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg همراه ShareX فقط از سیستم‌عامل‌های ۶۴ بیتی پشتیبانی می‌کند.</value>
+    <value>FFmpeg همراه ShareY فقط از سیستم‌عامل‌های ۶۴ بیتی پشتیبانی می‌کند.</value>
   </data>
   <data name="ActionsToolbar__LockPosition" xml:space="preserve">
     <value>قفل کردن موقعیت</value>
@@ -540,7 +540,7 @@ You can later disable it from "After ضبط tasks" منو.</value>
     <value>کلیپ‌بورد does not contain an تصویر.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the controlled پوشه access feature in پنجرهs could be blocking ShareX.</value>
+    <value>Your anti-virus software or the controlled پوشه access feature in پنجرهs could be blocking ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
     <value>عربی</value>
@@ -591,7 +591,7 @@ You can later disable it from "After ضبط tasks" منو.</value>
     <value>منبع ویدئو و صدای FFmpeg نمی‌توانند هر دو «هیچ‌کدام» باشند.</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while ضبط صفحه is active.
+    <value>ShareY cannot be closed while ضبط صفحه is active.
 
 Do you want to abort the active ضبط صفحه?</value>
   </data>
@@ -615,7 +615,7 @@ Do you want to abort the active ضبط صفحه?</value>
 
 {1}
 
-Please select a different hotkey or quit the conflicting application and reباز کردن ShareX.</value>
+Please select a different hotkey or quit the conflicting application and reباز کردن ShareY.</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>مستطیل کلاینت</value>

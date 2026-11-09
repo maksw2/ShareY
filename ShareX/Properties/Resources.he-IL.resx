@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX ממוזער למגש המערכת.</value>
+    <value>ShareY ממוזער למגש המערכת.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>זמן שנותר: {0} שניות ({1}%) סך הכל: {2}</value>
@@ -169,15 +169,15 @@
     <value>הישאר הכי למעלה</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX מעודכן עם הגרסה החדשה ביותר!</value>
+    <value>ShareY מעודכן עם הגרסה החדשה ביותר!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>יומן שינויים</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>יש להפעיל מחדש את ShareX כדי ששינויי השפה יחולו.
+    <value>יש להפעיל מחדש את ShareY כדי ששינויי השפה יחולו.
 
-האם תרצה להפעיל מחדש את ShareX?</value>
+האם תרצה להפעיל מחדש את ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>סינית מסורתית</value>
@@ -207,7 +207,7 @@
     <value>בחר מקש קיצור...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>הפעל את ShareX בעת עליית Windows</value>
+    <value>הפעל את ShareY בעת עליית Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>השבת מקשי קיצור</value>
@@ -223,7 +223,7 @@
 לחץ על 'לא' כדי לבטל את ההעלאה הנוכחית ולהשבית את ההעלאה האוטומטית של צילום מסך.</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg שמגיע עם ShareX תומך רק במערכות הפעלה של 64 סיביות.</value>
+    <value>FFmpeg שמגיע עם ShareY תומך רק במערכות הפעלה של 64 סיביות.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>מעלה</value>
@@ -247,7 +247,7 @@
     <value>שתף קישור ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>כדי שההגדרות ייכנסו לתוקף, יש לפתוח מחדש את ShareX מ-Steam.</value>
+    <value>כדי שההגדרות ייכנסו לתוקף, יש לפתוח מחדש את ShareY מ-Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>קישור להורדה והעלאה</value>
@@ -268,7 +268,7 @@
     <value>X: {0}, Y: {1}, רוחב: {2}, גובה: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>האם תרצה לאפס את הגדרות ShareX?</value>
+    <value>האם תרצה לאפס את הגדרות ShareY?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} יועלה אל {1}. ניתן לבחור יעד אחר.</value>
@@ -358,7 +358,7 @@
     <value>עמוד פרויקט</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ערוך עם ShareX</value>
+    <value>ערוך עם ShareY</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>בחר נתיב תיקיית צילומי מסך</value>
@@ -373,7 +373,7 @@
     <value>שגיאה</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>תוכנת האנטי-וירוס שלך או אפשרות גישה מבוקרת לתיקיות ב-Windows עלולים לחסום את ShareX.</value>
+    <value>תוכנת האנטי-וירוס שלך או אפשרות גישה מבוקרת לתיקיות ב-Windows עלולים לחסום את ShareY.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>לאפס את כל המשימות המהירות לברירות המחדל?</value>
@@ -427,9 +427,9 @@
     <value>סגור</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>יש להפעיל מחדש את ShareX כדי ששינויי התיקייה האישיים יחולו.
+    <value>יש להפעיל מחדש את ShareY כדי ששינויי התיקייה האישיים יחולו.
 
-האם תרצה להפעיל מחדש את ShareX?</value>
+האם תרצה להפעיל מחדש את ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>אתר</value>
@@ -447,7 +447,7 @@
     <value>שגיאה</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>בחר נתיב לתיקייה האישית של ShareX</value>
+    <value>בחר נתיב לתיקייה האישית של ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>ספרדית</value>
@@ -474,7 +474,7 @@
     <value>ניתן להוסיף תהליכי עבודה מהגדרות מקשי קיצור...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - אישור</value>
+    <value>ShareY - אישור</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>מוריד</value>
@@ -516,19 +516,19 @@
     <value>מקור הווידאו והשמע של FFmpeg לא יכולים להיות שניהם "ללא".</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>לא ניתן לסגור את ShareX בזמן שהקלטת מסך פעילה.
+    <value>לא ניתן לסגור את ShareY בזמן שהקלטת מסך פעילה.
 
 האם ברצונך לבטל את הקלטת המסך הפעילה?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>העלה עם ShareX</value>
+    <value>העלה עם ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>מקשי קיצור מושבתים.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>לא יכול לגשת לקובץ "{0}".
-אנא הפעל את ShareX כמנהל כדי לשנות את נתיב התיקייה האישית.</value>
+אנא הפעל את ShareY כמנהל כדי לשנות את נתיב התיקייה האישית.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>האתחול הושבת במנהל המשימות</value>
@@ -569,7 +569,7 @@
 
 {1}
 
-אנא בחר מקש קיצור אחר או צא מהיישום המתנגש ופתח מחדש את ShareX.</value>
+אנא בחר מקש קיצור אחר או צא מהיישום המתנגש ופתח מחדש את ShareY.</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>מלבן לקוח</value>
@@ -625,7 +625,7 @@
     <value>השהייה בצילום מסך: {0} שניות</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>פתח עם עליית ShareX</value>
+    <value>פתח עם עליית ShareY</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>מנהל המערכת שלך השבית את תכונת ההעלאה.</value>

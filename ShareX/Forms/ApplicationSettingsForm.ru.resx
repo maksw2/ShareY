@@ -139,7 +139,7 @@
     <value>Дополнительно</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Настройки приложения</value>
+    <value>ShareY - Настройки приложения</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Прокси</value>
@@ -148,13 +148,13 @@
     <value>Редактировать меню быстрых задач...</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Показывать пункт "Загрузить с помощью ShareX" в контекстном меню проводника Windows</value>
+    <value>Показывать пункт "Загрузить с помощью ShareY" в контекстном меню проводника Windows</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Показывать ShareX в меню "Отправить"</value>
+    <value>Показывать ShareY в меню "Отправить"</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Пока ShareX открыт, показывать в Steam статус "В приложении"</value>
+    <value>Пока ShareY открыт, показывать в Steam статус "В приложении"</value>
   </data>
   <data name="btnBrowsePersonalFolderPath.Text" xml:space="preserve">
     <value>Обзор...</value>
@@ -166,7 +166,7 @@
     <value>Шаблон имени подпапок:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Персональная папка ShareX:</value>
+    <value>Персональная папка ShareY:</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Интеграция</value>
@@ -301,7 +301,7 @@
     <value>Клик левой кнопкой по иконке в трее:</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Установить дополнение ShareX для Firefox...</value>
+    <value>Установить дополнение ShareY для Firefox...</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Включить поддержку дополнения для Firefox</value>
@@ -310,7 +310,7 @@
     <value>Включить поддержку расширения для Chrome</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Установить расширение ShareX для Chrome...</value>
+    <value>Установить расширение ShareY для Chrome...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Расширение для Chrome</value>
@@ -325,13 +325,13 @@
     <value>Установить dev сборку...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Показывать пункт "Редактировать в ShareX" в контекстном меню проводника Windows</value>
+    <value>Показывать пункт "Редактировать в ShareY" в контекстном меню проводника Windows</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Применить</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Использовать белую иконку ShareX</value>
+    <value>Использовать белую иконку ShareY</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>Заметка: Не делитесь этим экспортируемым файлом ни с кем, он может содержать личную информацию, например пароли.</value>

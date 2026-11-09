@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX 개인 폴더:</value>
+    <value>ShareY 개인 폴더:</value>
   </data>
   <data name="lblBufferSize.Text" xml:space="preserve">
     <value>버퍼 크기:</value>
@@ -214,16 +214,16 @@
     <value>고급설정</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 프로그램 설정</value>
+    <value>ShareY - 프로그램 설정</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>프록시</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Windows 탐색기의 "보내기" 컨텍스트 메뉴에 ShareX 표시하기</value>
+    <value>Windows 탐색기의 "보내기" 컨텍스트 메뉴에 ShareY 표시하기</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareX로 업로드하기" 표시하기</value>
+    <value>Windows 탐색기의 컨텍스트 메뉴에 "ShareY로 업로드하기" 표시하기</value>
   </data>
   <data name="btnClipboardFormatRemove.Text" xml:space="preserve">
     <value>제거</value>
@@ -259,7 +259,7 @@
     <value>파이어폭스 애드온 지원 활성화</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>ShareX 파이어폭스 애드온 설치하기...</value>
+    <value>ShareY 파이어폭스 애드온 설치하기...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>파이어폭스 애드온</value>
@@ -268,7 +268,7 @@
     <value>크롬 확장 기능 지원 활성화</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>ShareX 크롬 확장 기능 설치하기...</value>
+    <value>ShareY 크롬 확장 기능 설치하기...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>크롬 확장 기능</value>
@@ -319,16 +319,16 @@
     <value>간편 작업 메뉴 편집...</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>ShareX가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
+    <value>ShareY가 열려 있을 때 스팀에서 실행 중이라고 띄우기</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>dev build 설치...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareX로 편집"버튼 표시</value>
+    <value>Windows 탐색기의 컨택스트 메뉴에 "ShareY로 편집"버튼 표시</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>하얀색 ShareX 아이콘 사용</value>
+    <value>하얀색 ShareY 아이콘 사용</value>
   </data>
   <data name="lblExportImportNote.Text" xml:space="preserve">
     <value>노트: 내보낸 파일은 계정 정보나 파일 업로드 기록과 같은 개인정보를 포함하고 있을 수 있으니 아무에게도 공유하지 마세요.</value>

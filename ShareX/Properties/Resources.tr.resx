@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX sistem tepsisine küçültüldü.</value>
+    <value>ShareY sistem tepsisine küçültüldü.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Kalan zaman: {0}s ({1}%) Toplam: {2}</value>
@@ -169,14 +169,14 @@
     <value>En üstte dur</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX güncel!</value>
+    <value>ShareY güncel!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Değişim günlüğü</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX dil değişikliğinin uygulanması için yeniden başlatılmalı.
-ShareX'i yeniden başlatmak ister misiniz?</value>
+    <value>ShareY dil değişikliğinin uygulanması için yeniden başlatılmalı.
+ShareY'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Geleneksel çince</value>
@@ -206,7 +206,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Kısayol seçiniz...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Windows başladığında ShareX'i çalıştır</value>
+    <value>Windows başladığında ShareY'i çalıştır</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Kısayolları devre dışı bırak</value>
@@ -222,7 +222,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
 'Hayır' tuşuna basarak şu anki yüklemeyi iptal edebilir ve otomatik ekran görüntüsü yüklemeyi iptal edebilirsiniz.</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>ShareX ile birlikte gelen FFmpeg yalnızca 64 bit işletim sistemlerini destekler.</value>
+    <value>ShareY ile birlikte gelen FFmpeg yalnızca 64 bit işletim sistemlerini destekler.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Yükleniyor</value>
@@ -246,7 +246,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Adres paylaş ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Ayarların geçerli olabilmesi için ShareX in Steam den yeniden açılması gerekmektedir.</value>
+    <value>Ayarların geçerli olabilmesi için ShareY in Steam den yeniden açılması gerekmektedir.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Adresten dosya indir ve yükle</value>
@@ -267,7 +267,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>X: {0}, Y: {1}, Genişlik: {2}, Yükseklik: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>ShareX ayarlarını sıfırlamak ister misiniz?</value>
+    <value>ShareY ayarlarını sıfırlamak ister misiniz?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} {1}'a yüklenmek üzere. Başka bir hedef seçebilirsiniz.</value>
@@ -357,7 +357,7 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
     <value>Proje sayfası</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>ShareX ile düzenle</value>
+    <value>ShareY ile düzenle</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Ekran görüntüsü dizini seç</value>
@@ -372,7 +372,7 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
     <value>Hata</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Antivirüs yazılımınız veya Windows'daki kontrollü klasör erişimi özelliği ShareX'i engelliyor olabilir.</value>
+    <value>Antivirüs yazılımınız veya Windows'daki kontrollü klasör erişimi özelliği ShareY'i engelliyor olabilir.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Bütün hızlı görevleri varsayılan haline döndür?</value>
@@ -432,9 +432,9 @@ Daha sonra "Yakalama sonrası" menüsünden devre dışı bırakabilirsiniz.</va
     <value>Kapat</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>Kişisel klasör değişikliklerinin uygulanması için ShareX'in yeniden başlatılması gerekir.
+    <value>Kişisel klasör değişikliklerinin uygulanması için ShareY'in yeniden başlatılması gerekir.
 
-ShareX'i yeniden başlatmak ister misiniz?</value>
+ShareY'i yeniden başlatmak ister misiniz?</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Web sitesi</value>
@@ -452,7 +452,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Hata</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>ShareX kişisel dizin yolu seç</value>
+    <value>ShareY kişisel dizin yolu seç</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>İspanyolca</value>
@@ -479,7 +479,7 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>Kısayol ayarlarından yeni iş akışı ekliyebilirsiniz...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Onay</value>
+    <value>ShareY - Onay</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>İndiriliyor</value>
@@ -521,19 +521,19 @@ ShareX'i yeniden başlatmak ister misiniz?</value>
     <value>FFmpeg video ve ses kaynağının ikisi birden "Hiçbiri" olamaz.</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>Ekran kaydı aktifken ShareX kapatılamaz.
+    <value>Ekran kaydı aktifken ShareY kapatılamaz.
 
 Aktif ekran kaydını sonlandırmak istiyor musunuz?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>ShareX ile yükle</value>
+    <value>ShareY ile yükle</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Kısayollar devre dışı kaldı.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>"{0}" dosyasına erişilemiyor.
-Lütfen kişisel dizin yolunu değiştirmek için ShareX'i yönetici olarak çalıştırın.</value>
+Lütfen kişisel dizin yolunu değiştirmek için ShareY'i yönetici olarak çalıştırın.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Başlangıç görev yöneticisinden devre dışı bırakılmış</value>
@@ -574,7 +574,7 @@ sürükle</value>
 
 {1}
 
-Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve ShareX'i tekrar açın.</value>
+Lütfen başka bir kısayol seçin veya çakışan uygulamayı kapatın ve ShareY'i tekrar açın.</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>İstemci dikdörtgeni</value>
@@ -630,7 +630,7 @@ Orta fare tuşu kapatmak için</value>
     <value>Ekran görüntüsü gecikmesi: {0}sn</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>ShareX başlangıcında aç</value>
+    <value>ShareY başlangıcında aç</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Sistem yöneticiniz yükleme özelliğini devre dışı bıraktı.</value>

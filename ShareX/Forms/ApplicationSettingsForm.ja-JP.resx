@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - アプリの設定</value>
+    <value>ShareY - アプリの設定</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>参照...</value>
@@ -184,7 +184,7 @@
     <value>画像の印刷設定ダイアログを表示しない</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXで画像編集」を表示</value>
+    <value>エクスプローラのコンテキストメニューに「ShareYで画像編集」を表示</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Firefox アドオンへの対応を有効化</value>
@@ -217,13 +217,13 @@
     <value>メイン ウィンドウの位置を記憶</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>「送る」メニューにShareXを表示</value>
+    <value>「送る」メニューにShareYを表示</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>メイン ウィンドウの大きさを記憶</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>エクスプローラのコンテキストメニューに「ShareXでアップロード」を表示</value>
+    <value>エクスプローラのコンテキストメニューに「ShareYでアップロード」を表示</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>トレイアイコンを表示</value>
@@ -232,7 +232,7 @@
     <value>起動時にシステムトレイに最小化</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>ShareX起動中は、Steamの「ゲーム中」に表示</value>
+    <value>ShareY起動中は、Steamの「ゲーム中」に表示</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>進行状況をタスクバーに表示</value>
@@ -280,7 +280,7 @@
     <value>エクスポートしたファイルには、アカウントの情報やアップロード履歴が含まれることがあるため他者に共有しないようにしましょう。</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX 用の個人フォルダー:</value>
+    <value>ShareY 用の個人フォルダー:</value>
   </data>
   <data name="lblProxyHost.Text" xml:space="preserve">
     <value>ホスト:</value>

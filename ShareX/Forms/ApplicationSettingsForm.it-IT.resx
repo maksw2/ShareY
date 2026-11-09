@@ -160,28 +160,28 @@
     <value>Abilita Supporto all'Estensione per Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Installa l'Estensione ShareX per Firefox</value>
+    <value>Installa l'Estensione ShareY per Firefox</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Estensione per Firefox</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Mentre ShareX è aperto, mostra "In-App" su Steam</value>
+    <value>Mentre ShareY è aperto, mostra "In-App" su Steam</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Abilita Supporto all'Estensione per Chrome</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Installa l'Estensione ShareX per Chrome</value>
+    <value>Installa l'Estensione ShareY per Chrome</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Estensione per Chrome</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostra il Pulsante "Carica con ShareX" nel Menu Contestiale di Windows Explorer</value>
+    <value>Mostra il Pulsante "Carica con ShareY" nel Menu Contestiale di Windows Explorer</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostra ShareX nel Menu "Invia a"</value>
+    <value>Mostra ShareY nel Menu "Invia a"</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integrazione</value>
@@ -193,7 +193,7 @@
     <value>Sfoglia...</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Cartella Personale di ShareX:</value>
+    <value>Cartella Personale di ShareY:</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Apri...</value>
@@ -286,7 +286,7 @@
     <value>Avanzate</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Impostazioni Applicazione</value>
+    <value>ShareY - Impostazioni Applicazione</value>
   </data>
   <data name="lblProxyMethod.Text" xml:space="preserve">
     <value>Configurazione Proxy:</value>
@@ -328,7 +328,7 @@
     <value>Controlla automaticamente gli aggiornamenti</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Usa icona ShareX bianca</value>
+    <value>Usa icona ShareY bianca</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Installa build di sviluppo...</value>
@@ -346,7 +346,7 @@
     <value>Tema</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Mostra il pulsante "Modifica con ShareX" nel menu contestuale di Esplora risorse</value>
+    <value>Mostra il pulsante "Modifica con ShareY" nel menu contestuale di Esplora risorse</value>
   </data>
   <data name="lblSaveImageSubFolderPatternWindow.Text" xml:space="preserve">
     <value>Modello sottocartella per finestra:</value>

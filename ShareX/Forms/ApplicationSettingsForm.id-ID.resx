@@ -163,7 +163,7 @@
     <value>Minimalkan ke baki saat mulai</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Saat ShareX terbuka, tampilkan "In-App" di Steam</value>
+    <value>Saat ShareY terbuka, tampilkan "In-App" di Steam</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Aktifkan dukungan ekstensi Chrome</value>
@@ -184,7 +184,7 @@
     <value>Jelajahi...</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Folder pribadi ShareX:</value>
+    <value>Folder pribadi ShareY:</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Jelajahi...</value>
@@ -199,13 +199,13 @@
     <value>Gunakan folder screenshot khusus:</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Tampilkan ShareX di menu "Kirim ke"</value>
+    <value>Tampilkan ShareY di menu "Kirim ke"</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Tampilkan "Edit dengan ShareX" di menu konteks Windows Explorer</value>
+    <value>Tampilkan "Edit dengan ShareY" di menu konteks Windows Explorer</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Tampilkan "Unggah dengan ShareX" di menu konteks Windows Explorer</value>
+    <value>Tampilkan "Unggah dengan ShareY" di menu konteks Windows Explorer</value>
   </data>
   <data name="tpPaths.Text" xml:space="preserve">
     <value>Jalur</value>
@@ -277,7 +277,7 @@
     <value>Lanjutan</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Pengaturan aplikasi</value>
+    <value>ShareY - Pengaturan aplikasi</value>
   </data>
   <data name="tpPrint.Text" xml:space="preserve">
     <value>Cetak</value>
@@ -331,7 +331,7 @@
     <value>Periksa pembaruan secara otomatis</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Gunakan ikon ShareX putih</value>
+    <value>Gunakan ikon ShareY putih</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Instal build pengembangan...</value>

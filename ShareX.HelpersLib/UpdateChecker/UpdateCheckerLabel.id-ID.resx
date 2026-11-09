@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="llblUpdateAvailable.Text" xml:space="preserve">
-    <value>Versi terbaru dari ShareX tersedia</value>
+    <value>Versi terbaru dari ShareY tersedia</value>
   </data>
   <data name="lblCheckingUpdates.Text" xml:space="preserve">
     <value>Memeriksa pembaruan...</value>

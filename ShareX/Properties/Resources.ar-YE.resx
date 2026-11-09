@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>تم تصغير  ShareX إلى منطقة الإشعارات.</value>
+    <value>تم تصغير  ShareY إلى منطقة الإشعارات.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>الوقت المتبقي: {0}ثانية ({1}%) المجموع: {2}</value>
@@ -169,7 +169,7 @@
     <value>بقاء في المقدمة</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>تطبيق  ShareX محدث بالفعل!</value>
+    <value>تطبيق  ShareY محدث بالفعل!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>سجل التغييرات</value>
@@ -207,7 +207,7 @@
     <value>تحديد مفتاح اختصار...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>تشغيل ShareX عند بدء نظام Windows</value>
+    <value>تشغيل ShareY عند بدء نظام Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>تعطيل الاختصارات</value>
@@ -247,7 +247,7 @@
     <value>مشاركة الـ URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>لكي تظهر التغببرات يجب إعادة فتح ShareX من خلال Steam.</value>
+    <value>لكي تظهر التغببرات يجب إعادة فتح ShareY من خلال Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>عنوان URL إلى التنزيل والرفع</value>
@@ -355,7 +355,7 @@
     <value>صفحة المشروع</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>تعديل باستخدام ShareX</value>
+    <value>تعديل باستخدام ShareY</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>اختر مجلد لقطات الشاشة</value>
@@ -447,7 +447,7 @@
     <value>خطأ</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>اختر المجلد الخاص بـShareX</value>
+    <value>اختر المجلد الخاص بـShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>الإسبانية</value>
@@ -474,7 +474,7 @@
     <value>يمكنك إضافة مساحة عمل جديدة من إعدادات الاختصارات...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - تأكيد</value>
+    <value>ShareY - تأكيد</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>جارٍ التنزيل</value>
@@ -521,7 +521,7 @@
 هل تريد إلغاء تسجيل الشاشة الحاليّ؟</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>رفع باستخدام ShareX</value>
+    <value>رفع باستخدام ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>تم تعطيل اختصارات لوحة المفاتيح.</value>
@@ -625,7 +625,7 @@
     <value>تأخير لقطة الشاشة: {0} ثوان</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>فتح عند تشغيل ShareX</value>
+    <value>فتح عند تشغيل ShareY</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>مسؤول النظام قام بإيقاف وظيفة الرفع.</value>

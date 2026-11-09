@@ -127,7 +127,7 @@
     <value>Progression :</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Téléchargement de fichiers</value>
+    <value>ShareY - Téléchargement de fichiers</value>
   </data>
   <data name="btnAction.Text" xml:space="preserve">
     <value>Télécharger</value>

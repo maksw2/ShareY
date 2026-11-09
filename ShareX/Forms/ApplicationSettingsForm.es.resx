@@ -121,7 +121,7 @@
     <value>Avanzado</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configuración de la aplicación</value>
+    <value>ShareY - Configuración de la aplicación</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>
@@ -142,7 +142,7 @@
     <value>Tamaño de búfer:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Carpeta personal ShareX:</value>
+    <value>Carpeta personal ShareY:</value>
   </data>
   <data name="gbSecondaryFileUploaders.Text" xml:space="preserve">
     <value>Cargadores de archivos secundarios</value>
@@ -229,10 +229,10 @@
     <value>Mostrar el progreso en icono de la bandeja</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX en "Enviar a" menú</value>
+    <value>Mostrar ShareY en "Enviar a" menú</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar "Subir con ShareX" botón en el menú contextual de shell</value>
+    <value>Mostrar "Subir con ShareY" botón en el menú contextual de shell</value>
   </data>
   <data name="gbSecondaryImageUploaders.Text" xml:space="preserve">
     <value>Cargadores de imágenes secundarias</value>
@@ -253,7 +253,7 @@
     <value>Buscar actualizaciones automáticamente</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Usar icono blanco de ShareX</value>
+    <value>Usar icono blanco de ShareY</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Instalar compilación de desarrollo...</value>
@@ -286,25 +286,25 @@
     <value>Habilitar compatibilidad con complemento de Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Instalar complemento de ShareX para Firefox...</value>
+    <value>Instalar complemento de ShareY para Firefox...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Complemento de Firefox</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Mientras ShareX esté abierto, mostrar "En la aplicación" en Steam</value>
+    <value>Mientras ShareY esté abierto, mostrar "En la aplicación" en Steam</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Habilitar compatibilidad con extensión de Chrome</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Instalar extensión de ShareX para Chrome...</value>
+    <value>Instalar extensión de ShareY para Chrome...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Extensión de Chrome</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Mostrar el botón "Editar con ShareX" en el menú contextual del Explorador de Windows</value>
+    <value>Mostrar el botón "Editar con ShareY" en el menú contextual del Explorador de Windows</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integración</value>

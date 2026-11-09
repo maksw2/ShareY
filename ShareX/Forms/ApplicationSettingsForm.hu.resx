@@ -121,7 +121,7 @@
     <value>Haladó</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Alkalmazás beállítások</value>
+    <value>ShareY - Alkalmazás beállítások</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>
@@ -142,7 +142,7 @@
     <value>Puffer méret:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX személyes mappa:</value>
+    <value>ShareY személyes mappa:</value>
   </data>
   <data name="cbPrintDontShowWindowsDialog.Text" xml:space="preserve">
     <value>Ne mutassa a Windowsos nyomtatás dialógust</value>
@@ -157,10 +157,10 @@
     <value>Indításkor minimalizálás a tálcára</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mutassa a ShareX-et a "Küldés" gyorsmenüben</value>
+    <value>Mutassa a ShareY-et a "Küldés" gyorsmenüben</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mutassa a "Feltöltés ShareX használatával" gombot a kontextus menüben</value>
+    <value>Mutassa a "Feltöltés ShareY használatával" gombot a kontextus menüben</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>Emlékezzen a főablak pozíciójára</value>
@@ -253,7 +253,7 @@
     <value>Frissítések automatikus keresése</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Fehér ShareX ikon használata</value>
+    <value>Fehér ShareY ikon használata</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>Fejlesztői build telepítése...</value>
@@ -286,25 +286,25 @@
     <value>Enable Firefox hozzáadáson támogatás</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Install ShareX Firefox hozzáadáson...</value>
+    <value>Install ShareY Firefox hozzáadáson...</value>
   </data>
   <data name="gbFirefox.Text" xml:space="preserve">
     <value>Firefox kiegészítő</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>While ShareX is megnyitás, show "In-App" in Steam</value>
+    <value>While ShareY is megnyitás, show "In-App" in Steam</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>Enable Chrome kiterjesztés támogatás</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Install ShareX Chrome kiterjesztés...</value>
+    <value>Install ShareY Chrome kiterjesztés...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome kiterjesztés</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>"Szerkesztés ShareX-szel" gomb megjelenítése a Windows Intéző helyi menüjében</value>
+    <value>"Szerkesztés ShareY-szel" gomb megjelenítése a Windows Intéző helyi menüjében</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integráció</value>

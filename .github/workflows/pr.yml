@@ -1,4 +1,4 @@
-name: Build ShareX (PR)
+name: Build ShareY (PR)
 
 on:
   pull_request:

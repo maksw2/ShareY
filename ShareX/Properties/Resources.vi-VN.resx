@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX được thu nhỏ vào khay hệ thống.</value>
+    <value>ShareY được thu nhỏ vào khay hệ thống.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Thời gian còn lại: {0}giây ({1}%) Tổng cộng: {2}</value>
@@ -172,8 +172,8 @@
     <value>Lịch sử thay đổi</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX cần được khởi động lại để thay đổi ngôn ngữ có tác dụng.
-Bạn có muốn khởi động lại ShareX không?</value>
+    <value>ShareY cần được khởi động lại để thay đổi ngôn ngữ có tác dụng.
+Bạn có muốn khởi động lại ShareY không?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Tiếng Trung phồn thể</value>
@@ -203,7 +203,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
     <value>Chọn một phím tắt...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Chạy ShareX cùng Windows</value>
+    <value>Chạy ShareY cùng Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Vô hiệu hóa phím tắt</value>
@@ -219,7 +219,7 @@ Bạn có muốn khởi động lại ShareX không?</value>
 Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt chế độ tự động tải lên</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg đi kèm với ShareX chỉ hỗ trợ hệ điều hành 64-bit.</value>
+    <value>FFmpeg đi kèm với ShareY chỉ hỗ trợ hệ điều hành 64-bit.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Đang tải lên</value>
@@ -243,7 +243,7 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
     <value>Chia sẻ URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Để thiết lập có tác dụng ShareX cần được mở lại từ Steam.</value>
+    <value>Để thiết lập có tác dụng ShareY cần được mở lại từ Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL để tải xuống và tải lên</value>
@@ -264,7 +264,7 @@ Nhấn "Không" để hủy tiến trình tải lên hiện tại và tắt ch�
     <value>X: {0}, Y: {1}, Rộng: {2}, Cao: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Bạn có muốn đặt lại các cài đặt cho ShareX không?</value>
+    <value>Bạn có muốn đặt lại các cài đặt cho ShareY không?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} chuẩn bị được tải lên {1}. Bạn có thể chọn nơi tải lên khác.</value>
@@ -351,7 +351,7 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
     <value>Trang dự án</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Chỉnh sửa với ShareX</value>
+    <value>Chỉnh sửa với ShareY</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Chọn đường dẫn thư mục chứa ảnh chụp</value>
@@ -366,7 +366,7 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
     <value>Lỗi</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Phần mềm chống vi-rút của bạn hoặc tính năng truy cập thư mục được kiểm soát trong Windows có thể đang chặn ShareX.</value>
+    <value>Phần mềm chống vi-rút của bạn hoặc tính năng truy cập thư mục được kiểm soát trong Windows có thể đang chặn ShareY.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Đặt lại tất cả tác vụ nhanh về mặc định?</value>
@@ -420,9 +420,9 @@ Sau đó, bạn có thể tắt nó từ menu "Sau khi chụp tác vụ".</value
     <value>Đóng</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX cần được khởi động lại để thay đổi thư mục cá nhân có hiệu lực.
+    <value>ShareY cần được khởi động lại để thay đổi thư mục cá nhân có hiệu lực.
 
-Bạn có muốn khởi động lại ShareX?</value>
+Bạn có muốn khởi động lại ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Website</value>
@@ -440,7 +440,7 @@ Bạn có muốn khởi động lại ShareX?</value>
     <value>Lỗi</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Chọn đường dẫn thư mục riêng cho ShareX</value>
+    <value>Chọn đường dẫn thư mục riêng cho ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Tiếng Tây Ban Nha</value>
@@ -467,7 +467,7 @@ Bạn có muốn khởi động lại ShareX?</value>
     <value>Bạn có thể thêm các luồng công việc từ thiết lập phím tắt</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Xác nhận</value>
+    <value>ShareY - Xác nhận</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Đang tải về</value>
@@ -509,14 +509,14 @@ Bạn có muốn khởi động lại ShareX?</value>
     <value>Nguồn âm thanh và video FFmpeg không được là "Không".</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Tải lên với ShareX</value>
+    <value>Tải lên với ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Phím tắt đã được kích hoạt.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Không thể truy cập tới tệp "{0}"
-Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư mục riêng.</value>
+Vui lòng chạy ShareY dưới quyền administrator để thay đổi thư mục riêng.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Tự khởi động đã bị vô hiệu trong Task Manager</value>
@@ -554,7 +554,7 @@ Vui lòng chạy ShareX dưới quyền administrator để thay đổi thư m�
 
 {1}
 
-Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi và mở lại ShareX.</value>
+Vui lòng chọn phím tắt khác hoặc thoát ứng dụng đang gây lỗi và mở lại ShareY.</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>Hình chữ nhật khách hàng</value>
@@ -607,7 +607,7 @@ Nhấn chuột giữa để đóng</value>
     <value>Thời gian trễ chụp ảnh màn hình: {0} giây</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Mở khi ShareX khởi động</value>
+    <value>Mở khi ShareY khởi động</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Quản trị viên hệ thống của bạn đã tắt tính năng tải lên.</value>
@@ -623,7 +623,7 @@ Nhấn chuột giữa để đóng</value>
 {0}</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX đã được cập nhật!</value>
+    <value>ShareY đã được cập nhật!</value>
   </data>
   <data name="AboutForm_AboutForm_Language_he-IL" xml:space="preserve">
     <value>Tiếng Do Thái</value>
@@ -635,7 +635,7 @@ Nhấn chuột giữa để đóng</value>
     <value>Quyên góp</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>Không thể đóng ShareX khi đang quay màn hình.
+    <value>Không thể đóng ShareY khi đang quay màn hình.
 
 Bạn có muốn hủy phiên quay màn hình đang hoạt động không?</value>
   </data>

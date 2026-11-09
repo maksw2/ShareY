@@ -157,8 +157,8 @@
     <value>Cambiamenti</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX deve essere riavviato per cambiare lingua.
-Riavviare ShareX?</value>
+    <value>ShareY deve essere riavviato per cambiare lingua.
+Riavviare ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Cinese (Tradizionale)</value>
@@ -176,7 +176,7 @@ Riavviare ShareX?</value>
     <value>Seleziona una Scorciatoia...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Esegui ShareX all'Avvio di Windows</value>
+    <value>Esegui ShareY all'Avvio di Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Disattiva Scorciatoie da Tastiera</value>
@@ -210,7 +210,7 @@ Premi "No" per annullare il caricamento e disabilitare il caricamento automatico
     <value>Condividi URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Riavviare ShareX da Steam per applicare i cambiamenti.</value>
+    <value>Riavviare ShareY da Steam per applicare i cambiamenti.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL da Scaricare e Caricare</value>
@@ -334,7 +334,7 @@ Sei sicuro di voler continuare?</value>
     <value>Sito Web</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Scegli il Percorso della Cartella Personale di ShareX</value>
+    <value>Scegli il Percorso della Cartella Personale di ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Spagnolo</value>
@@ -367,14 +367,14 @@ Sei sicuro di voler continuare?</value>
     <value>Russo</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Carica con ShareX</value>
+    <value>Carica con ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Scorciatoie Disattivate</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Impossibile accedere al file "{0}".
-Esegui ShareX come amministratore per cambiare il percorso della cartella personale.</value>
+Esegui ShareY come amministratore per cambiare il percorso della cartella personale.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>L'avvio automatico è stato disattivato in Gestione Attività</value>
@@ -400,7 +400,7 @@ Qui</value>
 
 {1}
 
-Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e riavvia ShareX.</value>
+Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e riavvia ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>Vietnamita</value>
@@ -435,7 +435,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Registrazione scorciatoia fallita.</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Apri all'Avvio di ShareX</value>
+    <value>Apri all'Avvio di ShareY</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>Preparazione</value>
@@ -445,7 +445,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
 {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX è ridotto nell'area di notifica.</value>
+    <value>ShareY è ridotto nell'area di notifica.</value>
   </data>
   <data name="PinToScreen" xml:space="preserve">
     <value>Fissa allo schermo</value>
@@ -460,7 +460,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Passa alla vista miniature</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX è aggiornato!</value>
+    <value>ShareY è aggiornato!</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Il log di debug può contenere informazioni sensibili. Continuare?</value>
@@ -478,7 +478,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Contenuto appunti: File (Conteggio: {0})</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg incluso con ShareX supporta solo sistemi operativi a 64 bit.</value>
+    <value>FFmpeg incluso con ShareY supporta solo sistemi operativi a 64 bit.</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>Contenuto appunti: Testo (Lunghezza: {0})</value>
@@ -490,7 +490,7 @@ Selezione una scorciatoia diversa o chiudi l'applicazione che crea conflitto e r
     <value>Nome file processo</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Vuoi reimpostare le impostazioni di ShareX?</value>
+    <value>Vuoi reimpostare le impostazioni di ShareY?</value>
   </data>
   <data name="FFmpegIsMissing" xml:space="preserve">
     <value>FFmpeg mancante</value>
@@ -522,7 +522,7 @@ You can later disable it from "After acquisizione tasks" menu.</value>
     <value>Persiano</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Modifica with ShareX</value>
+    <value>Modifica with ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Links" xml:space="preserve">
     <value>Collegamenti</value>
@@ -531,7 +531,7 @@ You can later disable it from "After acquisizione tasks" menu.</value>
     <value>Appunti does not contain an immagine.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the controlled cartella access feature in Finestras could be blocking ShareX.</value>
+    <value>Your anti-virus software or the controlled cartella access feature in Finestras could be blocking ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
     <value>Arabo</value>
@@ -546,9 +546,9 @@ You can later disable it from "After acquisizione tasks" menu.</value>
     <value>Spagnolo messicano</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX needs to be reavviaed for the personal cartella changes to apply.
+    <value>ShareY needs to be reavviaed for the personal cartella changes to apply.
 
-Would you like to reavvia ShareX?</value>
+Would you like to reavvia ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Ucraino</value>
@@ -572,7 +572,7 @@ Would you like to reavvia ShareX?</value>
     <value>Finestra styles</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Conferma</value>
+    <value>ShareY - Conferma</value>
   </data>
   <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
     <value>Optical character recognition feature is only available with Finestras version {0} or newer.</value>
@@ -599,7 +599,7 @@ Would you like to reavvia ShareX?</value>
     <value>La sorgente video e audio di FFmpeg non possono essere entrambe "Nessuna".</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while registrazione schermo is active.
+    <value>ShareY cannot be closed while registrazione schermo is active.
 
 Do you want to abort the active registrazione schermo?</value>
   </data>

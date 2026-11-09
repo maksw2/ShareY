@@ -33,7 +33,7 @@ namespace ShareX.HelpersLib
 {
     public static class ShareXResources
     {
-        public static string Name { get; set; } = "ShareX";
+        public static string Name { get; set; } = "ShareY";
 
         public static string UserAgent
         {
@@ -111,6 +111,7 @@ namespace ShareX.HelpersLib
 
         public static void ApplyTheme(Form form, bool closeOnEscape = false, bool setIcon = true)
         {
+            form.Text = form.Text.Replace("ShareX", Name);
             if (closeOnEscape)
             {
                 form.CloseOnEscape();

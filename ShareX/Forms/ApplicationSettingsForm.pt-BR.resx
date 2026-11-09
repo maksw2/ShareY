@@ -121,7 +121,7 @@
     <value>Avançado</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Configurações do programa</value>
+    <value>ShareY - Configurações do programa</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>
@@ -142,7 +142,7 @@
     <value>Tamanho do buffer:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Pasta pessoal do ShareX:</value>
+    <value>Pasta pessoal do ShareY:</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Integração</value>
@@ -232,7 +232,7 @@
     <value>Imprimir</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Mostrar ShareX no menu de "Enviar para"</value>
+    <value>Mostrar ShareY no menu de "Enviar para"</value>
   </data>
   <data name="gbSecondaryTextUploaders.Text" xml:space="preserve">
     <value>Hospedagem de texto</value>
@@ -250,7 +250,7 @@
     <value>Idioma:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Mostrar botão "Enviar usando ShareX" no menu contextual do Windows Explorer</value>
+    <value>Mostrar botão "Enviar usando ShareY" no menu contextual do Windows Explorer</value>
   </data>
   <data name="lblTrayMiddleClickAction.Text" xml:space="preserve">
     <value>Clique com botão de scroll no ícone da bandeja:</value>
@@ -301,7 +301,7 @@
     <value>Histórico</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Usar ícone branco do ShareX</value>
+    <value>Usar ícone branco do ShareY</value>
   </data>
   <data name="cbThumbnailViewShowTitle.Text" xml:space="preserve">
     <value>Mostrar título</value>
@@ -340,7 +340,7 @@
     <value>Extensões do Firefox</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Instalar extensão ShareX no Firefox...</value>
+    <value>Instalar extensão ShareY no Firefox...</value>
   </data>
   <data name="tpMainWindow.Text" xml:space="preserve">
     <value>Janela principal</value>
@@ -391,7 +391,7 @@
     <value>Remover</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Instalar extensão ShareX no Chrome...</value>
+    <value>Instalar extensão ShareY no Chrome...</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Aplicar</value>
@@ -409,7 +409,7 @@
     <value>Número de arquivos a serem mantidos:</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Mostrar o botão "Editar com ShareX" no menu de contexto do Windows Explorer</value>
+    <value>Mostrar o botão "Editar com ShareY" no menu de contexto do Windows Explorer</value>
   </data>
   <data name="lblMainWindowTaskViewMode.Text" xml:space="preserve">
     <value>Modo de exibição de tarefas:</value>

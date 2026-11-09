@@ -121,7 +121,7 @@
     <value>...está actualizado</value>
   </data>
   <data name="llblUpdateAvailable.Text" xml:space="preserve">
-    <value>Una nueva versión de ShareX está disponible</value>
+    <value>Una nueva versión de ShareY está disponible</value>
   </data>
   <data name="lblCheckingUpdates.Text" xml:space="preserve">
     <value>Comprobación de actualizaciones...</value>

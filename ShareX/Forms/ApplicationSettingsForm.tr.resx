@@ -133,7 +133,7 @@
     <value>Hızlı görev menüsünü düzenle...</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>"Gönder" menüsünde ShareX göster</value>
+    <value>"Gönder" menüsünde ShareY göster</value>
   </data>
   <data name="cbRememberMainFormSize.Text" xml:space="preserve">
     <value>Ana pencere boyutunu hatırla</value>
@@ -148,7 +148,7 @@
     <value>Gözat...</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX kişisel dizini:</value>
+    <value>ShareY kişisel dizini:</value>
   </data>
   <data name="btnBrowseCustomScreenshotsPath.Text" xml:space="preserve">
     <value>Gözat...</value>
@@ -232,7 +232,7 @@
     <value>Gelişmiş</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Uygulama ayarları</value>
+    <value>ShareY - Uygulama ayarları</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Vekil Sunucu</value>
@@ -247,7 +247,7 @@
     <value>Tepsi simgesinde durum göster</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>ShareX açık iken Steam de "Uygulamada" olarak göster</value>
+    <value>ShareY açık iken Steam de "Uygulamada" olarak göster</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Genel</value>
@@ -256,7 +256,7 @@
     <value>Dil:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>"ShareX ile yükle" tuşunu Windows sağ tık menüsünde göster</value>
+    <value>"ShareY ile yükle" tuşunu Windows sağ tık menüsünde göster</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Son görevleri kaydet</value>
@@ -319,13 +319,13 @@
     <value>Firefox eklenti desteğini aktif et</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>ShareX Chrome uzantısını indir...</value>
+    <value>ShareY Chrome uzantısını indir...</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>ShareX Firefox eklentisini indir...</value>
+    <value>ShareY Firefox eklentisini indir...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>"ShareX ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
+    <value>"ShareY ile düzenle" tuşunu Windows sağ tık menüsünde göster</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>Uygula</value>
@@ -352,7 +352,7 @@
     <value>Ayarlar</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Beyaz ShareX ikonu kullan</value>
+    <value>Beyaz ShareY ikonu kullan</value>
   </data>
   <data name="lblCleanupKeepFileCount.Text" xml:space="preserve">
     <value>Saklancak dosya sayısı:</value>

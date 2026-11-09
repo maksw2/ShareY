@@ -120,7 +120,7 @@
     <value>進階</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 應用程式設定</value>
+    <value>ShareY - 應用程式設定</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>代理伺服器</value>
@@ -141,7 +141,7 @@
     <value>緩衝區大小：</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX 個人資料夾：</value>
+    <value>ShareY 個人資料夾：</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>整合</value>
@@ -159,7 +159,7 @@
     <value>啟動時最小化到系統匣</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>在「傳送到」選單中顯示 ShareX</value>
+    <value>在「傳送到」選單中顯示 ShareY</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>記住主視窗位置</value>
@@ -240,10 +240,10 @@
     <value>備用的文字上傳工具</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>當 ShareX 開啟時，在 Steam 狀態顯示 ShareX</value>
+    <value>當 ShareY 開啟時，在 Steam 狀態顯示 ShareY</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 上傳」按鈕</value>
+    <value>在檔案總管的右鍵選單中顯示「使用 ShareY 上傳」按鈕</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>一般</value>
@@ -303,19 +303,19 @@
     <value>啟用 Firefox 附加元件支援</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>安裝 ShareX Firefox 附加元件...</value>
+    <value>安裝 ShareY Firefox 附加元件...</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>啟用 Chrome 擴充功能支援</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>安裝 ShareX Chrome 擴充功能...</value>
+    <value>安裝 ShareY Chrome 擴充功能...</value>
   </data>
   <data name="gbChrome.Text" xml:space="preserve">
     <value>Chrome 擴充功能</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>使用白色 ShareX 圖示</value>
+    <value>使用白色 ShareY 圖示</value>
   </data>
   <data name="btnCheckDevBuild.Text" xml:space="preserve">
     <value>安裝開發版...</value>
@@ -336,7 +336,7 @@
     <value>Firefox 附加元件</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>在檔案總管的右鍵選單中顯示「使用 ShareX 編輯」按鈕</value>
+    <value>在檔案總管的右鍵選單中顯示「使用 ShareY 編輯」按鈕</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>套用</value>

@@ -139,8 +139,8 @@
     <value>Parada</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX debe reiniciarse para que se apliquen los cambios de idioma.
-¿Quieres reiniciar ShareX?</value>
+    <value>ShareY debe reiniciarse para que se apliquen los cambios de idioma.
+¿Quieres reiniciar ShareY?</value>
   </data>
   <data name="UploadTask_ThreadDoWork_URL_is_empty_" xml:space="preserve">
     <value>URL está vacía.</value>
@@ -152,7 +152,7 @@
     <value>Seleccione una tecla de acceso directo...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Ejecutar ShareX al iniciar Windows</value>
+    <value>Ejecutar ShareY al iniciar Windows</value>
   </data>
   <data name="Program_Run_Unable_to_create_folder_" xml:space="preserve">
     <value>No se puede crear la carpeta:</value>
@@ -252,7 +252,7 @@ Pulse "No" para cancelar la subida y desactivar la función de captura de pantal
     <value>Sitio web</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Elegir ruta de la carpeta personal ShareX</value>
+    <value>Elegir ruta de la carpeta personal ShareY</value>
   </data>
   <data name="TaskSettingsForm_UpdateUploaderMenuNames_Text_uploader___0_" xml:space="preserve">
     <value>Cargador de texto: {0}</value>
@@ -274,7 +274,7 @@ Pulse "No" para cancelar la subida y desactivar la función de captura de pantal
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>No se puede acceder "{0}" archivo.
-Por favor ejecute ShareX como administrador para cambiar ruta de la carpeta personal.</value>
+Por favor ejecute ShareY como administrador para cambiar ruta de la carpeta personal.</value>
   </data>
   <data name="MainForm_tsmiDeleteSelectedFile_Click_Do_you_really_want_to_delete_this_file_" xml:space="preserve">
     <value>¿Está seguro de que desea eliminar este archivo?</value>
@@ -291,7 +291,7 @@ aquí</value>
 
 {1}
 
-Por favor seleccione una tecla de acceso directo diferente o salir de la aplicación en conflicto y vuelva a abrir ShareX.</value>
+Por favor seleccione una tecla de acceso directo diferente o salir de la aplicación en conflicto y vuelva a abrir ShareY.</value>
   </data>
   <data name="UploadManager_UploadFile_File_upload" xml:space="preserve">
     <value>Carga de archivo</value>
@@ -315,7 +315,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Descarga fallida: {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX está minimizado en la bandeja del sistema.</value>
+    <value>ShareY está minimizado en la bandeja del sistema.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_CH" xml:space="preserve">
     <value>Chino simplificado</value>
@@ -345,7 +345,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Mantener siempre encima</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>¡ShareX está actualizado!</value>
+    <value>¡ShareY está actualizado!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Registro de cambios</value>
@@ -375,7 +375,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Contenido del portapapeles: archivo (cantidad: {0})</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>El FFmpeg incluido con ShareX solo admite sistemas operativos de 64 bits.</value>
+    <value>El FFmpeg incluido con ShareY solo admite sistemas operativos de 64 bits.</value>
   </data>
   <data name="BeforeUploadControl_AddDestination_Custom" xml:space="preserve">
     <value>Personalizado</value>
@@ -390,7 +390,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Neerlandés</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Para que la configuración surta efecto, ShareX debe volver a abrirse desde Steam.</value>
+    <value>Para que la configuración surta efecto, ShareY debe volver a abrirse desde Steam.</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>Contenido del portapapeles: texto (longitud: {0})</value>
@@ -402,7 +402,7 @@ Por favor seleccione una tecla de acceso directo diferente o salir de la aplicac
     <value>Nombre del archivo del proceso</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>¿Desea restablecer la configuración de ShareX?</value>
+    <value>¿Desea restablecer la configuración de ShareY?</value>
   </data>
   <data name="UploadTask_DoUploadJob_You_are_attempting_to_upload_a_large_file" xml:space="preserve">
     <value>Está intentando subir un archivo grande.
@@ -453,7 +453,7 @@ You can later disable it from "After captura tasks" menú.</value>
     <value>Portugués (Brasil)</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Editar with ShareX</value>
+    <value>Editar with ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Links" xml:space="preserve">
     <value>Enlaces</value>
@@ -462,7 +462,7 @@ You can later disable it from "After captura tasks" menú.</value>
     <value>Portapapeles does not contain an imagen.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Your anti-virus software or the controlled carpeta access feature in Ventanas could be blocking ShareX.</value>
+    <value>Your anti-virus software or the controlled carpeta access feature in Ventanas could be blocking ShareY.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Restablecer all quick tasks to defaults?</value>
@@ -498,9 +498,9 @@ You can later disable it from "After captura tasks" menú.</value>
     <value>Cerrar</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX needs to be reiniciared for the personal carpeta changes to apply.
+    <value>ShareY needs to be reiniciared for the personal carpeta changes to apply.
 
-Would you like to reiniciar ShareX?</value>
+Would you like to reiniciar ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_uk" xml:space="preserve">
     <value>Ucraniano</value>
@@ -527,7 +527,7 @@ Would you like to reiniciar ShareX?</value>
     <value>Estilos de ventana</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Confirmación</value>
+    <value>ShareY - Confirmación</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Descargaring</value>
@@ -563,12 +563,12 @@ Would you like to reiniciar ShareX?</value>
     <value>Las fuentes de vídeo y audio de FFmpeg no pueden ser ambas "Ninguna".</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX cannot be closed while grabación de pantalla is active.
+    <value>ShareY cannot be closed while grabación de pantalla is active.
 
 Do you want to abort the active grabación de pantalla?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Subir with ShareX</value>
+    <value>Subir with ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Teclas de acceso rápido deshabilitadas.</value>
@@ -636,7 +636,7 @@ Middle click to close</value>
     <value>Captura de pantalla delay: {0}s</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Abrir at ShareX iniciarup</value>
+    <value>Abrir at ShareY iniciarup</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Your system admin disabled the subida feature.</value>

@@ -1,16 +1,7 @@
-# Security Policy
+# Security policy
 
-## Reporting a Vulnerability
+Please report potential vulnerabilities to ShareY maintainers through the repository's Security tab using private vulnerability reporting when available.
 
-We take the security of our project seriously. If you discover a security vulnerability, we appreciate your help in disclosing it to us in a responsible manner.
+If private reporting is unavailable, open a brief issue requesting a private contact method, omitting exploit details and sensitive data.
 
-To report a security vulnerability, please follow these steps:
-
-1. Visit our [Security Page](https://github.com/ShareX/ShareX/security) on GitHub.
-2. Click on the "Report a vulnerability" button.
-3. Provide a detailed description of the vulnerability, including steps to reproduce if possible.
-4. Allow us a reasonable amount of time to address and mitigate the issue before disclosing it publicly.
-
-We encourage you to play a crucial role in keeping our project secure, and we thank you for your contributions to the community.
-
-Thank you for your cooperation.
+Upstream ShareX vulnerabilities should also be reported to the [ShareX project](https://github.com/ShareX/ShareX/security).

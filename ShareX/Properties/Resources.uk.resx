@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX згорнуто до системного лотка.</value>
+    <value>ShareY згорнуто до системного лотка.</value>
   </data>
   <data name="AutoCaptureForm_UpdateStatus_Timeleft___0_s___1____Total___2_" xml:space="preserve">
     <value>Залишилось часу: {0} с ({1}%) Всього: {2}</value>
@@ -169,15 +169,15 @@
     <value>Поверх інших вікон</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX актуальний!</value>
+    <value>ShareY актуальний!</value>
   </data>
   <data name="AboutForm_AboutForm_Changelog" xml:space="preserve">
     <value>Журнал змін</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>Треба перезапустити ShareX, щоб застосувати зміну мови.
+    <value>Треба перезапустити ShareY, щоб застосувати зміну мови.
 
-Чи хочете Ви перезапустити ShareX?</value>
+Чи хочете Ви перезапустити ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Китайська традиційна</value>
@@ -207,7 +207,7 @@
     <value>Виберіть гарячу клавішу...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Запустити ShareX під час запуску Windows</value>
+    <value>Запустити ShareY під час запуску Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Вимкнути гарячі клавіші</value>
@@ -223,7 +223,7 @@
 Натисніть „Ні“, щоб скасувати поточне вивантаження та вимкнути автоматичне вивантаження знімків.</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg, що постачається з ShareX, підтримує лише 64-розрядні операційні системи.</value>
+    <value>FFmpeg, що постачається з ShareY, підтримує лише 64-розрядні операційні системи.</value>
   </data>
   <data name="UploadTask_DoUploadJob_Uploading" xml:space="preserve">
     <value>Вивантаження</value>
@@ -247,7 +247,7 @@
     <value>Поділитися посиланням ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Для застосування змін ShareX треба перевідкрити зі Steam.</value>
+    <value>Для застосування змін ShareY треба перевідкрити зі Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>Посилання для завантаження та вивантаження</value>
@@ -268,7 +268,7 @@
     <value>X: {0}, Y: {1}, Ширина: {2}, Висота: {3}</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Чи бажаєте Ви скинути налаштування ShareX?</value>
+    <value>Чи бажаєте Ви скинути налаштування ShareY?</value>
   </data>
   <data name="BeforeUploadForm_BeforeUploadForm__0__is_about_to_be_uploaded_to__1___You_may_choose_a_different_destination_" xml:space="preserve">
     <value>{0} буде вивантажено до {1}. Ви можете обрати інший пункт призначення.</value>
@@ -358,7 +358,7 @@
     <value>Сторінка проекту</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Змінити з ShareX</value>
+    <value>Змінити з ShareY</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowseCustomScreenshotsPath_Click_Choose_screenshots_folder_path" xml:space="preserve">
     <value>Виберіть шлях до теки знімків екрану</value>
@@ -373,7 +373,7 @@
     <value>Помилка</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Ваше антивірусне програмне забезпечення або функція контрольованого доступу до папок у Windows може блокувати ShareX.</value>
+    <value>Ваше антивірусне програмне забезпечення або функція контрольованого доступу до папок у Windows може блокувати ShareY.</value>
   </data>
   <data name="QuickTaskMenuEditorForm_Reset_all_quick_tasks_to_defaults_Confirmation" xml:space="preserve">
     <value>Скинути всі швидкі завдання до типових значень?</value>
@@ -433,9 +433,9 @@
     <value>Закрити</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>Треба перезапустити ShareX, щоб застосувати зміну особистої теки.
+    <value>Треба перезапустити ShareY, щоб застосувати зміну особистої теки.
 
-Чи хочете Ви перезапустити ShareX?</value>
+Чи хочете Ви перезапустити ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Website" xml:space="preserve">
     <value>Сайт</value>
@@ -453,7 +453,7 @@
     <value>Помилка</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Виберіть персональний шлях до теки ShareX</value>
+    <value>Виберіть персональний шлях до теки ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Іспанська</value>
@@ -480,7 +480,7 @@
     <value>Ви можете додати робочі процеси у налаштуваннях гарячих клавіш...</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX — Підтвердження</value>
+    <value>ShareY — Підтвердження</value>
   </data>
   <data name="UploadTask_DownloadAndUpload_Downloading" xml:space="preserve">
     <value>Завантаження</value>
@@ -522,19 +522,19 @@
     <value>Джерело відео та аудіо FFmpeg не може бути одночасно "None".</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX не можна закрити під час активного запису екрана.
+    <value>ShareY не можна закрити під час активного запису екрана.
 
 Ви хочете перервати активний запис екрану?</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Вивантажити з ShareX</value>
+    <value>Вивантажити з ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Гарячі клавіші вимкнено.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Немає доступу до файла „{0}“.
-Будь ласка, запустіть ShareX з правами адміністратора, щоб змінити шлях до особистої теки.</value>
+Будь ласка, запустіть ShareY з правами адміністратора, щоб змінити шлях до особистої теки.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Запуск було вимкнено у Диспетчері завдань</value>
@@ -575,7 +575,7 @@
 
 {1}
 
-Будь ласка, виберіть іншу гарячу клавішу чи закрийте конфліктну програму та перевідкрийте ShareX.</value>
+Будь ласка, виберіть іншу гарячу клавішу чи закрийте конфліктну програму та перевідкрийте ShareY.</value>
   </data>
   <data name="InspectWindow_ClientRectangle" xml:space="preserve">
     <value>Клієнтський прямокутник</value>
@@ -631,7 +631,7 @@
     <value>Затримка для знімка: {0}с</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Відкривати при запуску ShareX</value>
+    <value>Відкривати при запуску ShareY</value>
   </data>
   <data name="YourSystemAdminDisabledTheUploadFeature" xml:space="preserve">
     <value>Ваш системний адміністратор вимкнув функцію вивантаження.</value>

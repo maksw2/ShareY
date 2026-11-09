@@ -121,7 +121,7 @@
     <value>高级</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - 应用程序设置</value>
+    <value>ShareY - 应用程序设置</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>代理</value>
@@ -142,7 +142,7 @@
     <value>缓冲区大小：</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>ShareX 个人文件夹：</value>
+    <value>ShareY 个人文件夹：</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>综合</value>
@@ -160,7 +160,7 @@
     <value>启动时最小化到托盘</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>在 "发送到" 菜单中显示 ShareX</value>
+    <value>在 "发送到" 菜单中显示 ShareY</value>
   </data>
   <data name="cbRememberMainFormPosition.Text" xml:space="preserve">
     <value>记住主窗口的位置</value>
@@ -238,10 +238,10 @@
     <value>格式</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>当 ShareX 开启时，在 Steam 状态显示 ShareX</value>
+    <value>当 ShareY 开启时，在 Steam 状态显示 ShareY</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>在 Windows 资源管理器右键菜单显示 "使用 ShareX 上传" 按钮</value>
+    <value>在 Windows 资源管理器右键菜单显示 "使用 ShareY 上传" 按钮</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>常规</value>
@@ -301,7 +301,7 @@
     <value>Chrome 扩展程序</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>安装 ShareX 的 Chrome 扩展程序...</value>
+    <value>安装 ShareY 的 Chrome 扩展程序...</value>
   </data>
   <data name="cbChromeExtensionSupport.Text" xml:space="preserve">
     <value>启用 Chrome 扩展程序支持</value>
@@ -322,10 +322,10 @@
     <value>安装开发版本...</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>在Windows上下文菜单中显示“使用ShareX编辑”</value>
+    <value>在Windows上下文菜单中显示“使用ShareY编辑”</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>使用白色 ShareX 图标</value>
+    <value>使用白色 ShareY 图标</value>
   </data>
   <data name="btnPersonalFolderPathApply.Text" xml:space="preserve">
     <value>应用</value>

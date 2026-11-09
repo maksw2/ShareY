@@ -121,7 +121,7 @@
     <value>Nâng cao</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Thiết lập ứng dụng</value>
+    <value>ShareY - Thiết lập ứng dụng</value>
   </data>
   <data name="tpProxy.Text" xml:space="preserve">
     <value>Proxy</value>
@@ -133,7 +133,7 @@
     <value>Mở...</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Khi ShareX đang chạy, hiện "In-App" trong Steam</value>
+    <value>Khi ShareY đang chạy, hiện "In-App" trong Steam</value>
   </data>
   <data name="btnClipboardFormatEdit.Text" xml:space="preserve">
     <value>Chỉnh sửa...</value>
@@ -145,7 +145,7 @@
     <value>Kích thước buffer:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Thư mục riêng của ShareX:</value>
+    <value>Thư mục riêng của ShareY:</value>
   </data>
   <data name="tpIntegration.Text" xml:space="preserve">
     <value>Tích hợp</value>
@@ -163,7 +163,7 @@
     <value>Khi khởi động thu nhỏ xuống khay hệ thống</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Hiện ShareX trong menu "Send to"</value>
+    <value>Hiện ShareY trong menu "Send to"</value>
   </data>
   <data name="tpGeneral.Text" xml:space="preserve">
     <value>Tổng quan</value>
@@ -217,7 +217,7 @@
     <value>Nhớ kích thước cửa sổ chính</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Hiện nút "Tải lên với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+    <value>Hiện nút "Tải lên với ShareY" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="lblSaveImageSubFolderPattern.Text" xml:space="preserve">
     <value>Định dạng tên thư mục phụ:</value>
@@ -271,7 +271,7 @@
     <value>Tiện ích mở rộng cho Firefox</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Hiện nút "Chỉnh sửa với ShareX" trong menu ngữ cảnh của Windows Explorer</value>
+    <value>Hiện nút "Chỉnh sửa với ShareY" trong menu ngữ cảnh của Windows Explorer</value>
   </data>
   <data name="tpHistory.Text" xml:space="preserve">
     <value>Lịch sử</value>
@@ -283,10 +283,10 @@
     <value>Cài đặt phiên bản cho lập trình viên...</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Cài đặt tiện ích mở rộng ShareX cho Chrome...</value>
+    <value>Cài đặt tiện ích mở rộng ShareY cho Chrome...</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Cài đặt tiện ích mở rộng ShareX cho Firefox...</value>
+    <value>Cài đặt tiện ích mở rộng ShareY cho Firefox...</value>
   </data>
   <data name="cbRecentTasksSave.Text" xml:space="preserve">
     <value>Lưu các tác vụ gần đây</value>
@@ -328,7 +328,7 @@
     <value>Hiện tác vụ gần đây ở menu khay hệ thống</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Dùng biểu tượng ShareX màu trắng</value>
+    <value>Dùng biểu tượng ShareY màu trắng</value>
   </data>
   <data name="btnThemeReset.Text" xml:space="preserve">
     <value>Thiết lập lại...</value>

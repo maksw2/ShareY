@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="$this.Text" xml:space="preserve">
-    <value>ShareX - Ustawienia aplikacji</value>
+    <value>ShareY - Ustawienia aplikacji</value>
   </data>
   <data name="btnThemeAdd.Text" xml:space="preserve">
     <value>Dodaj</value>
@@ -160,7 +160,7 @@
     <value>Eksportuj...</value>
   </data>
   <data name="btnFirefoxOpenAddonPage.Text" xml:space="preserve">
-    <value>Zainstaluj dodatek ShareX do Firefox...</value>
+    <value>Zainstaluj dodatek ShareY do Firefox...</value>
   </data>
   <data name="btnOpenPersonalFolderPath.Text" xml:space="preserve">
     <value>Otwórz...</value>
@@ -190,7 +190,7 @@
     <value>Zainstaluj wersję deweloperską...</value>
   </data>
   <data name="btnChromeOpenExtensionPage.Text" xml:space="preserve">
-    <value>Zainstaluj rozszerzenie ShareX do Chrome...</value>
+    <value>Zainstaluj rozszerzenie ShareY do Chrome...</value>
   </data>
   <data name="cbAutomaticallyCleanupLogFiles.Text" xml:space="preserve">
     <value>Automatycznie czyść stare pliki dziennika</value>
@@ -247,7 +247,7 @@
     <value>Format</value>
   </data>
   <data name="cbUseWhiteShareXIcon.Text" xml:space="preserve">
-    <value>Użyj białej ikony ShareX</value>
+    <value>Użyj białej ikony ShareY</value>
   </data>
   <data name="cbShowTray.Text" xml:space="preserve">
     <value>Pokaż ikonę w zasobniku</value>
@@ -289,13 +289,13 @@
     <value>Limit jednoczesnego przesyłania:</value>
   </data>
   <data name="cbShellContextMenu.Text" xml:space="preserve">
-    <value>Pokaż przycisk "Prześlij za pomocą ShareX" w menu kontekstowym Eksploratora Windows</value>
+    <value>Pokaż przycisk "Prześlij za pomocą ShareY" w menu kontekstowym Eksploratora Windows</value>
   </data>
   <data name="cbUseSecondaryUploaders.Text" xml:space="preserve">
     <value>Używaj serwisów drugorzędnych w kolejności preferencji przy ponawianiu prób</value>
   </data>
   <data name="cbSteamShowInApp.Text" xml:space="preserve">
-    <value>Gdy ShareX jest otwarty, pokaż status "W aplikacji" na Steamie</value>
+    <value>Gdy ShareY jest otwarty, pokaż status "W aplikacji" na Steamie</value>
   </data>
   <data name="cbTaskbarProgressEnabled.Text" xml:space="preserve">
     <value>Pokaż postęp na przycisku paska zadań</value>
@@ -349,7 +349,7 @@
     <value>Nie pokazuj okna dialogowego ustawień drukowania obrazu</value>
   </data>
   <data name="cbEditWithShareX.Text" xml:space="preserve">
-    <value>Pokaż przycisk "Edytuj za pomocą ShareX" w menu kontekstowym Eksploratora Windows</value>
+    <value>Pokaż przycisk "Edytuj za pomocą ShareY" w menu kontekstowym Eksploratora Windows</value>
   </data>
   <data name="cbFirefoxAddonSupport.Text" xml:space="preserve">
     <value>Włącz obsługę dodatku do Firefoksa</value>
@@ -364,7 +364,7 @@
     <value>Tryb widoku zadań:</value>
   </data>
   <data name="lblPersonalFolderPath.Text" xml:space="preserve">
-    <value>Osobisty folder ShareX:</value>
+    <value>Osobisty folder ShareY:</value>
   </data>
   <data name="tpAdvanced.Text" xml:space="preserve">
     <value>Zaawansowane</value>
@@ -412,7 +412,7 @@
     <value>Zapamiętaj rozmiar głównego okna</value>
   </data>
   <data name="cbSendToMenu.Text" xml:space="preserve">
-    <value>Pokaż ShareX w menu "Wyślij do"</value>
+    <value>Pokaż ShareY w menu "Wyślij do"</value>
   </data>
   <data name="lblDefaultPrinterOverride.Text" xml:space="preserve">
     <value>Zastąpienie domyślnej drukarki:</value>

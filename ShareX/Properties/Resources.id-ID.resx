@@ -160,8 +160,8 @@
     <value>Log perubahan</value>
   </data>
   <data name="ApplicationSettingsForm_cbLanguage_SelectedIndexChanged_Language_Restart" xml:space="preserve">
-    <value>ShareX perlu dimulai ulang untuk menerapkan bahasa.
-Apakah Anda ingin memulai ulang ShareX?</value>
+    <value>ShareY perlu dimulai ulang untuk menerapkan bahasa.
+Apakah Anda ingin memulai ulang ShareY?</value>
   </data>
   <data name="AboutForm_AboutForm_Language_zh_TW" xml:space="preserve">
     <value>Bahasa Mandarin Tradisional</value>
@@ -182,7 +182,7 @@ Apakah Anda ingin memulai ulang ShareX?</value>
     <value>Pilih tombol cepat...</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_Text" xml:space="preserve">
-    <value>Jalankan ShareX saat memulai Windows</value>
+    <value>Jalankan ShareY saat memulai Windows</value>
   </data>
   <data name="MainForm_UpdateToggleHotkeyButton_Disable_hotkeys" xml:space="preserve">
     <value>Nonaktifkan tombol cepat</value>
@@ -216,7 +216,7 @@ Tekan 'Tidak' untuk membatalkan unggahan saat ini dan nonaktifkan otomatis mengu
     <value>Bagikan URL ({0})</value>
   </data>
   <data name="ApplicationSettingsForm_cbSteamShowInApp_CheckedChanged_For_settings_to_take_effect_ShareX_needs_to_be_reopened_from_Steam_" xml:space="preserve">
-    <value>Agar pengaturan diterapkan, ShareX perlu dibuka kembali dari Steam.</value>
+    <value>Agar pengaturan diterapkan, ShareY perlu dibuka kembali dari Steam.</value>
   </data>
   <data name="UploadManager_UploadURL_URL_to_download_from_and_upload" xml:space="preserve">
     <value>URL untuk mengunduh dan mengunggah</value>
@@ -352,7 +352,7 @@ Apakah anda yakin ingin melanjutkan?</value>
     <value>Bahasa Ukraina</value>
   </data>
   <data name="ApplicationSettingsForm_btnBrowsePersonalFolderPath_Click_Choose_ShareX_personal_folder_path" xml:space="preserve">
-    <value>Pilih jalur folder pribadi ShareX</value>
+    <value>Pilih jalur folder pribadi ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Language_es" xml:space="preserve">
     <value>Bahasa Spanyol</value>
@@ -391,14 +391,14 @@ Apakah anda yakin ingin melanjutkan?</value>
     <value>Bahasa Rusia</value>
   </data>
   <data name="IntegrationHelpers_UploadWithShareX" xml:space="preserve">
-    <value>Unggah dengan ShareX</value>
+    <value>Unggah dengan ShareY</value>
   </data>
   <data name="TaskHelpers_ToggleHotkeys_Hotkeys_disabled_" xml:space="preserve">
     <value>Tombol cepat dinonaktifkan.</value>
   </data>
   <data name="Program_WritePersonalPathConfig_Cant_access_to_file" xml:space="preserve">
     <value>Tidak bisa mengakses file "{0}".
-Jalankan ShareX sebagai administrator untuk mengubah jalur folder pribadi.</value>
+Jalankan ShareY sebagai administrator untuk mengubah jalur folder pribadi.</value>
   </data>
   <data name="ApplicationSettingsForm_cbStartWithWindows_DisabledByUser_Text" xml:space="preserve">
     <value>Pengaktifan telah dinonaktifkan di Pengelola Tugas</value>
@@ -424,7 +424,7 @@ di sini</value>
 
 {1}
 
-Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentangan dan buka kembali ShareX.</value>
+Silakan pilih tombol cepat yang berbeda atau keluar dari aplikasi yang bertentangan dan buka kembali ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_vi_VN" xml:space="preserve">
     <value>Bahasa Vietnam</value>
@@ -459,7 +459,7 @@ Klik tengah untuk menutup</value>
     <value>Pendaftaran tombol cepat gagal</value>
   </data>
   <data name="ActionsToolbar_OpenAtShareXStartup" xml:space="preserve">
-    <value>Buka di pengaktifan ShareX</value>
+    <value>Buka di pengaktifan ShareY</value>
   </data>
   <data name="UploadTask_Prepare_Preparing" xml:space="preserve">
     <value>Mempersiapkan</value>
@@ -469,7 +469,7 @@ Klik tengah untuk menutup</value>
 {0}</value>
   </data>
   <data name="ShareXIsMinimizedToTheSystemTray" xml:space="preserve">
-    <value>ShareX diminimalkan ke baki sistem.</value>
+    <value>ShareY diminimalkan ke baki sistem.</value>
   </data>
   <data name="PinToScreen" xml:space="preserve">
     <value>Sematkan ke layar</value>
@@ -481,7 +481,7 @@ Klik tengah untuk menutup</value>
     <value>Beralih ke tampilan thumbnail</value>
   </data>
   <data name="ShareXIsUpToDate" xml:space="preserve">
-    <value>ShareX sudah terbaru!</value>
+    <value>ShareY sudah terbaru!</value>
   </data>
   <data name="MainForm_UploadDebugLogWarning" xml:space="preserve">
     <value>Log debug dapat berisi informasi sensitif. Yakin ingin melanjutkan?</value>
@@ -496,7 +496,7 @@ Klik tengah untuk menutup</value>
     <value>Konten clipboard: File (Jumlah: {0})</value>
   </data>
   <data name="FFmpegOnlySupports64BitOperatingSystems" xml:space="preserve">
-    <value>FFmpeg yang disertakan dengan ShareX hanya mendukung sistem operasi 64-bit.</value>
+    <value>FFmpeg yang disertakan dengan ShareY hanya mendukung sistem operasi 64-bit.</value>
   </data>
   <data name="ClipboardContentViewer_ClipboardContentViewer_Load_Clipboard_content__Text__Length___0__" xml:space="preserve">
     <value>Konten clipboard: Teks (Panjang: {0})</value>
@@ -508,7 +508,7 @@ Klik tengah untuk menutup</value>
     <value>Nama file proses</value>
   </data>
   <data name="ApplicationSettingsForm_btnResetSettings_Click_WouldYouLikeToResetShareXSettings" xml:space="preserve">
-    <value>Apakah Anda ingin mengatur ulang pengaturan ShareX?</value>
+    <value>Apakah Anda ingin mengatur ulang pengaturan ShareY?</value>
   </data>
   <data name="FFmpegIsMissing" xml:space="preserve">
     <value>FFmpeg tidak ditemukan</value>
@@ -537,7 +537,7 @@ Klik tengah untuk menutup</value>
 Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
   </data>
   <data name="IntegrationHelpers_EditWithShareX" xml:space="preserve">
-    <value>Edit dengan ShareX</value>
+    <value>Edit dengan ShareY</value>
   </data>
   <data name="AboutForm_AboutForm_Links" xml:space="preserve">
     <value>Tautan</value>
@@ -546,7 +546,7 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
     <value>Clipboard tidak berisi gambar.</value>
   </data>
   <data name="YourAntiVirusSoftwareOrTheControlledFolderAccessFeatureInWindowsCouldBeBlockingShareX" xml:space="preserve">
-    <value>Perangkat lunak antivirus Anda atau fitur akses folder terkontrol di Windows mungkin memblokir ShareX.</value>
+    <value>Perangkat lunak antivirus Anda atau fitur akses folder terkontrol di Windows mungkin memblokir ShareY.</value>
   </data>
   <data name="AboutForm_AboutForm_Language_ar_YE" xml:space="preserve">
     <value>Arab</value>
@@ -555,9 +555,9 @@ Anda dapat menonaktifkannya nanti dari menu "Tugas setelah tangkapan".</value>
     <value>Donasi</value>
   </data>
   <data name="ShareXNeedsToBeRestartedForThePersonalFolderChangesToApply" xml:space="preserve">
-    <value>ShareX perlu dimulai ulang agar perubahan folder pribadi diterapkan.
+    <value>ShareY perlu dimulai ulang agar perubahan folder pribadi diterapkan.
 
-Apakah Anda ingin memulai ulang ShareX?</value>
+Apakah Anda ingin memulai ulang ShareY?</value>
   </data>
   <data name="FFmpeg_FFmpeg_error" xml:space="preserve">
     <value>Kesalahan FFmpeg</value>
@@ -575,7 +575,7 @@ Apakah Anda ingin memulai ulang ShareX?</value>
     <value>Gaya jendela</value>
   </data>
   <data name="ShareXConfirmation" xml:space="preserve">
-    <value>ShareX - Konfirmasi</value>
+    <value>ShareY - Konfirmasi</value>
   </data>
   <data name="OpticalCharacterRecognitionFeatureIsOnlyAvailableWithWindowsVersion0OrNewer" xml:space="preserve">
     <value>Fitur pengenalan karakter optik hanya tersedia pada Windows versi {0} atau yang lebih baru.</value>
@@ -599,7 +599,7 @@ Apakah Anda ingin memulai ulang ShareX?</value>
     <value>Sumber video dan audio FFmpeg tidak boleh sama-sama "Tidak ada".</value>
   </data>
   <data name="ShareXCannotBeClosedWhileScreenRecordingIsActive" xml:space="preserve">
-    <value>ShareX tidak dapat ditutup saat perekaman layar aktif.
+    <value>ShareY tidak dapat ditutup saat perekaman layar aktif.
 
 Apakah Anda ingin membatalkan perekaman layar aktif?</value>
   </data>
