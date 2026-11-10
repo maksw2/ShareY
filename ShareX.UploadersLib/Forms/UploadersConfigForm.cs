@@ -46,6 +46,7 @@ namespace ShareX.UploadersLib
 
         private ImageList uploadersImageList;
         internal TabPage tpImgFish;
+        internal TabPage tpImmich;
 
         private UploadersConfigForm(UploadersConfig config)
         {
@@ -87,6 +88,10 @@ namespace ShareX.UploadersLib
             tpImgFish = new TabPage("img.fish") { Name = "tpImgFish" };
             tpImgFish.Controls.Add(new PropertyGrid { Dock = DockStyle.Fill, ToolbarVisible = false, SelectedObject = Config.ImgFishSettings });
             tcFileUploaders.Controls.Add(tpImgFish);
+
+            tpImmich = new TabPage("Immich") { Name = "tpImmich" };
+            tpImmich.Controls.Add(new PropertyGrid { Dock = DockStyle.Fill, ToolbarVisible = false, SelectedObject = Config.ImmichSettings });
+            tcFileUploaders.Controls.Add(tpImmich);
 
             AddIconToTabs();
 

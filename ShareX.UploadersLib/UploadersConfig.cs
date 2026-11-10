@@ -151,6 +151,7 @@ namespace ShareX.UploadersLib
         #region File uploaders
 
         public ImgFishSettings ImgFishSettings { get; set; } = new ImgFishSettings();
+        public ImmichSettings ImmichSettings { get; set; } = new ImmichSettings();
 
         #region Dropbox
 
