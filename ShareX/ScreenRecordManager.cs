@@ -59,6 +59,12 @@ namespace ShareX
 
         public static void StopRecording()
         {
+            if (recordForm?.RestartRequested == true)
+            {
+                nativeRecorder?.RequestAbort();
+                return;
+            }
+
             if (recordForm?.Status is ScreenRecordingStatus.Waiting or ScreenRecordingStatus.Working)
             {
                 recordForm.AbortRecording();
@@ -195,84 +201,107 @@ namespace ShareX
                         Duration = settings.ScreenRecordFixedDuration ? TimeSpan.FromSeconds(settings.ScreenRecordDuration) : TimeSpan.Zero
                     };
 
-                    nativeRecorder = new NativeScreenRecorder(options);
-                    nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
-                    nativeRecorder.EncodingProgressChanged += progress =>
+                    bool restarting = false;
+                    while (true)
                     {
-                        recordForm.InvokeSafe(() =>
+                        if (restarting) recordForm.InvokeSafe(() => recordForm.PrepareForRestart());
+                        try
                         {
-                            if (progress == 0)
+                            nativeRecorder = new NativeScreenRecorder(options);
+                            nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
+                            nativeRecorder.EncodingProgressChanged += progress =>
                             {
-                                recordForm.ChangeState(ScreenRecordState.RecordingEnd);
-                                recordForm.ChangeState(ScreenRecordState.Encoding);
-                            }
-                            recordForm.ChangeStateProgress(progress);
-                        });
-                    };
-
-                    recordForm.ChangeState(ScreenRecordState.BeforeStart);
-                    await nativeRecorder.PrepareAsync();
-
-                    if (!settings.ScreenRecordAutoStart)
-                    {
-                        recordForm.RecordResetEvent.WaitOne();
-                    }
-                    else if (settings.ScreenRecordStartDelay > 0)
-                    {
-                        int delay = checked((int)(settings.ScreenRecordStartDelay * 1000));
-                        recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
-                        recordForm.RecordResetEvent.WaitOne(delay);
-                    }
-
-                    if (recordForm.Status is ScreenRecordingStatus.Aborted or ScreenRecordingStatus.Stopped)
-                    {
-                        aborted = true;
-                        nativeRecorder.RequestAbort();
-                        return;
-                    }
-
-                    if (recordForm.RecordingRegion != options.Region)
-                    {
-                        await nativeRecorder.DisposeAsync();
-                        nativeRecorder = new NativeScreenRecorder(options with { Region = recordForm.RecordingRegion });
-                        nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
-                        nativeRecorder.EncodingProgressChanged += progress =>
-                            recordForm.InvokeSafe(() =>
-                            {
-                                if (progress == 0)
+                                recordForm.InvokeSafe(() =>
                                 {
-                                    recordForm.ChangeState(ScreenRecordState.RecordingEnd);
-                                    recordForm.ChangeState(ScreenRecordState.Encoding);
-                                }
-                                recordForm.ChangeStateProgress(progress);
-                            });
-                        await nativeRecorder.PrepareAsync();
-                    }
+                                    if (progress == 0)
+                                    {
+                                        recordForm.ChangeState(ScreenRecordState.RecordingEnd);
+                                        recordForm.ChangeState(ScreenRecordState.Encoding);
+                                    }
+                                    recordForm.ChangeStateProgress(progress);
+                                });
+                            };
 
-                    recordForm.ChangeState(ScreenRecordState.AfterStart);
-                    await nativeRecorder.StartAsync();
-                    if (recordForm.Status == ScreenRecordingStatus.Aborted)
-                    {
-                        nativeRecorder.RequestAbort();
-                    }
-                    else if (recordForm.Status == ScreenRecordingStatus.Stopped)
-                    {
-                        nativeRecorder.RequestStop();
-                    }
-                    else
-                    {
-                        recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
-                    }
+                            recordForm.ChangeState(ScreenRecordState.BeforeStart);
+                            await nativeRecorder.PrepareAsync();
 
-                    RecordingResult result = await nativeRecorder.Completion;
-                    DebugHelper.WriteLine("Native recording: {0}, frames: {1}, dropped: {2}",
-                        result.Encoder.Name, result.VideoFrames, result.DroppedVideoFrames);
-                    aborted = recordForm.Status == ScreenRecordingStatus.Aborted;
-                    if (!aborted)
-                    {
-                        File.Move(temporaryPath, path, true);
-                        completed = true;
-                        TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+                            if (!settings.ScreenRecordAutoStart && !restarting)
+                            {
+                                recordForm.RecordResetEvent.WaitOne();
+                            }
+                            else if (settings.ScreenRecordStartDelay > 0)
+                            {
+                                int delay = checked((int)(settings.ScreenRecordStartDelay * 1000));
+                                recordForm.InvokeSafe(() => recordForm.StartCountdown(delay));
+                                recordForm.RecordResetEvent.WaitOne(delay);
+                            }
+
+                            if (recordForm.Status is ScreenRecordingStatus.Aborted or ScreenRecordingStatus.Stopped)
+                            {
+                                aborted = true;
+                                nativeRecorder.RequestAbort();
+                                return;
+                            }
+
+                            if (recordForm.RecordingRegion != options.Region)
+                            {
+                                await nativeRecorder.DisposeAsync();
+                                nativeRecorder = new NativeScreenRecorder(options with { Region = recordForm.RecordingRegion });
+                                nativeRecorder.Diagnostic += message => DebugHelper.WriteLine("Native recorder: " + message);
+                                nativeRecorder.EncodingProgressChanged += progress =>
+                                    recordForm.InvokeSafe(() =>
+                                    {
+                                        if (progress == 0)
+                                        {
+                                            recordForm.ChangeState(ScreenRecordState.RecordingEnd);
+                                            recordForm.ChangeState(ScreenRecordState.Encoding);
+                                        }
+                                        recordForm.ChangeStateProgress(progress);
+                                    });
+                                await nativeRecorder.PrepareAsync();
+                            }
+
+                            recordForm.ChangeState(ScreenRecordState.AfterStart);
+                            await nativeRecorder.StartAsync();
+                            if (recordForm.Status == ScreenRecordingStatus.Aborted)
+                            {
+                                nativeRecorder.RequestAbort();
+                            }
+                            else if (recordForm.Status == ScreenRecordingStatus.Stopped)
+                            {
+                                nativeRecorder.RequestStop();
+                            }
+                            else
+                            {
+                                recordForm.ChangeState(ScreenRecordState.AfterRecordingStart);
+                            }
+
+                            RecordingResult result = await nativeRecorder.Completion;
+                            DebugHelper.WriteLine("Native recording: {0}, frames: {1}, dropped: {2}",
+                                result.Encoder.Name, result.VideoFrames, result.DroppedVideoFrames);
+                            aborted = recordForm.Status == ScreenRecordingStatus.Aborted;
+                            if (recordForm.RestartRequested) { restarting = true; continue; }
+                            if (!aborted)
+                            {
+                                File.Move(temporaryPath, path, true);
+                                completed = true;
+                                TaskHelpers.PlayNotificationSoundAsync(NotificationSound.ActionCompleted, taskSettings);
+                            }
+                            break;
+                        }
+                        catch (OperationCanceledException) when (recordForm?.RestartRequested == true)
+                        {
+                        }
+                        finally
+                        {
+                            if (nativeRecorder != null)
+                            {
+                                await nativeRecorder.DisposeAsync();
+                                nativeRecorder = null;
+                            }
+                            FileHelpers.DeleteFile(temporaryPath);
+                        }
+                        restarting = true;
                     }
                 }
                 catch (OperationCanceledException) when (recordForm?.Status is ScreenRecordingStatus.Aborted or ScreenRecordingStatus.Stopped)

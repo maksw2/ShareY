@@ -536,4 +536,7 @@ Czy chcesz zapisać zmiany przed zamknięciem edytora obrazów?</value>
   <data name="RulerBottom" xml:space="preserve">
     <value>Dół</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Uruchom ponownie</value>
+  </data>
 </root>

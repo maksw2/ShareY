@@ -536,4 +536,7 @@
   <data name="RulerBottom" xml:space="preserve">
     <value>Abajo</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
 </root>

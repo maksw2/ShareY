@@ -536,4 +536,7 @@ Möchten Sie die Änderungen speichern, bevor Sie den Bildeditor schließen?</va
   <data name="RulerBottom" xml:space="preserve">
     <value>Unten</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Neu starten</value>
+  </data>
 </root>

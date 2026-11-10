@@ -1562,6 +1562,12 @@ namespace ShareX.ScreenCaptureLib.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Stop.
         /// </summary>
+        internal static string ScreenRecordForm_Restart {
+            get {
+                return ResourceManager.GetString("ScreenRecordForm_Restart", resourceCulture);
+            }
+        }
+
         internal static string ScreenRecordForm_Stop {
             get {
                 return ResourceManager.GetString("ScreenRecordForm_Stop", resourceCulture);

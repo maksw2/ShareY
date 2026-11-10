@@ -536,4 +536,7 @@ Bạn có muốn lưu thay đổi trước khi đóng trình chỉnh sửa ảnh
   <data name="RulerBottom" xml:space="preserve">
     <value>Dưới</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Bắt đầu lại</value>
+  </data>
 </root>

@@ -536,4 +536,7 @@ Deseja salvar as alterações antes de fechar o editor?</value>
   <data name="RulerBottom" xml:space="preserve">
     <value>Inferior</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
 </root>

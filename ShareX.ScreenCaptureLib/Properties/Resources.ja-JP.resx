@@ -536,4 +536,7 @@
   <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
     <value>中央の十字線を表示</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>再録画</value>
+  </data>
 </root>

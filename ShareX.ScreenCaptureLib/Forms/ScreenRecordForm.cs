@@ -42,6 +42,13 @@ namespace ShareX.ScreenCaptureLib
         public bool UseInProcessPause { get; set; }
         public bool ExcludeFromCapture { get; set; }
 
+        private int restartRequested;
+        public bool RestartRequested => Volatile.Read(ref restartRequested) != 0;
+        public bool ConsumeRestartRequest() => Interlocked.Exchange(ref restartRequested, 0) != 0;
+
+        private readonly NoFocusBorderButton btnRestart = new NoFocusBorderButton();
+        private readonly ToolStripMenuItem tsmiRestart = new ToolStripMenuItem();
+
         private ScreenRecordingStatus status;
 
         public ScreenRecordingStatus Status
@@ -102,8 +109,22 @@ namespace ShareX.ScreenCaptureLib
         public ScreenRecordForm(Rectangle regionRectangle)
         {
             InitializeComponent();
-            ShareXResources.ApplyTheme(this);
             niTray.Icon = ShareXResources.Icon;
+
+            btnRestart.Text = Resources.ScreenRecordForm_Restart;
+            btnRestart.Font = btnPause.Font;
+            btnRestart.FlatStyle = btnPause.FlatStyle;
+            btnRestart.Size = new Size(Math.Max(btnPause.Width, TextRenderer.MeasureText(btnRestart.Text, btnRestart.Font).Width + 12), btnPause.Height);
+            btnRestart.Location = new Point(btnAbort.Right, 0);
+            btnRestart.MouseClick += (sender, e) => { if (e.Button == MouseButtons.Left) RestartRecording(); };
+            pInfo.Controls.Add(btnRestart);
+            lblTimer.Left += btnRestart.Width;
+
+            tsmiRestart.Text = Resources.ScreenRecordForm_Restart;
+            tsmiRestart.Click += (sender, e) => RestartRecording();
+            cmsMain.Items.Insert(2, tsmiRestart);
+            btnRestart.Enabled = tsmiRestart.Enabled = false;
+            ShareXResources.ApplyTheme(this);
 
             borderRectangle = regionRectangle.Offset(1);
             borderRectangle0Based = new Rectangle(0, 0, borderRectangle.Width, borderRectangle.Height);
@@ -178,6 +199,28 @@ namespace ShareX.ScreenCaptureLib
             {
                 RecordResetEvent?.Set();
             }
+        }
+
+        public void RestartRecording()
+        {
+            bool active = Status == ScreenRecordingStatus.Recording || (UseInProcessPause && Status == ScreenRecordingStatus.Paused);
+            if (!active) return;
+
+            Interlocked.Exchange(ref restartRequested, 1);
+            Status = ScreenRecordingStatus.Waiting;
+            Timer.Reset();
+            IsCountdown = false;
+            StopRecordingTimer();
+            UpdateUI();
+            OnStopRequested();
+            RecordResetEvent.Set();
+        }
+
+        public void PrepareForRestart()
+        {
+            ConsumeRestartRequest();
+            RecordResetEvent.Reset();
+            ChangeState(ScreenRecordState.BeforeStart);
         }
 
         public void PauseResumeRecording()
@@ -291,6 +334,7 @@ namespace ShareX.ScreenCaptureLib
 
         private void UpdateUI()
         {
+            btnRestart.Enabled = tsmiRestart.Enabled = Status is ScreenRecordingStatus.Recording or ScreenRecordingStatus.Paused;
             switch (Status)
             {
                 case ScreenRecordingStatus.Working:

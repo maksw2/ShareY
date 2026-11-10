@@ -536,4 +536,7 @@ Would you like to salva the changes before closing the modificaor immagini?</val
   <data name="RulerBottom" xml:space="preserve">
     <value>Basso</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Riavvia</value>
+  </data>
 </root>

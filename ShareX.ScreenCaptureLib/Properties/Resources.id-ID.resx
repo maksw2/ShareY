@@ -536,4 +536,7 @@ Apakah Anda ingin menyimpan perubahan sebelum menutup editor gambar?</value>
   <data name="RulerBottom" xml:space="preserve">
     <value>Bawah</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Mulai ulang</value>
+  </data>
 </root>

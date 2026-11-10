@@ -536,4 +536,7 @@
   <data name="ShapeManager_CreateContextMenu_Show_center_crosshair" xml:space="preserve">
     <value>Показывать центральный прицел</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Заново</value>
+  </data>
 </root>

@@ -536,4 +536,7 @@ Voulez-vous enregistrer les modifications avant de fermer l'éditeur d'image ?</
   <data name="RulerBottom" xml:space="preserve">
     <value>Bas</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>Redémarrer</value>
+  </data>
 </root>

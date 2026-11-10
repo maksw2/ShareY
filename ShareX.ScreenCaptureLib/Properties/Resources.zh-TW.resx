@@ -535,4 +535,7 @@
   <data name="RulerRight" xml:space="preserve">
     <value>右</value>
   </data>
+  <data name="ScreenRecordForm_Restart" xml:space="preserve">
+    <value>重新錄製</value>
+  </data>
 </root>
