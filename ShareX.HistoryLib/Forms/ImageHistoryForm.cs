@@ -186,7 +186,7 @@ namespace ShareX.HistoryLib
                         filteredHistoryItems.Add(hi);
                     }
                 }
-                else if (!string.IsNullOrEmpty(hi.FilePath) && (!Settings.ImageOnly || FileHelpers.IsImageFile(hi.FilePath)) &&
+                else if (!string.IsNullOrEmpty(hi.FilePath) && (!Settings.ImageOnly || FileHelpers.IsImageFile(hi.FilePath) || FileHelpers.IsVideoFile(hi.FilePath)) &&
                     (regex == null || regex.IsMatch(hi.FileName) || (SearchInTags && hi.Tags != null &&
                     hi.Tags.Any(tag => !string.IsNullOrEmpty(tag.Value) && regex.IsMatch(tag.Value)))) &&
                     (!Settings.FilterMissingFiles || File.Exists(hi.FilePath)))
