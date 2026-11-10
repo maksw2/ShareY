@@ -39,9 +39,27 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
     private bool started, finalized;
     public VideoEncoderInfo Encoder { get; private set; } = null!;
     public BindFlags EncoderBindFlags { get; private set; }
+    public int Width { get; }
+    public int Height { get; }
 
-    public MediaFoundationWriter(GraphicsDevice graphics, RecordingOptions options, int width, int height)
+    public static MediaFoundationWriter Create(GraphicsDevice graphics, RecordingOptions options, int width, int height)
     {
+        (int h264Width, int h264Height) = FitSize(width, height, 4096, 4096 * 2304);
+        if (h264Width != width || h264Height != height)
+        {
+            (int hevcWidth, int hevcHeight) = FitSize(width, height, 8192, 8192 * 4352);
+            try { return new(graphics, options, hevcWidth, hevcHeight, VideoFormatGuids.Hevc); }
+            catch (Exception ex) when (ex is SharpGenException or NotSupportedException)
+            {
+            }
+        }
+        return new(graphics, options, h264Width, h264Height, VideoFormatGuids.H264);
+    }
+
+    private MediaFoundationWriter(GraphicsDevice graphics, RecordingOptions options, int width, int height, Guid codec)
+    {
+        Width = width;
+        Height = height;
         try
         {
             deviceManager = MediaFactory.MFCreateDXGIDeviceManager();
@@ -54,9 +72,9 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
             attributes.Set(TranscodeAttributeKeys.TranscodeContainertype, TranscodeContainerTypeGuids.Mpeg4).CheckError();
             attributes.Set(SinkWriterAttributeKeys.D3DManager, deviceManager).CheckError();
             writer = MediaFactory.MFCreateSinkWriterFromURL(options.OutputPath, null!, attributes);
-            using IMFMediaType videoOut = CreateVideoType(VideoFormatGuids.H264, width, height, options.FramesPerSecond);
+            using IMFMediaType videoOut = CreateVideoType(codec, width, height, options.FramesPerSecond);
             videoOut.Set(MediaTypeAttributeKeys.AvgBitrate, (uint)options.VideoBitrate).CheckError();
-            videoOut.Set(MediaTypeAttributeKeys.Mpeg2Profile, 77u).CheckError(); // H.264 Main
+            videoOut.Set(MediaTypeAttributeKeys.Mpeg2Profile, codec == VideoFormatGuids.Hevc ? 1u : 77u).CheckError();
             videoStream = writer.AddStream(videoOut);
             using IMFMediaType videoIn = CreateVideoType(VideoFormatGuids.NV12, width, height, options.FramesPerSecond);
             writer.SetInputMediaType(videoStream, videoIn, null!);
@@ -68,6 +86,13 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
             started = true;
         }
         catch { Dispose(); throw; }
+    }
+
+    private static (int Width, int Height) FitSize(int width, int height, int maxSide, int maxPixels)
+    {
+        double scale = Math.Min(1, Math.Min((double)maxSide / Math.Max(width, height), Math.Sqrt((double)maxPixels / ((long)width * height))));
+        if (scale >= 1) return (width, height);
+        return (Math.Max(2, (int)(width * scale) & ~1), Math.Max(2, (int)(height * scale) & ~1));
     }
 
     private static IMFMediaType CreateType(Guid major, Guid subtype)
@@ -135,7 +160,7 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
                 using IMFAttributes attributes = transform.Attributes;
                 bool hardware = !string.IsNullOrEmpty(GetString(attributes, TransformAttributeKeys.MftEnumHardwareUrlAttribute));
                 bool d3d11 = attributes.GetUInt32(TransformAttributeKeys.D3D11Aware, out uint aware).Success && aware != 0;
-                string name = GetString(attributes, TransformAttributeKeys.MftFriendlyNameAttribute) ?? (hardware ? "Windows hardware H.264 encoder" : "Windows H.264 encoder");
+                string name = GetString(attributes, TransformAttributeKeys.MftFriendlyNameAttribute) ?? (hardware ? "Windows hardware video encoder" : "Windows video encoder");
                 try
                 {
                     using IMFAttributes inputAttributes = transform.GetInputStreamAttributes(0);
@@ -146,7 +171,7 @@ internal sealed unsafe class MediaFoundationWriter : IDisposable
                 return new(name, hardware, d3d11);
             }
         }
-        throw new NotSupportedException("Media Foundation did not expose the selected H.264 encoder.");
+        throw new NotSupportedException("Media Foundation did not expose the selected video encoder.");
     }
 
     private static void ConfigureLowLatency(IMFTransform transform)

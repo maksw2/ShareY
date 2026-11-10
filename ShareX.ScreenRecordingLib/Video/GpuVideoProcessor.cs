@@ -48,12 +48,16 @@ internal sealed class GpuVideoProcessor : IDisposable
     public ID3D11Texture2D Canvas { get; private set; } = null!;
     public int Width { get; }
     public int Height { get; }
+    public int OutputWidth { get; }
+    public int OutputHeight { get; }
 
-    public GpuVideoProcessor(GraphicsDevice graphics, int width, int height, int fps, bool convertToNv12 = true)
+    public GpuVideoProcessor(GraphicsDevice graphics, int width, int height, int fps, bool convertToNv12 = true, int outputWidth = 0, int outputHeight = 0)
     {
         this.graphics = graphics;
         Width = width;
         Height = height;
+        OutputWidth = outputWidth > 0 ? outputWidth : width;
+        OutputHeight = outputHeight > 0 ? outputHeight : height;
         try
         {
             Canvas = graphics.CreateTexture(width, height, Format.B8G8R8A8_UNorm, BindFlags.RenderTarget);
@@ -70,8 +74,8 @@ internal sealed class GpuVideoProcessor : IDisposable
                 OutputFrameRate = new((uint)fps, 1),
                 InputWidth = (uint)width,
                 InputHeight = (uint)height,
-                OutputWidth = (uint)width,
-                OutputHeight = (uint)height,
+                OutputWidth = (uint)OutputWidth,
+                OutputHeight = (uint)OutputHeight,
                 Usage = VideoUsage.PlaybackNormal
             };
             enumerator = videoDevice.CreateVideoProcessorEnumerator(desc);
@@ -87,10 +91,10 @@ internal sealed class GpuVideoProcessor : IDisposable
             videoContext.VideoProcessorSetOutputColorSpace(processor, new VideoProcessorColorSpace { YCbCr_Matrix = 1, Nominal_Range = 1 });
             videoContext.VideoProcessorSetStreamFrameFormat(processor, 0, VideoFrameFormat.Progressive);
             videoContext.VideoProcessorSetStreamAutoProcessingMode(processor, 0, false);
-            RawRect rect = new(0, 0, width, height);
-            videoContext.VideoProcessorSetStreamSourceRect(processor, 0, true, rect);
-            videoContext.VideoProcessorSetStreamDestRect(processor, 0, true, rect);
-            videoContext.VideoProcessorSetOutputTargetRect(processor, true, rect);
+            RawRect output = new(0, 0, OutputWidth, OutputHeight);
+            videoContext.VideoProcessorSetStreamSourceRect(processor, 0, true, new RawRect(0, 0, width, height));
+            videoContext.VideoProcessorSetStreamDestRect(processor, 0, true, output);
+            videoContext.VideoProcessorSetOutputTargetRect(processor, true, output);
         }
         catch { Dispose(); throw; }
     }
@@ -131,7 +135,9 @@ internal sealed class GpuVideoProcessor : IDisposable
                         videoContext.VideoProcessorSetStreamColorSpace(processor, 1, new VideoProcessorColorSpace { RGB_Range = 0, Nominal_Range = 2 });
                         videoContext.VideoProcessorSetStreamSourceRect(processor, 1, true, new RawRect(0, 0, camera.Bounds.Width, camera.Bounds.Height));
                         var rect = camera.Bounds;
-                        videoContext.VideoProcessorSetStreamDestRect(processor, 1, true, new RawRect(rect.Left, rect.Top, rect.Right, rect.Bottom));
+                        videoContext.VideoProcessorSetStreamDestRect(processor, 1, true, new RawRect(
+                            (int)((long)rect.Left * OutputWidth / Width), (int)((long)rect.Top * OutputHeight / Height),
+                            (int)((long)rect.Right * OutputWidth / Width), (int)((long)rect.Bottom * OutputHeight / Height)));
                     }
                     streams[1] = new() { Enable = true, InputSurface = cameraInput };
                     videoContext.VideoProcessorBlt(processor, output, frameNumber, 2, streams).CheckError();
