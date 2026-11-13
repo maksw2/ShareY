@@ -346,6 +346,9 @@ Soll sie heruntergeladen werden?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Drucken</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptiver Quantisierer, 256 Farben</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16 Farben</value>
   </data>

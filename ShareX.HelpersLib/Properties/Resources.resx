@@ -346,6 +346,9 @@ Would you like to download it?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Print</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptive quantizer 256 colors</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 colors</value>
   </data>

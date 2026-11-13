@@ -2137,8 +2137,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WebP (*.webp)|*.webp";
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.webp|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|WebP (*.webp)|*.webp";
 
                 ofd.Multiselect = multiselect;
 
@@ -2180,10 +2180,6 @@ namespace ShareX.HelpersLib
                 {
                     imageFormat = ImageFormat.Bmp;
                 }
-                else if (ext.Equals("tif", StringComparison.OrdinalIgnoreCase) || ext.Equals("tiff", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Tiff;
-                }
             }
 
             return imageFormat;
@@ -2196,7 +2192,16 @@ namespace ShareX.HelpersLib
 
             try
             {
-                img.Save(filePath, imageFormat);
+                if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                {
+                    using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
+                    using FileStream stream = File.Create(filePath);
+                    SkiaImageHelpers.SaveWebP(bitmap, stream, SkiaImageHelpers.GetWebPEncoderOptions(90, true, 100));
+                }
+                else
+                {
+                    img.Save(filePath, imageFormat);
+                }
                 return true;
             }
             catch (Exception e)
@@ -2212,7 +2217,7 @@ namespace ShareX.HelpersLib
         {
             using (SaveFileDialog sfd = new SaveFileDialog())
             {
-                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                sfd.Filter = "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|WebP (*.webp)|*.webp|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp";
                 sfd.DefaultExt = "png";
 
                 string initialDirectory = null;
@@ -2250,14 +2255,13 @@ namespace ShareX.HelpersLib
                             case "jfif":
                                 sfd.FilterIndex = 2;
                                 break;
-                            case "gif":
+                            case "webp":
                                 sfd.FilterIndex = 3;
                                 break;
-                            case "bmp":
+                            case "gif":
                                 sfd.FilterIndex = 4;
                                 break;
-                            case "tif":
-                            case "tiff":
+                            case "bmp":
                                 sfd.FilterIndex = 5;
                                 break;
                         }

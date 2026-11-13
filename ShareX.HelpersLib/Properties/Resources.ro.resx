@@ -346,6 +346,9 @@ Doriți să o descărcați?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Imprimare</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Cuantizator adaptiv cu 256 de culori</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 culori</value>
   </data>

@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>הדפס</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>כימות מסתגל עם 256 צבעים</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>מכונן Octree ב-16 צבעים</value>
   </data>

@@ -219,6 +219,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Nyomtatás</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptív kvantáló, 256 szín</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizáló 16 szín</value>
   </data>

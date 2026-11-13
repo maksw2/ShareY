@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Yazdır</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Uyarlanabilir niceleyici, 256 renk</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16 renk (Daha düşük boyut fakat kötü kalite)</value>
   </data>

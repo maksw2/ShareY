@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>列印</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>自適應量化 256 色</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>八元樹量化 16 色</value>
   </data>

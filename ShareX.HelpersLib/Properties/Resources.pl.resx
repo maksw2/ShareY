@@ -346,6 +346,9 @@ Czy chcesz ją pobrać?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Drukuj</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptacyjny kwantyzator, 256 kolorów</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 kolorów</value>
   </data>

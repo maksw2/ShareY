@@ -1232,6 +1232,9 @@
   <data name="HotkeyType_Metadata" xml:space="preserve">
     <value>البيانات الوصفية</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>مكمّم تكيفي بـ 256 لونًا</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>مُكمِّم Octree بـ 16 لونًا</value>
   </data>

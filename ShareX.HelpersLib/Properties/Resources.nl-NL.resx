@@ -277,6 +277,9 @@ Wil je deze downloaden?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Afdrukken</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Adaptieve kwantisatie, 256 kleuren</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 kleuren</value>
   </data>

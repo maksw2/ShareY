@@ -346,6 +346,9 @@ Bạn có muốn tải về không?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>In</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Bộ lượng tử thích ứng 256 màu</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Bộ lượng tử octree 16 màu (4 bit)</value>
   </data>

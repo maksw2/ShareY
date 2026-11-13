@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Друк</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Адаптивний квантувач, 256 кольорів</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 кольорів</value>
   </data>

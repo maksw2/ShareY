@@ -337,6 +337,9 @@ Apakah anda ingin mengunduhnya?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Cetak</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Kuantisasi adaptif 256 warna</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 warna</value>
   </data>

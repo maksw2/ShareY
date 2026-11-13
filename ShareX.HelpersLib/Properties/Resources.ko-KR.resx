@@ -337,6 +337,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>인쇄</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>적응형 양자화 256색</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>16색 팔진트리 양자화</value>
   </data>

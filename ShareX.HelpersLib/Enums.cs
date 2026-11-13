@@ -44,12 +44,20 @@ namespace ShareX.HelpersLib
         Bit24
     }
 
+    public enum BMPBitDepth // Localized
+    {
+        Automatic,
+        Bit32,
+        Bit24
+    }
+
     public enum GIFQuality // Localized
     {
         Default,
         Bit8,
         Bit4,
-        Grayscale
+        Grayscale,
+        Adaptive
     }
 
     public enum EImageFormat
@@ -58,12 +66,12 @@ namespace ShareX.HelpersLib
         PNG,
         [Description("jpg")]
         JPEG,
+        [Description("webp")]
+        WEBP,
         [Description("gif")]
         GIF,
         [Description("bmp")]
-        BMP,
-        [Description("tif")]
-        TIFF
+        BMP
     }
 
     public enum HashType

@@ -346,6 +346,9 @@
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>印刷</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>適応量子化 256色</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>オクトリー量子化 16色</value>
   </data>

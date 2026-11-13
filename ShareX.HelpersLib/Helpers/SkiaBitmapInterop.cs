@@ -27,11 +27,42 @@ using SkiaSharp;
 using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Drawing.Drawing2D;
 
 namespace ShareX.HelpersLib;
 
 public static class SkiaBitmapInterop
 {
+    public static SKBitmap ToSKBitmap(Image source)
+    {
+        using Bitmap bitmap = new(source.Width, source.Height, PixelFormat.Format32bppPArgb);
+        using (Graphics graphics = Graphics.FromImage(bitmap))
+        {
+            graphics.CompositingMode = CompositingMode.SourceCopy;
+            graphics.DrawImageUnscaled(source, 0, 0);
+        }
+
+        BitmapData data = bitmap.LockBits(new Rectangle(0, 0, bitmap.Width, bitmap.Height),
+            ImageLockMode.ReadOnly, PixelFormat.Format32bppPArgb);
+        SKBitmap result = new(new SKImageInfo(bitmap.Width, bitmap.Height, SKColorType.Bgra8888, SKAlphaType.Premul));
+        try
+        {
+            using SKPixmap pixels = new(result.Info, data.Scan0, data.Stride);
+            if (!pixels.ReadPixels(result.Info, result.GetPixels(), result.RowBytes))
+                throw new InvalidOperationException("Unable to read image pixels.");
+            return result;
+        }
+        catch
+        {
+            result.Dispose();
+            throw;
+        }
+        finally
+        {
+            bitmap.UnlockBits(data);
+        }
+    }
+
     public static Bitmap ToBitmap(SKBitmap source)
     {
         Bitmap bitmap = new(source.Width, source.Height, PixelFormat.Format32bppPArgb);

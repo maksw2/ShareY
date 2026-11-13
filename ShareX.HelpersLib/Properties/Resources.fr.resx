@@ -346,6 +346,9 @@ Voulez-vous la télécharger ?</value>
   <data name="PrintForm_LoadSettings_Print" xml:space="preserve">
     <value>Imprimer</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>Quantification adaptative à 256 couleurs</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Quantificateur d'octree 16 couleurs</value>
   </data>

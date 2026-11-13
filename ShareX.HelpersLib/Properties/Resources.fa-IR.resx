@@ -770,6 +770,9 @@
   <data name="ImgurThumbnailType_Small_Thumbnail" xml:space="preserve">
     <value>Small بندانگشتی</value>
   </data>
+  <data name="GIFQuality_Adaptive" xml:space="preserve">
+    <value>کوانتیزه‌ساز تطبیقی با 256 رنگ</value>
+  </data>
   <data name="GIFQuality_Bit4" xml:space="preserve">
     <value>Octree quantizer 16 رنگs</value>
   </data>

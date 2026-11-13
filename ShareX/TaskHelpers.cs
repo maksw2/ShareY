@@ -32,6 +32,7 @@ using ShareX.Properties;
 using ShareX.ScreenCaptureLib;
 using ShareX.UploadersLib;
 using ShareX.UploadersLib.SharingServices;
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -378,24 +379,33 @@ namespace ShareX
 
         public static ImageData PrepareImage(Image img, TaskSettings taskSettings)
         {
+            using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
             ImageData imageData = new ImageData();
-            imageData.ImageStream = SaveImageAsStream(img, taskSettings.ImageSettings.ImageFormat, taskSettings);
-            imageData.ImageFormat = taskSettings.ImageSettings.ImageFormat;
+            EImageFormat imageFormat = Enum.IsDefined(taskSettings.ImageSettings.ImageFormat) ? taskSettings.ImageSettings.ImageFormat : EImageFormat.PNG;
+            bool autoUseJPEG = taskSettings.ImageSettings.ImageAutoUseJPEG && imageFormat != EImageFormat.JPEG;
+            long jpegSizeLimit = (long)taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000;
+            imageData.ImageStream = SaveImageAsStream(bitmap, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings),
+                autoUseJPEG ? jpegSizeLimit : long.MaxValue, out bool pngSizeLimitExceeded);
+            imageData.ImageFormat = imageFormat;
 
-            if (taskSettings.ImageSettings.ImageAutoUseJPEG && taskSettings.ImageSettings.ImageFormat != EImageFormat.JPEG &&
-                imageData.ImageStream.Length > taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000)
+            if (autoUseJPEG && (pngSizeLimitExceeded || imageData.ImageStream.Length > jpegSizeLimit))
             {
                 imageData.ImageStream.Dispose();
 
-                using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                using (SKBitmap newImage = SkiaImageHelpers.FillBackground(bitmap, Color.White))
                 {
                     if (taskSettings.ImageSettings.ImageAutoJPEGQuality)
                     {
-                        imageData.ImageStream = ImageHelpers.SaveJPEGAutoQuality(newImage, taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEGAutoQuality(newImage,
+                            taskSettings.ImageSettings.ImageAutoUseJPEGSize * 1000, 2, 70, 100, taskSettings.ImageSettings.ImageJPEGSubsampling);
                     }
                     else
                     {
-                        imageData.ImageStream = ImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality);
+                        imageData.ImageStream = SkiaImageHelpers.SaveJPEG(newImage, taskSettings.ImageSettings.ImageJPEGQuality,
+                            taskSettings.ImageSettings.ImageJPEGSubsampling);
                     }
                 }
 
@@ -430,44 +440,81 @@ namespace ShareX
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, TaskSettings taskSettings)
         {
-            return SaveImageAsStream(img, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
-                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality);
+            using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
+            return SaveImageAsStream(bitmap, imageFormat, taskSettings.ImageSettings.ImagePNGBitDepth,
+                taskSettings.ImageSettings.ImageJPEGQuality, taskSettings.ImageSettings.ImageGIFQuality,
+                GetPNGEncoderOptions(taskSettings.ImageSettings), taskSettings.ImageSettings.ImageJPEGSubsampling,
+                taskSettings.ImageSettings.ImageBMPBitDepth, GetWebPEncoderOptions(taskSettings.ImageSettings), long.MaxValue, out _);
+        }
+
+        private static SKWebpEncoderOptions GetWebPEncoderOptions(TaskSettingsImage settings)
+        {
+            return SkiaImageHelpers.GetWebPEncoderOptions(settings.ImageWebPQuality, settings.ImageWebPLossless,
+                settings.ImageWebPCompressionEffort);
+        }
+
+        private static SKPngEncoderOptions GetPNGEncoderOptions(TaskSettingsImage settings)
+        {
+            SKPngEncoderFilterFlags filter = settings.ImagePNGFilter switch
+            {
+                SKPngEncoderFilterFlags.None or SKPngEncoderFilterFlags.Sub or SKPngEncoderFilterFlags.Up or
+                SKPngEncoderFilterFlags.Avg or SKPngEncoderFilterFlags.Paeth => settings.ImagePNGFilter,
+                _ => SKPngEncoderFilterFlags.AllFilters
+            };
+            return new SKPngEncoderOptions(filter, Math.Clamp(settings.ImagePNGCompressionLevel, 0, 9));
         }
 
         public static MemoryStream SaveImageAsStream(Image img, EImageFormat imageFormat, PNGBitDepth pngBitDepth = PNGBitDepth.Automatic,
-            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Default)
+            int jpegQuality = 90, GIFQuality gifQuality = GIFQuality.Adaptive,
+            SKJpegEncoderDownsample jpegSubsampling = SKJpegEncoderDownsample.Downsample420,
+            BMPBitDepth bmpBitDepth = BMPBitDepth.Bit24)
+        {
+            using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
+            return SaveImageAsStream(bitmap, imageFormat, pngBitDepth, jpegQuality, gifQuality,
+                SKPngEncoderOptions.Default, jpegSubsampling, bmpBitDepth, SkiaImageHelpers.GetWebPEncoderOptions(90, true, 100),
+                long.MaxValue, out _);
+        }
+
+        private static MemoryStream SaveImageAsStream(SKBitmap img, EImageFormat imageFormat, PNGBitDepth pngBitDepth,
+            int jpegQuality, GIFQuality gifQuality, SKPngEncoderOptions pngOptions, SKJpegEncoderDownsample jpegSubsampling,
+            BMPBitDepth bmpBitDepth, SKWebpEncoderOptions webpOptions, long pngSizeLimit, out bool pngSizeLimitExceeded)
         {
             MemoryStream ms = new MemoryStream();
+            pngSizeLimitExceeded = false;
 
             try
             {
                 switch (imageFormat)
                 {
+                    default:
                     case EImageFormat.PNG:
-                        ImageHelpers.SavePNG(img, ms, pngBitDepth);
-
                         if (Program.Settings.PNGStripColorSpaceInformation)
                         {
+                            SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, long.MaxValue, pngOptions);
                             using (ms)
                             {
                                 return ImageHelpers.PNGStripColorSpaceInformation(ms);
                             }
                         }
+                        else
+                        {
+                            pngSizeLimitExceeded = !SkiaImageHelpers.SavePNG(img, ms, pngBitDepth, pngSizeLimit, pngOptions);
+                        }
                         break;
                     case EImageFormat.JPEG:
-                        using (Bitmap newImage = ImageHelpers.FillBackground(img, Color.White))
+                        using (SKBitmap newImage = SkiaImageHelpers.FillBackground(img, Color.White))
                         {
-                            ImageHelpers.SaveJPEG(newImage, ms, jpegQuality);
+                            SkiaImageHelpers.SaveJPEG(newImage, ms, jpegQuality, jpegSubsampling);
                         }
                         break;
                     case EImageFormat.GIF:
-                        ImageHelpers.SaveGIF(img, ms, gifQuality);
+                        SkiaImageHelpers.SaveGIF(img, ms, gifQuality);
                         break;
                     case EImageFormat.BMP:
-                        img.Save(ms, ImageFormat.Bmp);
+                        SkiaImageHelpers.SaveBMP(img, ms, bmpBitDepth);
                         break;
-                    case EImageFormat.TIFF:
-                        img.Save(ms, ImageFormat.Tiff);
+                    case EImageFormat.WEBP:
+                        SkiaImageHelpers.SaveWebP(img, ms, webpOptions);
                         break;
                 }
             }
