@@ -23,6 +23,7 @@
 
 #endregion License Information (GPL v3)
 
+using SkiaSharp;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -2136,8 +2137,8 @@ namespace ShareX.HelpersLib
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
-                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff|" +
-                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff";
+                ofd.Filter = "Image files (*.png, *.jpg, *.jpeg, *.jpe, *.jfif, *.gif, *.bmp, *.tif, *.tiff, *.webp)|*.png;*.jpg;*.jpeg;*.jpe;*.jfif;*.gif;*.bmp;*.tif;*.tiff;*.webp|" +
+                    "PNG (*.png)|*.png|JPEG (*.jpg, *.jpeg, *.jpe, *.jfif)|*.jpg;*.jpeg;*.jpe;*.jfif|GIF (*.gif)|*.gif|BMP (*.bmp)|*.bmp|TIFF (*.tif, *.tiff)|*.tif;*.tiff|WebP (*.webp)|*.webp";
 
                 ofd.Multiselect = multiselect;
 
@@ -2295,6 +2296,13 @@ namespace ShareX.HelpersLib
 
                     if (!string.IsNullOrEmpty(filePath) && FileHelpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
+                        if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                        {
+                            using FileStream stream = File.OpenRead(filePath);
+                            using SKBitmap skBitmap = SkiaImageHelpers.Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
+                            return SkiaBitmapInterop.ToBitmap(skBitmap);
+                        }
+
                         // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
                         Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
 
