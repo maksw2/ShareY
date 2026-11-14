@@ -2156,51 +2156,22 @@ namespace ShareX.HelpersLib
             return null;
         }
 
-        public static ImageFormat GetImageFormat(string filePath)
-        {
-            ImageFormat imageFormat = ImageFormat.Png;
-            string ext = FileHelpers.GetFileNameExtension(filePath);
-
-            if (!string.IsNullOrEmpty(ext))
-            {
-                if (ext.Equals("png", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Png;
-                }
-                else if (ext.Equals("jpg", StringComparison.OrdinalIgnoreCase) || ext.Equals("jpeg", StringComparison.OrdinalIgnoreCase) ||
-                    ext.Equals("jpe", StringComparison.OrdinalIgnoreCase) || ext.Equals("jfif", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Jpeg;
-                }
-                else if (ext.Equals("gif", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Gif;
-                }
-                else if (ext.Equals("bmp", StringComparison.OrdinalIgnoreCase))
-                {
-                    imageFormat = ImageFormat.Bmp;
-                }
-            }
-
-            return imageFormat;
-        }
-
         public static bool SaveImage(Image img, string filePath)
         {
             FileHelpers.CreateDirectoryFromFilePath(filePath);
-            ImageFormat imageFormat = GetImageFormat(filePath);
 
             try
             {
-                if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
+                ImageFileFormat format = SkiaImageHelpers.GetImageFormat(filePath);
+                if (format == ImageFileFormat.Webp)
                 {
-                    using SKBitmap bitmap = SkiaBitmapInterop.ToSKBitmap(img);
                     using FileStream stream = File.Create(filePath);
                     SkiaImageHelpers.SaveWebP(bitmap, stream, SkiaImageHelpers.GetWebPEncoderOptions(90, true, 100));
                 }
                 else
                 {
-                    img.Save(filePath, imageFormat);
+                    bitmap.Save(filePath, format);
                 }
                 return true;
             }
@@ -2272,9 +2243,11 @@ namespace ShareX.HelpersLib
 
                 if (sfd.ShowDialog() == DialogResult.OK && !string.IsNullOrEmpty(sfd.FileName))
                 {
-                    SaveImage(img, sfd.FileName);
-                    HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
-                    return sfd.FileName;
+                    if (SaveImage(img, sfd.FileName))
+                    {
+                        HelpersOptions.LastSaveDirectory = Path.GetDirectoryName(sfd.FileName);
+                        return sfd.FileName;
+                    }
                 }
             }
 
@@ -2283,11 +2256,9 @@ namespace ShareX.HelpersLib
 
         public static Bitmap ByteArrayToBitmap(byte[] bytes)
         {
-            using (MemoryStream ms = new MemoryStream(bytes))
-            using (Image tempImage = Image.FromStream(ms))
-            {
-                return new Bitmap(tempImage);
-            }
+            using MemoryStream stream = new(bytes, false);
+            using SKBitmap bitmap = SkiaImageHelpers.Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
+            return SkiaBitmapInterop.ToBitmap(bitmap);
         }
 
         public static Bitmap LoadImage(string filePath)
@@ -2300,22 +2271,21 @@ namespace ShareX.HelpersLib
 
                     if (!string.IsNullOrEmpty(filePath) && FileHelpers.IsImageFile(filePath) && File.Exists(filePath))
                     {
-                        if (Path.GetExtension(filePath).Equals(".webp", StringComparison.OrdinalIgnoreCase))
+                        if (Path.GetExtension(filePath).Equals(".gif", StringComparison.OrdinalIgnoreCase))
                         {
-                            using FileStream stream = File.OpenRead(filePath);
-                            using SKBitmap skBitmap = SkiaImageHelpers.Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
-                            return SkiaBitmapInterop.ToBitmap(skBitmap);
+                            Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
+
+                            if (HelpersOptions.RotateImageByExifOrientationData)
+                            {
+                                RotateImageByExifOrientationData(bmp);
+                            }
+
+                            return bmp;
                         }
 
-                        // http://stackoverflow.com/questions/788335/why-does-image-fromfile-keep-a-file-handle-open-sometimes
-                        Bitmap bmp = (Bitmap)Image.FromStream(new MemoryStream(File.ReadAllBytes(filePath)));
-
-                        if (HelpersOptions.RotateImageByExifOrientationData)
-                        {
-                            RotateImageByExifOrientationData(bmp);
-                        }
-
-                        return bmp;
+                        using FileStream stream = File.OpenRead(filePath);
+                        using SKBitmap bitmap = SkiaImageHelpers.Decode(stream, HelpersOptions.RotateImageByExifOrientationData);
+                        return SkiaBitmapInterop.ToBitmap(bitmap);
                     }
                 }
                 catch (Exception e)
@@ -2811,15 +2781,20 @@ namespace ShareX.HelpersLib
 
         public static Size GetImageFileDimensions(string filePath)
         {
-            using (Bitmap bmp = LoadImage(filePath))
+            try
             {
-                if (bmp != null)
-                {
-                    return bmp.Size;
-                }
+                using FileStream stream = File.OpenRead(filePath);
+                using SKManagedStream managed = new(stream, false);
+                using SKCodec codec = SKCodec.Create(managed);
+                if (codec == null) return Size.Empty;
+                return HelpersOptions.RotateImageByExifOrientationData && (int)codec.EncodedOrigin >= 5
+                    ? new Size(codec.Info.Height, codec.Info.Width) : new Size(codec.Info.Width, codec.Info.Height);
             }
-
-            return Size.Empty;
+            catch (Exception exception)
+            {
+                DebugHelper.WriteException(exception);
+                return Size.Empty;
+            }
         }
 
         public static InterpolationMode GetInterpolationMode(ImageInterpolationMode interpolationMode)

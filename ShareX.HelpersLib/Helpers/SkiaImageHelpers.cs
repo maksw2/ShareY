@@ -29,8 +29,47 @@ using System.IO;
 
 namespace ShareX.HelpersLib;
 
+public enum ImageFileFormat { Png, Jpeg, Gif, Bmp, Webp }
+
 public static partial class SkiaImageHelpers
 {
+    public static void Save(this SKBitmap bitmap, Stream stream, SKEncodedImageFormat format, int quality = 100)
+    {
+        if (format == SKEncodedImageFormat.Gif) { SaveGIF(bitmap, stream, GIFQuality.Adaptive); return; }
+        if (format == SKEncodedImageFormat.Bmp) { SaveBMP(bitmap, stream); return; }
+        using SKImage image = SKImage.FromBitmap(bitmap);
+        using SKData data = image.Encode(format, Math.Clamp(quality, 0, 100));
+        if (data == null) throw new InvalidDataException($"Image encoding failed: {format}.");
+        data.SaveTo(stream);
+    }
+
+    public static void Save(this SKBitmap bitmap, Stream stream, ImageFileFormat format, int quality = 100)
+    {
+        bitmap.Save(stream, format switch
+        {
+            ImageFileFormat.Jpeg => SKEncodedImageFormat.Jpeg,
+            ImageFileFormat.Gif => SKEncodedImageFormat.Gif,
+            ImageFileFormat.Bmp => SKEncodedImageFormat.Bmp,
+            ImageFileFormat.Webp => SKEncodedImageFormat.Webp,
+            _ => SKEncodedImageFormat.Png
+        }, quality);
+    }
+
+    public static void Save(this SKBitmap bitmap, string filePath, ImageFileFormat format, int quality = 100)
+    {
+        using FileStream stream = new(filePath, FileMode.Create, FileAccess.Write, FileShare.Read);
+        bitmap.Save(stream, format, quality);
+    }
+
+    public static ImageFileFormat GetImageFormat(string path) => Path.GetExtension(path).ToLowerInvariant() switch
+    {
+        ".jpg" or ".jpeg" or ".jpe" or ".jfif" => ImageFileFormat.Jpeg,
+        ".gif" => ImageFileFormat.Gif,
+        ".bmp" => ImageFileFormat.Bmp,
+        ".webp" => ImageFileFormat.Webp,
+        _ => ImageFileFormat.Png
+    };
+
     public static SKBitmap CreateBitmap(int width, int height)
     {
         SKBitmap bitmap = new(new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul));
