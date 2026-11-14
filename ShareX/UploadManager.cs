@@ -206,20 +206,9 @@ namespace ShareX
 
             try
             {
-                if (Clipboard.ContainsImage())
+                if (ClipboardHelpers.ContainsImage())
                 {
-                    Bitmap image;
-
-                    if (HelpersOptions.UseAlternativeClipboardGetImage)
-                    {
-                        image = ClipboardHelpers.GetImageAlternative2();
-                    }
-                    else
-                    {
-                        image = (Bitmap)Clipboard.GetImage();
-                    }
-
-                    ProcessImageUpload(image, taskSettings);
+                    ProcessImageUpload(ClipboardHelpers.GetImage(), taskSettings);
                 }
                 else if (Clipboard.ContainsText())
                 {

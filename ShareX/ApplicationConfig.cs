@@ -224,13 +224,13 @@ namespace ShareX
         [Category("Clipboard"), DefaultValue(true), Description("Show clipboard content viewer when using clipboard upload in main window.")]
         public bool ShowClipboardContentViewer { get; set; }
 
-        [Category("Clipboard"), DefaultValue(true), Description("Because default .NET image copying not supports alpha channel, background of image will be black. This option will fill background white.")]
+        [Category("Clipboard"), DefaultValue(true), Description("Fill image backgrounds with white when using legacy .NET clipboard copying.")]
         public bool DefaultClipboardCopyImageFillBackground { get; set; }
 
-        [Category("Clipboard"), DefaultValue(false), Description("Default .NET method can't copy image with alpha channel to clipboard. When this setting is true, ShareX copies \"PNG\" and 32 bit \"DIB\" to clipboard in order to retain image transparency.")]
+        [Category("Clipboard"), DefaultValue(false), Description("Use legacy .NET image copying instead of PNG and DIB clipboard formats.")]
         public bool UseAlternativeClipboardCopyImage { get; set; }
 
-        [Category("Clipboard"), DefaultValue(false), Description("Default .NET method can't get image with alpha channel from clipboard. When this setting is true, ShareX checks if clipboard contains \"PNG\" or 32 bit \"DIB\" in order to retain image transparency.")]
+        [Category("Clipboard"), DefaultValue(false), Description("Use legacy .NET image reading instead of PNG and DIB clipboard formats.")]
         public bool UseAlternativeClipboardGetImage { get; set; }
 
         [Category("Image"), DefaultValue(true), Description("If JPEG exif contains orientation data then rotate image accordingly.")]

@@ -110,7 +110,7 @@ namespace ShareX.HelpersLib
             {
                 try
                 {
-                    if (HelpersOptions.UseAlternativeClipboardCopyImage)
+                    if (!HelpersOptions.UseAlternativeClipboardCopyImage)
                     {
                         return CopyImageAlternative2(img, fileName);
                     }
@@ -189,7 +189,10 @@ namespace ShareX.HelpersLib
 
                 dataObject.SetData(DataFormats.Bitmap, true, bmpNonTransparent);
 
-                img.Save(msPNG, ImageFormat.Png);
+                using (var bitmap = SkiaBitmapInterop.ToSKBitmap(img))
+                {
+                    bitmap.Save(msPNG, SkiaSharp.SKEncodedImageFormat.Png);
+                }
                 dataObject.SetData(FORMAT_PNG, false, msPNG);
 
                 byte[] dibData = ClipboardHelpersEx.ConvertToDib(img);
@@ -281,9 +284,9 @@ namespace ShareX.HelpersLib
             {
                 lock (ClipboardLock)
                 {
-                    if (!checkContainsImage || Clipboard.ContainsImage())
+                    if (!checkContainsImage || ContainsImage())
                     {
-                        if (HelpersOptions.UseAlternativeClipboardGetImage)
+                        if (!HelpersOptions.UseAlternativeClipboardGetImage)
                         {
                             return GetImageAlternative2();
                         }
@@ -368,10 +371,7 @@ namespace ShareX.HelpersLib
                     {
                         if (ms != null)
                         {
-                            using (Bitmap bmp = new Bitmap(ms))
-                            {
-                                return ClipboardHelpersEx.CloneImage(bmp);
-                            }
+                            return ImageHelpers.ByteArrayToBitmap(ms.ToArray());
                         }
                     }
                 }
@@ -537,7 +537,8 @@ namespace ShareX.HelpersLib
         {
             try
             {
-                return Clipboard.ContainsImage();
+                return Clipboard.ContainsImage() || (!HelpersOptions.UseAlternativeClipboardGetImage &&
+                    (Clipboard.ContainsData(FORMAT_PNG) || Clipboard.ContainsData(DataFormats.Dib) || Clipboard.ContainsData(FORMAT_17)));
             }
             catch (Exception e)
             {
