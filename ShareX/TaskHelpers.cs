@@ -429,7 +429,8 @@ namespace ShareX
                     using (Bitmap resizedImage = new Resize(taskSettings.ImageSettings.ThumbnailWidth, taskSettings.ImageSettings.ThumbnailHeight).Apply(thumbnail))
                     using (Bitmap newImage = ImageHelpers.FillBackground(resizedImage, Color.White))
                     {
-                        ImageHelpers.SaveJPEG(newImage, thumbnailFilePath, 90);
+                        using SKBitmap skiaThumbnail = SkiaBitmapInterop.ToSKBitmap(newImage);
+                        SkiaImageHelpers.SaveJPEG(skiaThumbnail, thumbnailFilePath, 90);
                         return thumbnailFilePath;
                     }
                 }

@@ -172,59 +172,11 @@ namespace ShareX.HelpersLib
 
         public static Bitmap CreateThumbnail(Bitmap bmp, int width, int height, InterpolationMode interpolationMode = DefaultInterpolationMode)
         {
-            double srcRatio = (double)bmp.Width / bmp.Height;
-            double dstRatio = (double)width / height;
-            int w, h;
-
-            if (srcRatio >= dstRatio)
-            {
-                if (srcRatio >= 1)
-                {
-                    w = (int)(bmp.Height * dstRatio);
-                }
-                else
-                {
-                    w = (int)(bmp.Width / srcRatio * dstRatio);
-                }
-
-                h = bmp.Height;
-            }
-            else
-            {
-                w = bmp.Width;
-
-                if (srcRatio >= 1)
-                {
-                    h = (int)(bmp.Height / dstRatio * srcRatio);
-                }
-                else
-                {
-                    h = (int)(bmp.Height * srcRatio / dstRatio);
-                }
-            }
-
-            int x = (bmp.Width - w) / 2;
-            int y = (bmp.Height - h) / 2;
-
-            Bitmap bmpResult = new Bitmap(width, height, PixelFormat.Format32bppArgb);
-            bmpResult.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
-
-            using (Graphics g = Graphics.FromImage(bmpResult))
-            {
-                g.InterpolationMode = interpolationMode;
-                g.SmoothingMode = SmoothingMode.HighQuality;
-                g.PixelOffsetMode = PixelOffsetMode.HighQuality;
-                g.CompositingQuality = CompositingQuality.HighQuality;
-                g.CompositingMode = CompositingMode.SourceOver;
-
-                using (ImageAttributes ia = new ImageAttributes())
-                {
-                    ia.SetWrapMode(WrapMode.TileFlipXY);
-                    g.DrawImage(bmp, new Rectangle(0, 0, width, height), new Rectangle(x, y, w, h), GraphicsUnit.Pixel);
-                }
-            }
-
-            return bmpResult;
+            using SKBitmap source = SkiaBitmapInterop.ToSKBitmap(bmp);
+            using SKBitmap thumbnail = SkiaImageHelpers.CreateThumbnail(source, width, height, interpolationMode);
+            Bitmap result = SkiaBitmapInterop.ToBitmap(thumbnail);
+            result.SetResolution(bmp.HorizontalResolution, bmp.VerticalResolution);
+            return result;
         }
 
         /// <summary>If image size is bigger than specified size then resize it and keep aspect ratio else return image.</summary>

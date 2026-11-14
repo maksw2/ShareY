@@ -25,6 +25,7 @@
 
 using SkiaSharp;
 using System;
+using System.Drawing.Drawing2D;
 using System.IO;
 
 namespace ShareX.HelpersLib;
@@ -75,6 +76,27 @@ public static partial class SkiaImageHelpers
         SKBitmap bitmap = new(new SKImageInfo(width, height, SKColorType.Bgra8888, SKAlphaType.Premul));
         bitmap.Erase(SKColors.Transparent);
         return bitmap;
+    }
+
+    public static SKBitmap CreateThumbnail(SKBitmap source, int width, int height,
+        InterpolationMode interpolationMode = InterpolationMode.HighQualityBicubic)
+    {
+        ArgumentOutOfRangeException.ThrowIfLessThan(width, 1);
+        ArgumentOutOfRangeException.ThrowIfLessThan(height, 1);
+        float scale = Math.Max(width / (float)source.Width, height / (float)source.Height);
+        float sourceWidth = width / scale, sourceHeight = height / scale;
+        SKRect crop = SKRect.Create((source.Width - sourceWidth) / 2, (source.Height - sourceHeight) / 2, sourceWidth, sourceHeight);
+        SKBitmap result = CreateBitmap(width, height);
+        SKSamplingOptions sampling = interpolationMode switch
+        {
+            InterpolationMode.NearestNeighbor => new(SKFilterMode.Nearest),
+            InterpolationMode.Bilinear or InterpolationMode.HighQualityBilinear => new(SKFilterMode.Linear),
+            _ => new(SKCubicResampler.Mitchell)
+        };
+        using SKCanvas canvas = new(result);
+        using SKImage image = SKImage.FromBitmap(source);
+        canvas.DrawImage(image, crop, SKRect.Create(width, height), sampling);
+        return result;
     }
 
     public static SKBitmap Decode(Stream stream, bool applyOrientation = true)
