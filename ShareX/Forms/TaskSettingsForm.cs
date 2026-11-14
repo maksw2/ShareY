@@ -46,12 +46,12 @@ namespace ShareX
         public TaskSettingsForm(TaskSettings hotkeySetting, bool isDefault = false)
         {
             InitializeComponent();
+            TaskSettings = hotkeySetting;
+            IsDefault = isDefault;
+            InitializeImageEncoderSettings();
             ShareXResources.ApplyTheme(this, true);
 
             tsmiURLShorteners.Image = ShareXResources.IsDarkTheme ? Resources.edit_scale_white : Resources.edit_scale;
-
-            TaskSettings = hotkeySetting;
-            IsDefault = isDefault;
 
             UpdateWindowTitle();
 
@@ -234,8 +234,7 @@ namespace ShareX
             cbImagePNGBitDepth.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<PNGBitDepth>());
             cbImagePNGBitDepth.SelectedIndex = (int)TaskSettings.ImageSettings.ImagePNGBitDepth;
             nudImageJPEGQuality.SetValue(TaskSettings.ImageSettings.ImageJPEGQuality);
-            cbImageGIFQuality.Items.AddRange(Helpers.GetLocalizedEnumDescriptions<GIFQuality>());
-            cbImageGIFQuality.SelectedIndex = (int)TaskSettings.ImageSettings.ImageGIFQuality;
+            InitializeGIFQualityOptions();
             cbImageAutoUseJPEG.Checked = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             nudImageAutoUseJPEGSize.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
             cbImageAutoJPEGQuality.Enabled = TaskSettings.ImageSettings.ImageAutoUseJPEG;
@@ -975,6 +974,7 @@ namespace ShareX
         private void cbImageFormat_SelectedIndexChanged(object sender, EventArgs e)
         {
             TaskSettings.ImageSettings.ImageFormat = (EImageFormat)cbImageFormat.SelectedIndex;
+            UpdateImageEncoderOptions();
         }
 
         private void cbImagePNGBitDepth_SelectedIndexChanged(object sender, EventArgs e)
@@ -989,7 +989,10 @@ namespace ShareX
 
         private void cbImageGIFQuality_SelectedIndexChanged(object sender, EventArgs e)
         {
-            TaskSettings.ImageSettings.ImageGIFQuality = (GIFQuality)cbImageGIFQuality.SelectedIndex;
+            if (cbImageGIFQuality.SelectedIndex >= 0)
+            {
+                TaskSettings.ImageSettings.ImageGIFQuality = GIFQualityOptions[cbImageGIFQuality.SelectedIndex];
+            }
         }
 
         private void cbImageAutoUseJPEG_CheckedChanged(object sender, EventArgs e)

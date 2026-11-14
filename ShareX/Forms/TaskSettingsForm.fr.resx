@@ -666,4 +666,64 @@
   <data name="btnActions.Text" xml:space="preserve">
     <value>Actions...</value>
   </data>
+  <data name="ImageEncoder.PNGCompression" xml:space="preserve">
+    <value>Niveau de compression PNG :</value>
+  </data>
+  <data name="ImageEncoder.PNGFilter" xml:space="preserve">
+    <value>Filtre PNG :</value>
+  </data>
+  <data name="ImageEncoder.FilterAutomatic" xml:space="preserve">
+    <value>Automatique (tous les filtres)</value>
+  </data>
+  <data name="ImageEncoder.FilterNone" xml:space="preserve">
+    <value>Aucun filtrage</value>
+  </data>
+  <data name="ImageEncoder.FilterSub" xml:space="preserve">
+    <value>Sub (pixel de gauche)</value>
+  </data>
+  <data name="ImageEncoder.FilterUp" xml:space="preserve">
+    <value>Up (pixel du dessus)</value>
+  </data>
+  <data name="ImageEncoder.FilterAverage" xml:space="preserve">
+    <value>Moyenne (gauche et haut)</value>
+  </data>
+  <data name="ImageEncoder.FilterPaeth" xml:space="preserve">
+    <value>Paeth (prédiction)</value>
+  </data>
+  <data name="ImageEncoder.JPEGSubsampling" xml:space="preserve">
+    <value>Sous-échantillonnage chromatique JPEG :</value>
+  </data>
+  <data name="ImageEncoder.JPEG420" xml:space="preserve">
+    <value>4:2:0 (fichiers plus petits)</value>
+  </data>
+  <data name="ImageEncoder.JPEG422" xml:space="preserve">
+    <value>4:2:2 (équilibré)</value>
+  </data>
+  <data name="ImageEncoder.JPEG444" xml:space="preserve">
+    <value>4:4:4 (pleine résolution des couleurs)</value>
+  </data>
+  <data name="ImageEncoder.BMPBitDepth" xml:space="preserve">
+    <value>Profondeur de bits BMP :</value>
+  </data>
+  <data name="ImageEncoder.WebPQuality" xml:space="preserve">
+    <value>Qualité WebP :</value>
+  </data>
+  <data name="ImageEncoder.WebPLossless" xml:space="preserve">
+    <value>Sans perte</value>
+  </data>
+  <data name="ImageEncoder.WebPEffort" xml:space="preserve">
+    <value>Effort de compression WebP :</value>
+  </data>
+  <data name="ImageEncoder.GIFAdaptive" xml:space="preserve">
+    <value>Adaptatif (256 couleurs)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree256" xml:space="preserve">
+    <value>Octree (256 couleurs)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree16" xml:space="preserve">
+    <value>Octree (16 couleurs)</value>
+  </data>
+  <data name="ImageEncoder.GIFGrayscale" xml:space="preserve">
+    <value>Niveaux de gris (256 niveaux)</value>
+  </data>
 </root>

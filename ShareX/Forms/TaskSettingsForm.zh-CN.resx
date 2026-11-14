@@ -666,4 +666,64 @@
   <data name="cbRegionCaptureShowCenterCrosshair.Text" xml:space="preserve">
     <value>显示中心十字线</value>
   </data>
+  <data name="ImageEncoder.PNGCompression" xml:space="preserve">
+    <value>PNG 压缩级别：</value>
+  </data>
+  <data name="ImageEncoder.PNGFilter" xml:space="preserve">
+    <value>PNG 筛选器：</value>
+  </data>
+  <data name="ImageEncoder.FilterAutomatic" xml:space="preserve">
+    <value>自动（所有筛选器）</value>
+  </data>
+  <data name="ImageEncoder.FilterNone" xml:space="preserve">
+    <value>不使用筛选器</value>
+  </data>
+  <data name="ImageEncoder.FilterSub" xml:space="preserve">
+    <value>Sub（左侧像素）</value>
+  </data>
+  <data name="ImageEncoder.FilterUp" xml:space="preserve">
+    <value>Up（上方像素）</value>
+  </data>
+  <data name="ImageEncoder.FilterAverage" xml:space="preserve">
+    <value>平均（左侧和上方）</value>
+  </data>
+  <data name="ImageEncoder.FilterPaeth" xml:space="preserve">
+    <value>Paeth（预测）</value>
+  </data>
+  <data name="ImageEncoder.JPEGSubsampling" xml:space="preserve">
+    <value>JPEG 色度抽样：</value>
+  </data>
+  <data name="ImageEncoder.JPEG420" xml:space="preserve">
+    <value>4:2:0（文件更小）</value>
+  </data>
+  <data name="ImageEncoder.JPEG422" xml:space="preserve">
+    <value>4:2:2（均衡）</value>
+  </data>
+  <data name="ImageEncoder.JPEG444" xml:space="preserve">
+    <value>4:4:4（完整色彩分辨率）</value>
+  </data>
+  <data name="ImageEncoder.BMPBitDepth" xml:space="preserve">
+    <value>BMP 位深度：</value>
+  </data>
+  <data name="ImageEncoder.WebPQuality" xml:space="preserve">
+    <value>WebP 质量：</value>
+  </data>
+  <data name="ImageEncoder.WebPLossless" xml:space="preserve">
+    <value>无损</value>
+  </data>
+  <data name="ImageEncoder.WebPEffort" xml:space="preserve">
+    <value>WebP 压缩力度：</value>
+  </data>
+  <data name="ImageEncoder.GIFAdaptive" xml:space="preserve">
+    <value>自适应 (256 色)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree256" xml:space="preserve">
+    <value>八叉树 (256 色)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree16" xml:space="preserve">
+    <value>八叉树 (16 色)</value>
+  </data>
+  <data name="ImageEncoder.GIFGrayscale" xml:space="preserve">
+    <value>灰度 (256 级)</value>
+  </data>
 </root>

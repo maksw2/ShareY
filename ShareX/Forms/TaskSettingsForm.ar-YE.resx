@@ -666,4 +666,64 @@
   <data name="cbImageEditorUseLegacyImageEditor.Text" xml:space="preserve">
     <value>استخدام محرر الصور القديم</value>
   </data>
+  <data name="ImageEncoder.PNGCompression" xml:space="preserve">
+    <value>مستوى ضغط PNG:</value>
+  </data>
+  <data name="ImageEncoder.PNGFilter" xml:space="preserve">
+    <value>مرشح PNG:</value>
+  </data>
+  <data name="ImageEncoder.FilterAutomatic" xml:space="preserve">
+    <value>تلقائي (جميع المرشحات)</value>
+  </data>
+  <data name="ImageEncoder.FilterNone" xml:space="preserve">
+    <value>بدون ترشيح</value>
+  </data>
+  <data name="ImageEncoder.FilterSub" xml:space="preserve">
+    <value>Sub (البكسل الأيسر)</value>
+  </data>
+  <data name="ImageEncoder.FilterUp" xml:space="preserve">
+    <value>Up (البكسل العلوي)</value>
+  </data>
+  <data name="ImageEncoder.FilterAverage" xml:space="preserve">
+    <value>المتوسط (اليسار والأعلى)</value>
+  </data>
+  <data name="ImageEncoder.FilterPaeth" xml:space="preserve">
+    <value>Paeth (التنبؤ)</value>
+  </data>
+  <data name="ImageEncoder.JPEGSubsampling" xml:space="preserve">
+    <value>تقليل عينات اللون في JPEG:</value>
+  </data>
+  <data name="ImageEncoder.JPEG420" xml:space="preserve">
+    <value>4:2:0 (ملفات أصغر)</value>
+  </data>
+  <data name="ImageEncoder.JPEG422" xml:space="preserve">
+    <value>4:2:2 (متوازن)</value>
+  </data>
+  <data name="ImageEncoder.JPEG444" xml:space="preserve">
+    <value>4:4:4 (دقة لونية كاملة)</value>
+  </data>
+  <data name="ImageEncoder.BMPBitDepth" xml:space="preserve">
+    <value>عمق بت BMP:</value>
+  </data>
+  <data name="ImageEncoder.WebPQuality" xml:space="preserve">
+    <value>جودة WebP:</value>
+  </data>
+  <data name="ImageEncoder.WebPLossless" xml:space="preserve">
+    <value>بدون فقدان</value>
+  </data>
+  <data name="ImageEncoder.WebPEffort" xml:space="preserve">
+    <value>جهد ضغط WebP:</value>
+  </data>
+  <data name="ImageEncoder.GIFAdaptive" xml:space="preserve">
+    <value>تكيفي (256 لونًا)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree256" xml:space="preserve">
+    <value>Octree (256 لونًا)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree16" xml:space="preserve">
+    <value>Octree (16 لونًا)</value>
+  </data>
+  <data name="ImageEncoder.GIFGrayscale" xml:space="preserve">
+    <value>تدرج رمادي (256 درجة)</value>
+  </data>
 </root>

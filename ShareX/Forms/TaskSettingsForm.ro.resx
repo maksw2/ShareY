@@ -666,4 +666,64 @@
   <data name="cbImageEditorUseLegacyImageEditor.Text" xml:space="preserve">
     <value>Folosește editorul de imagini vechi</value>
   </data>
+  <data name="ImageEncoder.PNGCompression" xml:space="preserve">
+    <value>Nivel de compresie PNG:</value>
+  </data>
+  <data name="ImageEncoder.PNGFilter" xml:space="preserve">
+    <value>Filtru PNG:</value>
+  </data>
+  <data name="ImageEncoder.FilterAutomatic" xml:space="preserve">
+    <value>Automat (toate filtrele)</value>
+  </data>
+  <data name="ImageEncoder.FilterNone" xml:space="preserve">
+    <value>Fără filtrare</value>
+  </data>
+  <data name="ImageEncoder.FilterSub" xml:space="preserve">
+    <value>Sub (pixelul din stânga)</value>
+  </data>
+  <data name="ImageEncoder.FilterUp" xml:space="preserve">
+    <value>Up (pixelul de deasupra)</value>
+  </data>
+  <data name="ImageEncoder.FilterAverage" xml:space="preserve">
+    <value>Medie (stânga și deasupra)</value>
+  </data>
+  <data name="ImageEncoder.FilterPaeth" xml:space="preserve">
+    <value>Paeth (predicție)</value>
+  </data>
+  <data name="ImageEncoder.JPEGSubsampling" xml:space="preserve">
+    <value>Subeșantionare cromatică JPEG:</value>
+  </data>
+  <data name="ImageEncoder.JPEG420" xml:space="preserve">
+    <value>4:2:0 (fișiere mai mici)</value>
+  </data>
+  <data name="ImageEncoder.JPEG422" xml:space="preserve">
+    <value>4:2:2 (echilibrat)</value>
+  </data>
+  <data name="ImageEncoder.JPEG444" xml:space="preserve">
+    <value>4:4:4 (rezoluție cromatică completă)</value>
+  </data>
+  <data name="ImageEncoder.BMPBitDepth" xml:space="preserve">
+    <value>Adâncime de biți BMP:</value>
+  </data>
+  <data name="ImageEncoder.WebPQuality" xml:space="preserve">
+    <value>Calitate WebP:</value>
+  </data>
+  <data name="ImageEncoder.WebPLossless" xml:space="preserve">
+    <value>Fără pierderi</value>
+  </data>
+  <data name="ImageEncoder.WebPEffort" xml:space="preserve">
+    <value>Efort de compresie WebP:</value>
+  </data>
+  <data name="ImageEncoder.GIFAdaptive" xml:space="preserve">
+    <value>Adaptiv (256 culori)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree256" xml:space="preserve">
+    <value>Octree (256 culori)</value>
+  </data>
+  <data name="ImageEncoder.GIFOctree16" xml:space="preserve">
+    <value>Octree (16 culori)</value>
+  </data>
+  <data name="ImageEncoder.GIFGrayscale" xml:space="preserve">
+    <value>Nuanțe de gri (256 niveluri)</value>
+  </data>
 </root>
